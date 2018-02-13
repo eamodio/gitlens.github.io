@@ -1,5 +1,9 @@
 @import '_normalize';
 
+body.preload:not(.is-section) .content__sections {
+    visibility: hidden;
+}
+
 body:not(.is-section--about) #about,
 body:not(.is-section--donate) #donate,
 body:not(.is-section--features) #features,
