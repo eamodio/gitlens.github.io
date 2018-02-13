@@ -620,6 +620,7 @@ footer {
     .header {
         align-items: center;
         flex-direction: column;
+        padding-top: 1.5em;
     }
 
     .header__headine {
@@ -690,12 +691,6 @@ footer {
         transform: scale(0.75);
     }
 }
-
-// @media all and (max-width: 375px) {
-//     .button-group {
-//         font-size: 0.8em;
-//     }
-// }
 
 @media all and (max-width: 320px) {
     html {
