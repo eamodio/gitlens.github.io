@@ -1,0 +1,41 @@
+{
+  "name": "gitlens.github.io",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "url": "https://github.com/eamodio/gitlens.github.io",
+    "type": "git"
+  },
+  "private": true,
+  "author": "Eric Amodio",
+  "license": "",
+  "engines": {
+    "node": ">= 6.11.0"
+  },
+  "scripts": {
+    "build": "webpack --env.production",
+    "build-dev": "webpack",
+    "watch": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "@types/node": "9.4.5",
+    "@types/webpack": "3.8.5",
+    "autoprefixer": "8.0.0",
+    "css-loader": "0.28.9",
+    "extract-text-webpack-plugin": "3.0.2",
+    "html-webpack-inline-source-plugin": "0.0.9",
+    "html-webpack-plugin": "2.30.1",
+    "node-sass": "4.7.2",
+    "postcss-loader": "2.1.0",
+    "sass-loader": "6.0.6",
+    "style-loader": "0.20.1",
+    "tslint": "5.9.1",
+    "ts-loader": "3.5.0",
+    "typed.js": "2.0.6",
+    "typescript": "2.7.1",
+    "uglifyjs-webpack-plugin": "1.1.8",
+    "webpack": "3.11.0",
+    "webpack-dev-server": "2.11.1",
+    "write-file-webpack-plugin": "4.2.0"
+  }
+}

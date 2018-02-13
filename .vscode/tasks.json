@@ -1,0 +1,54 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+    },
+    "tasks": [
+        {
+            "label": "build",
+            "type": "npm",
+            "script": "build",
+            "problemMatcher": [
+                "$node-sass",
+                "$tsc",
+                "$tslint5"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "build-dev",
+            "type": "npm",
+            "script": "build-dev",
+            "problemMatcher": [
+                "$node-sass",
+                "$tsc",
+                "$tslint5"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "watch",
+            "type": "npm",
+            "script": "watch",
+            "problemMatcher": {
+                "owner": "custom",
+                "pattern": { "regexp": "__________" },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^webpack: Compiling\\.\\.\\.$",
+                    "endsPattern": "^webpack: Compiled successfully\\.$"
+                }
+            },
+            "group": "build",
+            "isBackground": true
+        }
+    ]
+}

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>GitLens &mdash; Git supercharged</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico?v=2"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110925859-1"></script> -->
+    <!-- <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js',new Date()); gtag('config','UA-110925859-1');</script> -->
+</head>
+
+<body class="preload">
+    <header class="header">
+        <div class="header__headine">
+            <img class="header__headline-image" src="assets/gitlens-logo.png" />
+        </div>
+        <div class="button-group button-group--header">
+            <a id="donate-button" class="button button--flat">Donate<span class="button__icon"> &#x2764;</span></a>
+            <a id="whatsnew-button" class="button button--flat">What's New<span class="button__icon"> &#128227;</span></a>
+            <a id="features-button" class="button button--flat">Features</a>
+            <a id="about-button" class="button button--flat">About</a>
+        </div>
+    </header>
+
+    <section class="main">
+        <div class="content__hero">
+            <div class="section-header">
+                <div class="section-header__image">
+                    <img class="gitlens__image" src="assets/gitlens-logo.png" />
+                </div>
+            </div>
+            <div class="section-body">
+                <p class="center">
+                    GitLens is a free, <a title="GitLens on GitHub" href="https://github.com/eamodio/vscode-gitlens" target="_blank">open-source</a> extension for <a title="Learn more about Visual Studio Code" href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a>.
+                </p>
+                <p>
+                    GitLens <b>supercharges</b> the Git capabilities built into Visual Studio Code.
+                    It helps you to <b>visualize code authorship</b> at a glance via Git blame annotations and code lens, <b>seamlessly navigate and explore</b> Git repositories, <b>gain valuable insights</b> via powerful comparison commands, and so much more.
+                </p>
+                <p>
+                    GitLens simply helps you understand code better. Quickly glimpse into whom, why, and when a line or code block was changed. Jump back through history to gain further insights as to how and why the code evolved. Explore the history and evolution of a codebase.
+                </p>
+                <div class="section__cta">
+                    <a class="button button--flat-primary button__about" href="vscode:extension/eamodio.gitlens">
+                        Install GitLens
+                        <span class="button__content--version">v8.0</span>
+                    </a>
+                    <p class="button__info">from the <a title="GitLens on the Visual Studio Marketplace" href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens" target="_blank">Visual Studio Marketplace</a></p>
+                </div>
+            </div>
+            <p class="gitlens__badges">
+                <a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens" target="_blank"><img src="https://vsmarketplacebadge.apphb.com/version-short/eamodio.gitlens.svg" alt="marketplace"></a>
+                <a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens" target="_blank"><img src="https://vsmarketplacebadge.apphb.com/installs-short/eamodio.gitlens.svg" alt="installs"></a>
+                <a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens" target="_blank"><img src="https://vsmarketplacebadge.apphb.com/rating-short/eamodio.gitlens.svg" alt="rating"></a>
+            </p>
+        </div>
+
+        <div class="content__sections">
+            <div class="section__back-button">
+                <svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+                    <circle r="30" cy="30" cx="30" stroke-width="0" fill="rgba(255,255,255,0.7)"></circle>
+                    <path fill="#000" d="m14.975,28.26c-1,0.97 -1,2.54 0,3.5l11.8,11.62c1.9,1.88 4.72,-0.94 2.83,-2.82l-7.88,-7.86c-0.4,-0.4 -0.26,-0.7 0.3,-0.7l21.75,0c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2l-21.76,0c-0.55,0 -0.68,-0.3 -0.3,-0.7l7.9,-7.86c1.88,-1.88 -0.95,-4.7 -2.84,-2.82l-11.8,11.66l0,-0.02z"></path>
+                </svg>
+            </div>
+
+            <div class="content__sections-scroller">
+                <section id="donate" class="section" data-view="donate">
+                    <h3>Support GitLens</h3>
+                    <p>
+                        GitLens needs help to realize its mission of making developer's lives easier, as well as to support its continued development.
+                    </p>
+                    <p>
+                        I've been building GitLens in my spare time<sup><a title="trading sleep for time">1</a></sup> for almost 2 years now.
+                        From its very humble beginnings, GitLens has grown wildly beyond my expectations &mdash; in both its reach as well as its demands on my time and attention.
+                        While I would love to continue dedicating more and more of my time and attention to GitLens' development and growth, I need help.
+                    </p>
+                    <h4>Show Your Support &nbsp;&#x2764;</h4>
+                    <p>
+                        To my incredible backers &mdash; thank you so much for your contributions.
+                        I am truly humbled by your generosity and support.
+                        Please know that your support plays a important role in helping me realize GitLens' potential in making developer's lives easier.
+                        If you'd like to join them in supporting GitLens, please consider the following &mdash; feel free to choose more than one. &#x1F609;
+                    </p>
+                    <div class="button-group button-group--donate">
+                        <a class="button button--flat-primary" title="Become a patron on Patreon" href="https://www.patreon.com/eamodio" target="_blank">Become a Patron</a>
+                        <a class="button button--flat-primary" title="Donate via PayPal" href="https://www.paypal.me/eamodio" target="_blank">Donate via PayPal</a>
+                    </div>
+                    <ul class="section-list">
+                        <li><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens#review-details" target="_blank">Write a Review</a></li>
+                        <li><a href="https://github.com/eamodio/vscode-gitlens" target="_blank">Star or Fork me on GitHub</a></li>
+                        <li><a href="https://twitter.com/eamodio" target="_blank">Follow me on Twitter</a></li>
+                    </ul>
+                    <p id="trading-sleep" class="footnote">
+                        <sup>1</sup> Nights and weekends, i.e. trading sleep for time
+                    </p>
+                </section>
+
+                <section id="whatsnew" class="section" data-view="whatsnew">
+                    <h3>What's new in <span class="changelog__version">GitLens 8</span></h3>
+                    <ul class="changelog__list">
+                        <li>
+                            <span class="changelog__badge changelog__badge--added">NEW</span>Brand new welcome experience
+                            <div class="changelog__details">
+                                <img class="changelog__image" src="assets/teaser-welcome.png">
+                            </div>
+                        </li>
+                        <li>
+                            <span class="changelog__badge changelog__badge--added">NEW</span>Brand new WYSIWYG settings editor &mdash; GitLens is easier than ever to customize to suit your needs
+                            <div class="changelog__details">
+                                <img class="changelog__image" src="assets/teaser-settings.png">
+                            </div>
+                        </li>
+                        <li>
+                            <span class="changelog__badge changelog__badge--added">NEW</span>Adds a tree layout option to branches in the <i>GitLens</i> explorer &mdash; thanks to Yukai Huang (<a href="https://github.com/Yukaii" target="_blank">@Yukaii</a>)!
+                            <div class="changelog__details"></div>
+                        </li>
+                        <li><span class="changelog__badge changelog__badge--changed">IMPROVED</span>Reworked settings &mdash; clearer, simpler settings</li>
+                    </ul>
+
+                    <p>
+                        See the <a title="Open Release Notes" href="https://github.com/eamodio/vscode-gitlens/blob/master/CHANGELOG.md">Release Notes</a> for the full set of changes
+                    </p>
+                </section>
+
+                <section id="features" class="section" data-view="features">
+                    <h3>GitLens Features</h3>
+                    <p>
+                        GitLens simply helps you understand code better. Quickly glimpse into whom, why, and when a line or code block was changed.
+                        Jump back through history to gain further insights as to how and why the code evolved. Explore
+                        the history and evolution of a codebase. Dive right in and see how GitLens can help!
+                    </p>
+                    <p>
+                        Here are just some of the features that GitLens provides,
+                    </p>
+                    <ul class="section-list">
+                        <li>a <a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#gitlens-explorer" target="_blank"><i>GitLens</i> explorer</a> to navigate and explore repositories or file histories</li>
+                        <li>an on-demand <a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#gitlens-results-view" target="_blank"><i>GitLens Results</i> view</a> to explore commits, histories, and searches, or visualize comparisons between branches, tags, commits, and more</li>
+                        <li>authorship <a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#code-lens" target="_blank">code lens</a> showing the most recent commit and # of authors to the top of files and/or on code blocks</li>
+                        <li>an unobtrusive <a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#current-line-blame" target="_blank">current line blame</a> annotation at the end of the line</li>
+                        <li>on-demand <a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#gutter-blame" target="_blank">gutter blame</a> annotations, including a heatmap, for the whole file</li>
+                        <li>detailed blame information accessible via <a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#hovers" target="_blank">hovers</a></li>
+                        <li>on-demand <a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#recent-changes" target="_blank">recent changes</a> annotations to highlight lines changed by the most recent commit</li>
+                        <li>a <a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#status-bar-blame" target="_blank">status bar blame</a> annotation showing author and date for the current line</li>
+                        <li><a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#commit-search" target="_blank">commit search</a> &mdash; by message, author, filename, commit id, or code changes</li>
+                        <li>many powerful commands for exploring commits and histories, comparing and navigating revisions, stash access, repository status, etc</li>
+                        <li>and so much <a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#features" target="_blank">more</a></li>
+                    </ul>
+                    <p>
+                        GitLens is powerful, feature rich, and highly customizable to meet your specific needs &mdash;
+                        find code lens intrusive or the current line blame annotation distracting &mdash;
+                        no problem, it is quick and easy to turn them off or change how they behave via the built-in <a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#settings-editor" target="_blank">settings editor</a>,
+                        a WYSIWYG editor covering many of GitLens' powerful settings.
+                        While for more advanced customizations, refer to the <a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#gitlens-settings" target="_blank">GitLens settings docs</a>
+                        and edit your user settings.
+                    </p>
+                </section>
+
+                <section id="about" class="section" data-view="about">
+                    <h3>About GitLens</h3>
+                    <p>
+                        GitLens started back in mid-2016, when I fell in love with <a title="Learn more about Visual Studio Code" href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a> and wanted to play with the newly released extension support.
+                        It was also a good excuse for me to improve my budding <a title="Learn more about TypeScript" href="https://www.typescriptlang.org/" target="_blank">TypeScript</a> skills.
+                        It all started with a simple question &mdash; could I add <i>code lens</i> showing Git insights to any document.
+                    </p>
+                    <p>
+                        Since then, GitLens has quickly grown from a prototype to a full-fledged product with a mission of its own &mdash; make developers lives easier.
+                        GitLens strives to simply help you understand code better.
+                    </p>
+                    <p>
+                        <a title="Read reviews on the Visual Studio Marketplace" href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens#review-details" target="_blank">Read the reviews</a> to see what people are saying about GitLens.
+                        I am truly humbled by the love and support of the Visual Studio Code community.
+                    </p>
+                    <div class="gitlens__tweet">
+                        <blockquote class="twitter-tweet" data-cards="hidden" data-lang="en">
+                            <p lang="en" dir="ltr">
+                                I have never seen such an amazing plugin for <a href="https://twitter.com/code?ref_src=twsrc%5Etfw" target="_blank">@code</a> as GitLens. You NEED to try this. NOW.  <a href="https://t.co/LFmrzEszZy">GitLens</a> by <a href="https://twitter.com/eamodio?ref_src=twsrc%5Etfw">@eamodio</a>
+                            </p>
+                            &mdash; Scott Hanselman (@shanselman) <a href="https://twitter.com/shanselman/status/908123838768078848?ref_src=twsrc%5Etfw" target="_blank">September 14, 2017</a>
+                        </blockquote>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <p class="gitlens__tweet-caption">&#x2764; My favorite review</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <ul class="footer__links">
+            <li class="footer__link">
+                <a href="https://github.com/eamodio">
+                    <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#fff" d="M24.917 12.803q0 4.058-2.37 7.3T16.43 24.59q-.438.08-.64-.114t-.202-.485v-3.41q0-1.56-.84-2.29.92-.09 1.656-.29t1.52-.63 1.31-1.07.857-1.693.34-2.432q0-1.955-1.27-3.33.6-1.47-.13-3.3-.45-.143-1.31.18t-1.484.71l-.615.39q-1.503-.42-3.104-.42t-3.11.41q-.26-.18-.686-.436t-1.35-.625-1.396-.22q-.71 1.82-.113 3.29-1.28 1.38-1.28 3.332 0 1.38.33 2.43t.85 1.698 1.306 1.08 1.52.63 1.656.29q-.65.586-.8 1.67-.34.16-.73.24t-.923.08-1.06-.347-.897-1.01q-.306-.517-.783-.84t-.8-.39l-.324-.047q-.34 0-.47.073t-.08.185.145.227.21.2l.114.08q.358.16.706.62t.51.823l.16.37q.21.615.713.995t1.083.482 1.12.114.9-.057l.37-.064q0 .612.006 1.436t.01.874q0 .29-.21.48t-.645.113q-3.74-1.25-6.11-4.492T.08 12.8q0-3.38 1.668-6.232T6.265 2.05 12.5.387t6.233 1.665 4.518 4.52 1.67 6.23z"/>
+                    </svg>
+                </a>
+            </li>
+            <li class="footer__link">
+                <a href="https://twitter.com/eamodio">
+                    <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#fff" d="M24.97 4.777q-1.06 1.55-2.563 2.643.016.22.016.664 0 2.058-.6 4.107t-1.83 3.936-2.92 3.332-4.082 2.31-5.11.863q-4.29 0-7.85-2.295.555.063 1.235.063 3.56 0 6.347-2.184-1.66-.03-2.975-1.02T2.83 14.667q.522.08.966.08.68 0 1.345-.175-1.77-.364-2.933-1.764T1.042 9.555v-.063q1.076.6 2.31.65-1.044-.697-1.66-1.82t-.62-2.438q0-1.393.698-2.58 1.915 2.36 4.66 3.776t5.88 1.574q-.127-.6-.127-1.17 0-2.122 1.496-3.617t3.613-1.496q2.216 0 3.735 1.617 1.724-.332 3.244-1.234-.586 1.82-2.248 2.818 1.472-.157 2.944-.79z"/>
+                    </svg>
+                </a>
+            </li>
+            <li class="footer__link">
+                <a href="https://linkedin.com/in/eamodio">
+                    <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#fff" d="M5.68 8.317v16.13H.31V8.317h5.37zm.342-4.98q.016 1.188-.822 1.985t-2.205.798h-.033q-1.334 0-2.148-.798T0 3.337q0-1.205.838-1.994t2.19-.79 2.164.79.83 1.994zM25 15.202v9.245h-5.355V15.82q0-1.71-.66-2.677t-2.058-.97q-1.025 0-1.717.563t-1.034 1.392q-.18.488-.18 1.318v9H8.644q.032-6.494.032-10.53T8.66 9.098l-.017-.78h5.354v2.343h-.032q.325-.52.667-.91t.92-.844 1.416-.708 1.863-.252q2.788 0 4.48 1.847t1.69 5.41z"/>
+                    </svg>
+                </a>
+            </li>
+            <li class="footer__link">
+                <a href="mailto:eric@amod.io">
+                    <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#fff" d="M24.854 11.846v10.947q0 .91-.648 1.56-.648.647-1.558.647H2.352q-.91 0-1.558-.648-.648-.65-.648-1.56V11.848q.606.676 1.392 1.2 4.992 3.39 6.853 4.756.79.58 1.28.903.49.324 1.31.66.82.34 1.52.34h.03q.71 0 1.52-.34.82-.336 1.31-.66t1.276-.904q2.343-1.7 6.866-4.76.786-.54 1.38-1.2l-.024.004zm.024-4.058q0 1.08-.675 2.08-.68.99-1.69 1.69l-6.46 4.48-.59.42q-.45.32-.745.52t-.717.45q-.42.25-.79.37-.37.12-.69.12h-.025q-.314 0-.69-.125-.37-.124-.79-.37-.42-.25-.715-.45t-.748-.523q-.446-.327-.584-.424-1.252-.88-3.61-2.516T2.52 11.573q-.856-.58-1.614-1.592-.76-1.01-.76-1.88 0-1.073.572-1.79.572-.716 1.634-.716h20.296q.896 0 1.55.648.656.65.656 1.56l.024-.01z"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <span class="footer__copyright">Created by <a href="mailto:eric@amod.io">Eric Amodio</a></span>
+    </footer>
+</body>
+
+</html>
