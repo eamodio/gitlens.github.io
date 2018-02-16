@@ -4,7 +4,7 @@ import { DOM } from './dom';
 export class View {
 
     get buttonSelector(): string {
-        return `#${this.name}-button`;
+        return `.js-button__${this.name}`;
     }
 
     get selector(): string {
