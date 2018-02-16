@@ -313,6 +313,9 @@ a {
 .section__cta {
     margin: 3em 0 2.5em 0;
     text-align: center;
+}
+
+.on-section-change-fade {
     transition: opacity 750ms ease-in;
 
     body[class*="is-section--"] & {
