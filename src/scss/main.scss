@@ -105,6 +105,7 @@ a {
     text-decoration: none;
     text-transform: uppercase;
     user-select: none;
+    white-space: nowrap;
 
     &:focus {
         outline: none;
@@ -437,9 +438,18 @@ a {
 }
 
 .gitlens__badges {
-    margin-bottom: 0;
+    margin: 0;
     padding: 0 10px;
     text-align: center;
+
+    & > a {
+        display: inline-block;
+        margin: 0.15em;
+
+        &:last-child {
+            display: block;
+        }
+    }
 }
 
 .gitlens__tweet {
@@ -567,7 +577,17 @@ footer {
     }
 }
 
-@media all and (max-height: 811px) { // iPhone X
+@media all and (max-height: 812px) { // iPhone X
+    .content__hero {
+        top: 4em;
+    }
+
+    .gitlens__badges {
+        margin-top: -1em;
+    }
+}
+
+@media all and (max-height: 811px) {
     .content__hero {
         top: 3em;
     }
