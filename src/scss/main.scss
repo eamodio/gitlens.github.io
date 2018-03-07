@@ -268,20 +268,8 @@ a {
 
 .is-section--whats-new {
     .content__sections-scroller {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         margin-bottom: 1.5em;
-    }
-
-    .content__sections-scroller::after {
-        background: linear-gradient(
-          rgba(255, 255, 255, 0.001),
-          rgba(255, 255, 255, 0.3)
-        );
-        bottom: 1.5em;
-        content: '';
-        height: 25px;
-        pointer-events: none;
-        position: absolute;
-        width: 100%;
     }
 }
 
