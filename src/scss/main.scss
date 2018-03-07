@@ -5,16 +5,16 @@ body.preload:not(.is-section) .content__sections {
 }
 
 body:not(.is-section--about) #about,
-body:not(.is-section--donate) #donate,
+body:not(.is-section--support-gitlens) #support-gitlens,
 body:not(.is-section--features) #features,
-body:not(.is-section--whatsnew) #whatsnew {
+body:not(.is-section--whats-new) #whats-new {
     display: none;
 }
 
 body.is-section--about #about-button,
-body.is-section--donate #donate-button,
+body.is-section--support-gitlens #support-gitlens-button,
 body.is-section--features #features-button,
-body.is-section--whatsnew #whatsnew-button {
+body.is-section--whats-new #whats-new-button {
     background: white !important;
     color: black !important;
 }
@@ -55,6 +55,15 @@ a {
     &:focus {
         color: #914db3;
     }
+}
+
+.setting-key {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    border-radius: 3px;
+    font-family: monospace;
+    padding: 1px 5px;
+    vertical-align: text-bottom;
 }
 
 .header {
@@ -174,14 +183,14 @@ a {
     flex-wrap: nowrap;
 }
 
-.button-group--donate {
+.button-group--support-gitlens {
     font-size: 0.4em;
     justify-content: center;
     margin: 1.5em 0 1em 0;
 
     & .button {
-        margin-left: 1.5em;
-        margin-right: 1.5em;
+        margin-left: 1em;
+        margin-right: 1em;
         white-space: nowrap;
     }
 }
@@ -208,7 +217,7 @@ a {
     position: absolute;
     right: 0;
     text-align: justify;
-    top: 20%;
+    top: 15%;
     transition: transform 1s cubic-bezier(.01,.3,.75,-1);
 
     body[class*="is-section--"] & {
@@ -257,6 +266,36 @@ a {
     z-index: 0;
 }
 
+.is-section--whats-new {
+    .content__sections-scroller {
+        margin-bottom: 1.5em;
+    }
+
+    .content__sections-scroller::after {
+        background: linear-gradient(
+          rgba(255, 255, 255, 0.001),
+          rgba(255, 255, 255, 0.3)
+        );
+        bottom: 1.5em;
+        content: '';
+        height: 25px;
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+    }
+}
+
+.content__sections-footer {
+    position: fixed;
+    bottom: 1em;
+    margin-bottom: 0;
+    margin-top: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(100% - 3em);
+}
+
 @keyframes fade-in {
     0% { opacity: 0; visibility: hidden; }
     1% { visibility: visible; }
@@ -266,6 +305,15 @@ a {
 @keyframes fade-out {
     0% { opacity: 1; visibility: visible; }
     100% { opacity: 0; visibility: hidden; }
+}
+
+.cta__primary {
+    flex: 100% 0 0;
+}
+
+.cta__secondary {
+    font-size: 0.8em;
+    margin-top: 1.5em;
 }
 
 .section {
@@ -324,6 +372,9 @@ a {
 }
 
 .section__cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 3em 0 2.5em 0;
     text-align: center;
 }
@@ -389,6 +440,21 @@ a {
     background-color: #0366d6;
 }
 
+.changelog__badge--version {
+    background-color: #914db3;
+    font-size: 15px;
+}
+
+.changelog__date {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    font-size: 0.8em;
+    font-weight: 600;
+    font-variant: small-caps;
+    opacity: 0.9;
+    margin-left: -7px;
+    vertical-align: middle;
+}
+
 .changelog__details {
     align-items: center;
     display: flex;
@@ -419,6 +485,10 @@ a {
     & li {
         margin-bottom: 0.5em;
     }
+}
+
+.changelog__list-item--version {
+    margin: 2em 0 0.5em 0;
 }
 
 .changelog__version {
@@ -582,6 +652,11 @@ footer {
         top: 4em;
     }
 
+    .cta__secondary {
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+
     .gitlens__badges {
         margin-top: -1em;
     }
@@ -594,14 +669,19 @@ footer {
 }
 
 @media all and (max-height: 730px) {
-    body:not(.is-section) .gitlens__badges {
-        visibility: hidden;
+    body:not(.is-section) {
+        .gitlens__badges {
+            visibility: hidden;
+        }
     }
 }
 
 @media all and (max-height: 640px) {
-    body:not(.is-section) footer {
-        visibility: hidden;
+    body:not(.is-section) {
+        // footer {
+        .cta__secondary {
+            visibility: hidden;
+        }
     }
 }
 
@@ -622,21 +702,17 @@ footer {
         display: none;
     }
 
+    .button-group--header {
+        font-size: 0.8em;
+    }
+
     .header__headline-image {
         width: 180px;
         top: -7px;
     }
-
-    .button-group--header {
-        font-size: 0.8em;
-    }
 }
 
-@media all and (max-width: 700px) {
-    html {
-        font-size: 0.9em;
-    }
-
+@media all and (max-width: 768px) {
     .content__sections {
         margin: 3em 1.25em;
     }
@@ -647,9 +723,64 @@ footer {
     }
 }
 
+@media all and (max-width: 700px) {
+    html {
+        font-size: 0.9em;
+    }
+}
+
 @media all and (max-width: 590px) {
     html {
         font-size: 0.7em;
+    }
+
+    .button {
+        margin-bottom: 1em;
+    }
+
+    .button--flat {
+        background: none;
+    }
+
+    .button-group {
+        flex-wrap: wrap;
+
+        &.button-group--header {
+            flex-wrap: nowrap;
+        }
+    }
+
+    .button__icon {
+        display: none;
+    }
+
+    .changelog__list {
+        font-size: 0.6em;
+    }
+
+    .content__hero {
+        font-size: 15px; // 1.3em;
+    }
+
+    .content__sections {
+        margin: 2.5em 0.5em !important;
+    }
+
+    .content__sections-footer {
+        bottom: 0.5em;
+    }
+
+    .footer {
+        margin: -4.5em 0 0 0;
+    }
+
+    .footer__links {
+        margin: 0 0 0.25em 0;
+        transform: scale(0.75);
+    }
+
+    .gitlens__image {
+        width: 75%;
     }
 
     .header {
@@ -660,18 +791,6 @@ footer {
 
     .header__headine {
         display: none;
-    }
-
-    .content__hero {
-        font-size: 1.5em;
-    }
-
-    .gitlens__image {
-        width: 75%;
-    }
-
-    .content__sections {
-        margin: 2.5em 0.5em !important;
     }
 
     .section-header,
@@ -695,35 +814,6 @@ footer {
 
     .section p {
         font-size: 0.6em;
-    }
-
-    .changelog__list {
-        font-size: 0.6em;
-    }
-
-    .button {
-        margin-bottom: 1em;
-    }
-
-    .button--flat {
-        background: none;
-    }
-
-    .button-group {
-        flex-wrap: wrap;
-    }
-
-    .button__icon {
-        display: none;
-    }
-
-    .footer {
-        margin: -4.5em 0 0 0;
-    }
-
-    .footer__links {
-        margin: 0 0 0.25em 0;
-        transform: scale(0.75);
     }
 }
 
