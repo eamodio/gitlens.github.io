@@ -669,19 +669,14 @@ footer {
 }
 
 @media all and (max-height: 730px) {
-    body:not(.is-section) {
-        .gitlens__badges {
-            visibility: hidden;
-        }
+    .gitlens__badges {
+        visibility: hidden;
     }
 }
 
 @media all and (max-height: 640px) {
-    body:not(.is-section) {
-        // footer {
-        .cta__secondary {
-            visibility: hidden;
-        }
+    .cta__secondary {
+        visibility: hidden;
     }
 }
 
