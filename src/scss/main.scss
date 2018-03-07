@@ -4,6 +4,13 @@ body.preload:not(.is-section) .content__sections {
     visibility: hidden;
 }
 
+// body.preload * {
+//     animation-delay: 0s !important;
+//     animation-duration: 0s !important;
+//     transition-delay: 0s !important;
+//     transition-duration: 0s !important;
+// }
+
 body:not(.is-section--about) #about,
 body:not(.is-section--support-gitlens) #support-gitlens,
 body:not(.is-section--features) #features,
@@ -253,16 +260,12 @@ a {
         transition-delay: 600ms;
         visibility: hidden;
     }
-
-    .preload & {
-        animation-duration: 0s !important;
-    }
 }
 
 .content__sections-scroller {
     margin: 0.5em 0;
     -webkit-overflow-scrolling: touch;
-    overflow-x: auto;
+    overflow-y: auto;
     z-index: 0;
 }
 
