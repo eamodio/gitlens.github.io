@@ -1,16 +1,5 @@
 @import '_normalize';
 
-body.preload:not(.is-section) .content__sections {
-    visibility: hidden;
-}
-
-// body.preload * {
-//     animation-delay: 0s !important;
-//     animation-duration: 0s !important;
-//     transition-delay: 0s !important;
-//     transition-duration: 0s !important;
-// }
-
 body:not(.is-section--about) #about,
 body:not(.is-section--support-gitlens) #support-gitlens,
 body:not(.is-section--features) #features,
@@ -96,7 +85,7 @@ a {
     transform-origin: top left;
     transition: transform 500ms cubic-bezier(1,.4,.7,1.5);
 
-    body[class*="is-section--"] & {
+    body.is-section & {
         transform: translateY(5%);
         transition-delay: 600ms;
     }
@@ -139,7 +128,7 @@ a {
         color: black !important;
     }
 
-    .preload & {
+    body.preload & {
         transition-duration: 0s !important;
     }
 }
@@ -157,7 +146,7 @@ a {
         color: white !important;
     }
 
-    .preload & {
+    body.preload & {
         transition-duration: 0s !important;
     }
 }
@@ -175,7 +164,7 @@ a {
         color: black !important;
     }
 
-    .preload & {
+    body.preload & {
         transition-duration: 0s !important;
     }
 }
@@ -213,7 +202,7 @@ a {
     position: relative;
 }
 
-.content__hero {
+.hero {
     bottom: 0;
     color: rgba(237, 228, 241, 0.75);
     font-size: 1.25em;
@@ -227,14 +216,14 @@ a {
     top: 15%;
     transition: transform 1s cubic-bezier(.01,.3,.75,-1);
 
-    body[class*="is-section--"] & {
+    body.is-section & {
         transform: translateX(-150%);
     }
 }
 
-.content__sections {
+.sections {
     animation: fade-out 500ms ease-out;
-    animation-fill-mode: forwards;
+    animation-fill-mode: both;
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(127, 0, 255, 0.4);
     border-radius: 0.5em;
@@ -252,31 +241,22 @@ a {
     top: 0;
     transform: scale(.90);
     transition: transform 500ms cubic-bezier(.8,-0.5,.2,1.5);
+    visibility: hidden;
 
-    body[class*="is-section--"] & {
+    body.is-section & {
         animation: fade-in 500ms 750ms ease-in;
-        animation-fill-mode: forwards;
+        animation-fill-mode: both;
         transform: scale(1);
         transition-delay: 600ms;
-        visibility: hidden;
+    }
+
+    body.preload & {
+        // Move it off screen so the animation can run, but we don't see the flash
+        left: -200%;
     }
 }
 
-.content__sections-scroller {
-    margin: 0.5em 0;
-    -webkit-overflow-scrolling: touch;
-    overflow-y: auto;
-    z-index: 0;
-}
-
-.is-section--whats-new {
-    .content__sections-scroller {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        margin-bottom: 1.5em;
-    }
-}
-
-.content__sections-footer {
+.sections__footer {
     position: fixed;
     bottom: 1em;
     margin-bottom: 0;
@@ -285,6 +265,18 @@ a {
     text-overflow: ellipsis;
     white-space: nowrap;
     width: calc(100% - 3em);
+}
+
+.sections__scroller {
+    margin: 0.5em 0;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    z-index: 0;
+
+    .is-section--whats-new & {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        margin-bottom: 1.5em;
+    }
 }
 
 @keyframes fade-in {
@@ -373,7 +365,7 @@ a {
 .on-section-change-fade {
     transition: opacity 750ms ease-in;
 
-    body[class*="is-section--"] & {
+    body.is-section & {
         opacity: 0;
         transition: opacity 500ms ease-out;
     }
@@ -633,13 +625,13 @@ footer {
 }
 
 @media all and (max-height: 1024px) { // iPad
-    .content__hero {
+    .hero {
         top: 10%;
     }
 }
 
 @media all and (max-height: 812px) { // iPhone X
-    .content__hero {
+    .hero {
         top: 4em;
     }
 
@@ -654,7 +646,7 @@ footer {
 }
 
 @media all and (max-height: 811px) {
-    .content__hero {
+    .hero {
         top: 3em;
     }
 }
@@ -678,7 +670,7 @@ footer {
 }
 
 @media all and (max-width: 1120px) {
-    .content__sections {
+    .sections {
         margin: 3em 2em;
     }
 }
@@ -699,7 +691,7 @@ footer {
 }
 
 @media all and (max-width: 768px) {
-    .content__sections {
+    .sections {
         margin: 3em 1.25em;
     }
 
@@ -744,15 +736,15 @@ footer {
         font-size: 0.6em;
     }
 
-    .content__hero {
+    .hero {
         font-size: 15px; // 1.3em;
     }
 
-    .content__sections {
+    .sections {
         margin: 2.5em 0.5em !important;
     }
 
-    .content__sections-footer {
+    .sections__footer {
         bottom: 0.5em;
     }
 
