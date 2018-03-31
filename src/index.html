@@ -67,7 +67,7 @@
                     <div class="cta__primary">
                         <a class="button button--flat-primary" href="vscode:extension/eamodio.gitlens">
                             Install GitLens
-                            <span class="button__content--version">v8.1</span>
+                            <span class="button__content--version">v8.2</span>
                         </a>
                         <p class="button__info">from the <a title="GitLens on the Visual Studio Marketplace" href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens" target="_blank">Visual Studio Marketplace</a></p>
                     </div>
@@ -125,7 +125,78 @@
                 <section id="whats-new" class="section" data-view="whats-new">
                     <h3>What's new in <span class="changelog__version">GitLens 8</span></h3>
                     <ul class="changelog__list">
-                        <li><span class="changelog__badge changelog__badge--version">8.1</span>
+                        <li><span class="changelog__badge changelog__badge--version">8.2</span>
+                            <span class="changelog__date">APRIL &nbsp;2018</span>
+                            <div class="changelog__details"></div>
+                        </li>
+                        <li><span class="changelog__badge changelog__badge--added">NEW</span>
+                            Adds new stand-alone <i>GitLens History</i> explorer to visualize the history of the current file &mdash; undocked version of the <i>GitLens</i> explorer history view
+                            <div class="changelog__details">
+                                <img class="changelog__image" src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/cl-history-explorer.png" alt="GitLens History explorer"/>
+                            </div>
+                        </li>
+                        <li><span class="changelog__badge changelog__badge--added">NEW</span>
+                            Adds richer tooltips to the <i>GitLens</i> explorer and <i>GitLens Results</i> view, and richer working tree and upstream status to the <i>GitLens</i> explorer
+                            <div class="changelog__details">
+                                <img class="changelog__image" src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/cl-rich-tooltips.png" alt="Richer tooltips and working tree and upstream status"/>
+                            </div>
+                        </li>
+                        <li><span class="changelog__badge changelog__badge--added">NEW</span>
+                            Adds an indicator to the <i>GitLens</i> explorer's branch history to mark the synchronization point between the local and remote branch (if available)
+                            <div class="changelog__details">
+                                <img class="changelog__image" src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/cl-branch-upstream-indicator.png" alt="Branch upstream indicator"/>
+                            </div>
+                        </li>
+                        <li><span class="changelog__badge changelog__badge--added">NEW</span>
+                            Adds ability to easily switch between relative and absolute dates via the <code>gitlens.defaultDateStyle</code> settings &mdash; closes <a title="Open Issue #312" href="https://github.com/eamodio/vscode-gitlens/issues/312">#312</a>
+                            <div class="changelog__details">
+                                <img class="changelog__image" src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/cl-general-settings.png" alt="General settings"/>
+                            </div>
+                        </li>
+                        <li><span class="changelog__badge changelog__badge--added">NEW</span>
+                            Adds annotation format settings (<code>gitlens.*.format</code>) to the interactive settings editor
+                            <div class="changelog__details">
+                                <img class="changelog__image" src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/cl-annotation-format.png" alt="Annotation format settings"/>
+                            </div>
+                        </li>
+                        <li><span class="changelog__badge changelog__badge--added">NEW</span>
+                            Adds new <code>gitlens.currentLine.scrollable</code> setting to specify whether the current line blame annotation can be scrolled into view when it is outside the viewport &mdash; closes <a title="Open Issue #149" href="https://github.com/eamodio/vscode-gitlens/issues/149">#149</a>, <a title="Open Issue #290" href="https://github.com/eamodio/vscode-gitlens/issues/290">#290</a>, <a title="Open Issue #265" href="https://github.com/eamodio/vscode-gitlens/issues/265">#265</a>
+                            <div class="changelog__details">
+                                <img class="changelog__image" src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/cl-current-line-scrollable.png" alt="Allow scrolling to annotation setting"/>
+                            </div>
+                        </li>
+                        <li><span class="changelog__badge changelog__badge--added">NEW</span>
+                            Adds <code>gitlens.statusBar.reduceFlicker</code> setting to the interactive settings editor
+                            <div class="changelog__details">
+                                <img class="changelog__image" src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/cl-status-bar-reduce-flashing.png" alt="Reduce status bar flashing setting"/>
+                            </div>
+                        </li>
+                        <li><span class="changelog__badge changelog__badge--fixed">FIXED</span>
+                            Fixes <a title="Open Issue #314" href="https://github.com/eamodio/vscode-gitlens/issues/314">#314</a> &mdash; Toggle line annotation doesn't work properly
+                            <div class="changelog__details"></div>
+                        </li>
+                        <li><span class="changelog__badge changelog__badge--fixed">FIXED</span>
+                            Fixes <a title="Open Issue #310" href="https://github.com/eamodio/vscode-gitlens/issues/310">#310</a> &mdash; "via Terminal" commands need quoting around work directory
+                            <div class="changelog__details"></div>
+                        </li>
+                        <li><span class="changelog__badge changelog__badge--fixed">FIXED</span>
+                            Fixes issues with the active repository in the <i>GitLens</i> explorer failed to update properly
+                            <div class="changelog__details"></div>
+                        </li>
+                        <li><span class="changelog__badge changelog__badge--fixed">FIXED</span>
+                            Fixes issues with <i>Open File</i>, <i>Open Revision</i>, and <i>Show File History</i> commands and images and other binary files
+                            <div class="changelog__details"></div>
+                        </li>
+                        <li><span class="changelog__badge changelog__badge--fixed">FIXED</span>
+                            Fixes issues preventing nodes in the <i>GitLens</i> explorer from expanding properly in certain cases
+                            <div class="changelog__details"></div>
+                        </li>
+                        <li><span class="changelog__badge changelog__badge--fixed">FIXED</span>
+                            Fixes issues when refreshing nodes in the <i>GitLens Results</i> view
+                            <div class="changelog__details"></div>
+                        </li>
+
+                        <li class="changelog__list-item--version"><span class="changelog__badge changelog__badge--version">8.1</span>
                             <span class="changelog__date">MARCH &nbsp;2018</span>
                             <div class="changelog__details"></div>
                         </li>

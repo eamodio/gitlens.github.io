@@ -468,10 +468,16 @@ a {
     & li {
         margin-bottom: 0.5em;
     }
+
+    & code {
+        font-size: 0.9em;
+    }
 }
 
 .changelog__list-item--version {
+    border-top: 1px solid rgba(122, 122, 122, 0.15);
     margin: 2em 0 0.5em 0;
+    padding-top: 2em;
 }
 
 .changelog__version {
