@@ -10,7 +10,7 @@
             "name": "Launch Chrome",
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}",
-            "preLaunchTask": "watch"
+            "preLaunchTask": "npm: watch"
         }
     ]
 }

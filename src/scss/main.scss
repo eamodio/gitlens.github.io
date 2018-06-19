@@ -442,6 +442,7 @@ a {
     align-items: center;
     display: flex;
     justify-content: center;
+    padding: 0 7em;
     position: relative;
 
     &:before {
@@ -451,6 +452,19 @@ a {
         left: 31px;
         position: absolute;
         top: 1px;
+    }
+}
+
+.changelog__details--list {
+    flex-direction: column;
+
+    & p {
+        font-size: 0.9em;
+        margin-bottom: 0;
+    }
+
+    & p:last-child {
+        margin-bottom: 1em;
     }
 }
 

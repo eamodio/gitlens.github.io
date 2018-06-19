@@ -3,41 +3,40 @@
     // for the documentation about the tasks.json format
     "version": "2.0.0",
     "presentation": {
-        "echo": true,
+        "echo": false,
         "reveal": "always",
         "focus": false,
-        "panel": "shared"
+        "panel": "dedicated"
     },
     "tasks": [
         {
-            "label": "build",
             "type": "npm",
             "script": "build",
+            "group": "build",
             "problemMatcher": [
                 "$node-sass",
                 "$tsc",
                 "$tslint5"
-            ],
+            ]
+        },
+        {
+            "type": "npm",
+            "script": "build-dev",
+            "group": "build",
+            "problemMatcher": [
+                "$node-sass",
+                "$tsc",
+                "$tslint5"
+            ]
+        },
+        {
+            "type": "npm",
+            "script": "watch",
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
-        },
-        {
-            "label": "build-dev",
-            "type": "npm",
-            "script": "build-dev",
-            "problemMatcher": [
-                "$node-sass",
-                "$tsc",
-                "$tslint5"
-            ],
-            "group": "build"
-        },
-        {
-            "label": "watch",
-            "type": "npm",
-            "script": "watch",
+            },
+            "isBackground": true,
             "problemMatcher": {
                 "owner": "custom",
                 "pattern": { "regexp": "__________" },
@@ -46,9 +45,7 @@
                     "beginsPattern": "^webpack: Compiling\\.\\.\\.$",
                     "endsPattern": "^webpack: Compiled successfully\\.$"
                 }
-            },
-            "group": "build",
-            "isBackground": true
+            }
         }
     ]
 }
