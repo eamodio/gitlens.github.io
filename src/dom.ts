@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 export namespace DOM {
     export function listenAll(selector: string, name: string, listener: EventListenerOrEventListenerObject) {

@@ -1,10 +1,9 @@
-'use strict'
+'use strict';
 import { DOM } from './dom';
 // import { MainView } from './mainView';
 import { View } from './view';
 
 export class App {
-
     activeView: string = '';
 
     // readonly main: MainView;
@@ -22,7 +21,7 @@ export class App {
         }
 
         DOM.listenAll('.section__back-button', 'click', this.onBackButtonClicked.bind(this));
-        window.addEventListener("hashchange", this.onHashChanged.bind(this), false);
+        window.addEventListener('hashchange', this.onHashChanged.bind(this), false);
 
         this.switchView(document.location.hash && document.location.hash.substring(1), true);
 
@@ -40,7 +39,11 @@ export class App {
                 this.activeView = '';
 
                 if (!loading) {
-                    classList.remove(...[...classList].filter(function(c) { return c.match(/^is-section\S*/); }));
+                    classList.remove(
+                        ...[...classList].filter(function(c) {
+                            return c.match(/^is-section\S*/);
+                        })
+                    );
                     document.location.hash = '';
                 }
 
@@ -62,7 +65,11 @@ export class App {
                 }
 
                 if (classList.contains('is-section')) {
-                    classList.remove(...[...classList].filter(function(c) { return c.match(/^is-section--\S+/); }));
+                    classList.remove(
+                        ...[...classList].filter(function(c) {
+                            return c.match(/^is-section--\S+/);
+                        })
+                    );
                 }
 
                 classList.add('is-section', sectionClass);

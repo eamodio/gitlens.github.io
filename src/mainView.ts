@@ -1,10 +1,7 @@
-'use strict'
+'use strict';
 
 export class MainView {
+    activate(previous?: string) {}
 
-    activate(previous?: string) {
-    }
-
-    deactivate(view: string) {
-    }
+    deactivate(view: string) {}
 }

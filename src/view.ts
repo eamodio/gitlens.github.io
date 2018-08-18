@@ -1,8 +1,7 @@
-'use strict'
+'use strict';
 import { DOM } from './dom';
 
 export class View {
-
     get buttonSelector(): string {
         return `.js-button__${this.name}`;
     }
@@ -11,7 +10,9 @@ export class View {
         return `#${this.name}`;
     }
 
-    constructor(public name: string) {
+    constructor(
+        public name: string
+    ) {
         DOM.listenAll(this.buttonSelector, 'click', this.onButtonClicked.bind(this));
     }
 
