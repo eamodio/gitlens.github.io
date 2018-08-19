@@ -13,13 +13,13 @@
             "type": "npm",
             "script": "build",
             "group": "build",
-            "problemMatcher": ["$node-sass", "$tsc", "$tslint5"]
+            "problemMatcher": ["$node-sass", "$ts-webpack", "$tslint-webpack"]
         },
         {
             "type": "npm",
-            "script": "build-dev",
+            "script": "bundle",
             "group": "build",
-            "problemMatcher": ["$node-sass", "$tsc", "$tslint5"]
+            "problemMatcher": ["$node-sass", "$ts-webpack", "$tslint-webpack"]
         },
         {
             "type": "npm",
