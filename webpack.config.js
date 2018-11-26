@@ -3,12 +3,12 @@ const path = require('path');
 const HtmlInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = function(env, argv) {
     env = env || {};
-    env.production = !!env.production;
+    env.production = Boolean(env.production);
     env.prefixCss = true;
 
     const plugins = [
@@ -29,7 +29,9 @@ module.exports = function(env, argv) {
                       useShortDoctype: true,
                       removeEmptyAttributes: true,
                       removeStyleLinkTypeAttributes: true,
-                      keepClosingSlash: true
+                      keepClosingSlash: true,
+                      minifyCSS: true,
+                      minifyJS: true
                   }
                 : false
         }),
@@ -39,7 +41,7 @@ module.exports = function(env, argv) {
     return {
         entry: ['./src/index.ts', './src/scss/main.scss'],
         mode: env.production ? 'production' : 'development',
-        devtool: !env.production ? 'eval-source-map' : undefined,
+        devtool: !env.production ? 'source-map' : undefined,
         output: {
             filename: '[name].js',
             path: path.resolve(__dirname, 'dist'),
@@ -47,10 +49,10 @@ module.exports = function(env, argv) {
         },
         optimization: {
             minimizer: [
-                new UglifyJsPlugin({
+                new TerserPlugin({
                     parallel: true,
                     sourceMap: !env.production,
-                    uglifyOptions: {
+                    terserOptions: {
                         ecma: 5,
                         compress: env.production,
                         mangle: env.production,
@@ -73,16 +75,13 @@ module.exports = function(env, argv) {
                 }
             }
         },
-        resolve: {
-            extensions: ['.tsx', '.ts', '.js'],
-            modules: [path.resolve(__dirname, 'src'), 'node_modules']
-        },
         module: {
             rules: [
                 {
                     test: /\.ts$/,
                     enforce: 'pre',
-                    use: 'tslint-loader'
+                    use: 'tslint-loader',
+                    exclude: /node_modules/
                 },
                 {
                     test: /\.tsx?$/,
@@ -98,7 +97,6 @@ module.exports = function(env, argv) {
                         {
                             loader: 'css-loader',
                             options: {
-                                minimize: env.production,
                                 sourceMap: !env.production,
                                 url: false
                             }
@@ -123,6 +121,10 @@ module.exports = function(env, argv) {
                     exclude: /node_modules/
                 }
             ]
+        },
+        resolve: {
+            extensions: ['.ts', '.tsx', '.js', '.jsx'],
+            modules: [path.resolve(__dirname, 'src'), 'node_modules']
         },
         plugins: plugins,
         stats: {

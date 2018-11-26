@@ -23,7 +23,7 @@ export class App {
         DOM.listenAll('.section__back-button', 'click', this.onBackButtonClicked.bind(this));
         window.addEventListener('hashchange', this.onHashChanged.bind(this), false);
 
-        this.switchView(document.location.hash && document.location.hash.substring(1), true);
+        this.switchView(document.location!.hash && document.location!.hash.substring(1), true);
 
         setTimeout(() => {
             document.body.classList.remove('preload');
@@ -44,7 +44,7 @@ export class App {
                             return c.match(/^is-section\S*/);
                         })
                     );
-                    document.location.hash = '';
+                    document.location!.hash = '';
                 }
 
                 // this.main.activate(previous);
@@ -59,7 +59,7 @@ export class App {
                 const sectionClass = `is-section--${view}`;
                 if (classList.contains(sectionClass)) {
                     classList.remove('is-section', sectionClass);
-                    document.location.hash = '';
+                    document.location!.hash = '';
 
                     return;
                 }
@@ -73,17 +73,17 @@ export class App {
                 }
 
                 classList.add('is-section', sectionClass);
-                document.location.hash = view;
+                document.location!.hash = view;
 
                 break;
         }
     }
 
     private onBackButtonClicked(e: MouseEvent) {
-        document.location.hash = '';
+        document.location!.hash = '';
     }
 
     private onHashChanged(e: HashChangeEvent) {
-        this.switchView(document.location.hash && document.location.hash.substring(1));
+        this.switchView(document.location!.hash && document.location!.hash.substring(1));
     }
 }

@@ -17,11 +17,11 @@ export class View {
     }
 
     activate() {
-        document.location.hash = this.name;
+        document.location!.hash = this.name;
     }
 
     deactivate() {
-        document.location.hash = '';
+        document.location!.hash = '';
     }
 
     private onButtonClicked(e: MouseEvent) {

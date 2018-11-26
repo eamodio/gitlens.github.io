@@ -128,6 +128,10 @@ a {
     &:hover {
         background-color: white;
         color: black !important;
+
+        & .button__icon--svg {
+            filter: invert(100%);
+        }
     }
 
     body.preload & {
@@ -146,6 +150,14 @@ a {
         background: rgba(0, 0, 0, 0.2);
         border-color: rgba(255, 255, 255, 0.6);
         color: white !important;
+
+        & .button__icon--svg {
+            filter: invert(0%);
+        }
+    }
+
+    & .button__icon--svg {
+        filter: invert(100%);
     }
 
     body.preload & {
@@ -164,6 +176,10 @@ a {
         background-color: white;
         border-color: white;
         color: black !important;
+
+        & .button__icon--svg {
+            filter: invert(100%);
+        }
     }
 
     body.preload & {
@@ -172,13 +188,24 @@ a {
 }
 
 .button__content--version {
-    font-weight: 300;
+    font-weight: 400;
     text-transform: none;
+}
+
+.button__icon--svg {
+    position: relative;
+    top: 4px;
+    transition: filter 250ms;
+    width: 14px;
 }
 
 .button-group {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+
+    & .button {
+        white-space: nowrap;
+    }
 }
 
 .button-group--support-gitlens {
@@ -187,8 +214,7 @@ a {
     margin: 1.5em 0 1em 0;
 
     & .button {
-        margin-left: 1em;
-        margin-right: 1em;
+        margin: 1em 1.5em;
         white-space: nowrap;
     }
 }
@@ -338,6 +364,11 @@ a {
         text-align: center;
     }
 
+    & h5 {
+        font-size: 0.45em;
+        margin: 1.5em 0 0 0;
+    }
+
     & p {
         font-size: 0.45em;
     }
@@ -350,6 +381,10 @@ a {
         font-size: 0.3em;
         margin-top: 2em;
         padding-top: 1em;
+    }
+
+    & p.sponsors {
+        font-size: 0.3em;
     }
 }
 
@@ -412,6 +447,29 @@ a {
     font-size: 0.45em;
     list-style: disc;
     margin: 0.5em 1em;
+}
+
+.section-list--nested {
+    font-size: inherit;
+    margin: 0.5em 0;
+}
+
+.feature_preview {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1em 0;
+
+    .section-list--nested & {
+        margin-left: -2em;
+    }
+
+    a {
+        flex: 35% 0 1;
+    }
+
+    img {
+        width: 100%;
+    }
 }
 
 .changelog__badge {
@@ -722,9 +780,9 @@ footer {
 }
 
 @media all and (max-width: 860px) {
-    .button__icon {
-        display: none;
-    }
+    // .button__icon {
+    //     display: none;
+    // }
 
     .button-group--header {
         font-size: 0.8em;
