@@ -39,7 +39,9 @@
 
     <body class="preload">
         <header class="header">
-            <div class="header__headine"><img class="header__headline-image" src="assets/gitlens-logo.png" /></div>
+            <div class="header__headine js-button__back">
+                <img class="header__headline-image" src="assets/gitlens-logo.png" />
+            </div>
             <div class="button-group button-group--header">
                 <a id="support-gitlens-button" class="button button--flat js-button__support-gitlens"
                     >Support GitLens <span class="button__icon"> &#x2764;</span>
@@ -86,10 +88,10 @@
                         to how and why the code evolved. Explore the history and evolution of a codebase.
                     </p>
 
-                    <div class="section__cta on-section-change-fade">
+                    <div class="section__cta">
                         <div class="cta__primary">
                             <a class="button button--flat-primary" href="vscode:extension/eamodio.gitlens">
-                                Install GitLens <span class="button__content--version">v8.5</span>
+                                Install GitLens <span class="button__content--version">v9.0</span>
                             </a>
                             <p class="button__info">
                                 or download from the
@@ -117,6 +119,26 @@
                                 <a class="js-button__support-gitlens" href="#support-gitlens">supporting</a> it.
                             </p>
                         </div>
+                    </div>
+
+                    <div class="sponsors on-section-change-fade">
+                        <h2>Sponsors</h2>
+                        <a
+                            class="sponsor__image-link"
+                            title="Try CodeStream"
+                            href="https://codestream.com/?utm_source=vscmarket&utm_medium=banner&utm_campaign=gitlens"
+                        >
+                            <!-- prettier-ignore-attribute src -->
+                            <img
+                                class="sponsor__image sponsor__image--hero"
+                                src="assets/sponsors/codestream-dark.png"
+                                alt="CodeStream Logo"
+                            />
+                        </a>
+                        <p class="sponsor__tag">
+                            CodeStream enables continuous code review by putting team chat in VS Code. Save discussions
+                            about code with your code. Integrates w/Slack.
+                        </p>
                     </div>
 
                     <p class="gitlens__badges on-section-change-fade">
@@ -152,7 +174,7 @@
             </div>
 
             <div class="sections">
-                <div class="section__back-button">
+                <div class="section__back-button js-button__back">
                     <svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
                         <circle r="30" cy="30" cx="30" stroke-width="0" fill="rgba(255,255,255,0.7)"></circle>
                         <path
@@ -165,6 +187,26 @@
                 <div class="sections__scroller">
                     <section id="support-gitlens" class="section" data-view="support-gitlens">
                         <h3>Support GitLens</h3>
+                        <div class="sponsors sponsors--section">
+                            <h4>Sponsors</h4>
+                            <a
+                                class="sponsor__image-link"
+                                title="Try CodeStream"
+                                href="https://codestream.com/?utm_source=vscmarket&utm_medium=banner&utm_campaign=gitlens"
+                            >
+                                <!-- prettier-ignore-attribute src -->
+                                <img
+                                    class="sponsor__image"
+                                    src="assets/sponsors/codestream-light.png"
+                                    alt="CodeStream Logo"
+                                />
+                            </a>
+                            <p class="sponsor__tag">
+                                CodeStream enables continuous code review by putting team chat in VS Code. Save
+                                discussions about code with your code. Integrates w/Slack.
+                            </p>
+                        </div>
+
                         <p>
                             While GitLens is generously offered to everyone free of charge, if you find it useful,
                             please consider supporting it.
@@ -446,6 +488,14 @@
                                 <span class="changelog__badge changelog__badge--added">NEW</span> Adds relative date
                                 markers (<i>Less than a week ago</i>, <i>Over a week ago</i>, <i>Over a month ago</i>,
                                 etc) to revision (commit) histories in GitLens views
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--added">NEW</span> Adds branch and tag
+                                tip markers to revision (commit) histories in GitLens views &mdash; closes
+                                <a title="Open Issue #560" href="https://github.com/eamodio/vscode-gitlens/issues/560"
+                                    >#560</a
+                                >
                                 <div class="changelog__details changelog__details--list"></div>
                             </li>
                             <li>

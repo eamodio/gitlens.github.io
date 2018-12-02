@@ -20,7 +20,7 @@ export class App {
             new View(view);
         }
 
-        DOM.listenAll('.section__back-button', 'click', this.onBackButtonClicked.bind(this));
+        DOM.listenAll('.js-button__back', 'click', this.onBackButtonClicked.bind(this));
         window.addEventListener('hashchange', this.onHashChanged.bind(this), false);
 
         this.switchView(document.location!.hash && document.location!.hash.substring(1), true);
