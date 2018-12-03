@@ -3,11 +3,15 @@ import { DOM } from './dom';
 // import { MainView } from './mainView';
 import { View } from './view';
 
+const sectionRegex = /^is-section\S*/;
+
 export class App {
     activeView: string = '';
 
     // readonly main: MainView;
     readonly views: View[];
+
+    private _sectionCompleteTimer: NodeJS.Timer | undefined;
 
     constructor() {
         // this.main = new MainView();
@@ -33,17 +37,25 @@ export class App {
     switchView(view: string, loading: boolean = false) {
         // const previous = this.activeView;
 
+        if (this._sectionCompleteTimer !== undefined) {
+            clearTimeout(this._sectionCompleteTimer);
+            this._sectionCompleteTimer = undefined;
+        }
+
         const classList = document.body.classList;
         switch (view) {
             case '':
                 this.activeView = '';
 
                 if (!loading) {
-                    classList.remove(
-                        ...[...classList].filter(function(c) {
-                            return c.match(/^is-section\S*/);
-                        })
-                    );
+                    const classesToRemove = [];
+                    for (const c of classList) {
+                        if (c !== 'section-complete' && !c.match(sectionRegex)) continue;
+
+                        classesToRemove.push(c);
+                    }
+
+                    classList.remove(...classesToRemove);
                     document.location!.hash = '';
                 }
 
@@ -58,22 +70,27 @@ export class App {
 
                 const sectionClass = `is-section--${view}`;
                 if (classList.contains(sectionClass)) {
-                    classList.remove('is-section', sectionClass);
+                    classList.remove('is-section', 'section-complete', sectionClass);
                     document.location!.hash = '';
 
                     return;
                 }
 
                 if (classList.contains('is-section')) {
-                    classList.remove(
-                        ...[...classList].filter(function(c) {
-                            return c.match(/^is-section--\S+/);
-                        })
-                    );
+                    const classesToRemove = [];
+                    for (const c of classList) {
+                        if (!c.match(sectionRegex)) continue;
+
+                        classesToRemove.push(c);
+                    }
+
+                    classList.remove(...classesToRemove);
                 }
 
                 classList.add('is-section', sectionClass);
                 document.location!.hash = view;
+
+                this._sectionCompleteTimer = setTimeout(() => classList.add('section-complete'), 1000);
 
                 break;
         }
