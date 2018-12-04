@@ -28,10 +28,6 @@ export class App {
         window.addEventListener('hashchange', this.onHashChanged.bind(this), false);
 
         this.switchView(document.location!.hash && document.location!.hash.substring(1), true);
-
-        setTimeout(() => {
-            document.body.classList.remove('preload');
-        }, 750); // Wait for the length of the fade-out animation
     }
 
     switchView(view: string, loading: boolean = false) {
@@ -50,13 +46,16 @@ export class App {
                 if (!loading) {
                     const classesToRemove = [];
                     for (const c of classList) {
-                        if (c !== 'section-complete' && !c.match(sectionRegex)) continue;
+                        if (c !== 'complete' && !c.match(sectionRegex)) continue;
 
                         classesToRemove.push(c);
                     }
 
                     classList.remove(...classesToRemove);
                     document.location!.hash = '';
+                }
+                else {
+                    classList.add('complete');
                 }
 
                 // this.main.activate(previous);
@@ -70,10 +69,10 @@ export class App {
 
                 const sectionClass = `is-section--${view}`;
                 if (classList.contains(sectionClass)) {
-                    classList.remove('is-section', 'section-complete', sectionClass);
+                    classList.remove('is-section', 'complete', sectionClass);
                     document.location!.hash = '';
 
-                    return;
+                    break;
                 }
 
                 if (classList.contains('is-section')) {
@@ -86,13 +85,27 @@ export class App {
 
                     classList.remove(...classesToRemove);
                 }
+                else if (!loading && classList.contains('complete')) {
+                    classList.remove('complete');
+                }
 
-                classList.add('is-section', sectionClass);
+                if (loading) {
+                    classList.add('is-section', sectionClass, 'complete');
+                }
+                else {
+                    classList.add('is-section', sectionClass);
+                }
                 document.location!.hash = view;
 
-                this._sectionCompleteTimer = setTimeout(() => classList.add('section-complete'), 1000);
+                if (!loading) {
+                    this._sectionCompleteTimer = setTimeout(() => classList.add('complete'), 1000) as any;
+                }
 
                 break;
+        }
+
+        if (loading) {
+            setTimeout(() => document.body.classList.remove('preload'), 1);
         }
     }
 

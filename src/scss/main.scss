@@ -49,7 +49,7 @@ body {
     &.is-section {
         overflow: hidden;
 
-        &.section-complete {
+        &.complete {
             .hero {
                 position: absolute;
             }
@@ -104,6 +104,11 @@ a {
     body.is-section & {
         transform: translateY(5%);
         transition-delay: 600ms;
+    }
+
+    body.preload & {
+        transition-delay: 0s !important;
+        transition-duration: 0s !important;
     }
 }
 
@@ -265,11 +270,15 @@ a {
     body.is-section & {
         transform: translateX(-150%);
     }
+
+    body.preload & {
+        transition-duration: 0s !important;
+        visibility: hidden;
+    }
 }
 
 .sections {
-    animation: fade-out 500ms ease-out;
-    animation-fill-mode: both;
+    animation: fade-out 500ms ease-out 1 forwards;
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(127, 0, 255, 0.4);
     border-radius: 0.5em;
@@ -290,15 +299,17 @@ a {
     visibility: hidden;
 
     body.is-section & {
-        animation: fade-in 500ms 750ms ease-in;
-        animation-fill-mode: both;
+        animation: fade-in 500ms 750ms ease-in 1 forwards;
         transform: scale(1);
         transition-delay: 600ms;
     }
 
-    body.preload & {
-        // Move it off screen so the animation can run, but we don't see the flash
-        left: -200%;
+    body.preload &,
+    body.complete & {
+        animation-delay: 0s !important;
+        animation-duration: 0s !important;
+        transition-delay: 0s !important;
+        transition-duration: 0s !important;
     }
 }
 
@@ -426,8 +437,6 @@ a {
     flex: auto 1 0;
     display: flex;
     flex-direction: column;
-    // align-items: center;
-    // justify-content: center;
 
     p {
         margin-bottom: 0;
@@ -449,6 +458,11 @@ a {
     body.is-section & {
         opacity: 0;
         transition: opacity 500ms ease-out;
+    }
+
+    body.preload & {
+        transition-delay: 0s !important;
+        transition-duration: 0s !important;
     }
 }
 
