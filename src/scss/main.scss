@@ -734,15 +734,20 @@ footer {
     & a {
         display: block;
         font-weight: normal;
-    }
 
-    & a svg path {
-        transition: fill 300ms ease-out;
-    }
+        & svg {
+            width: 25px;
+            height: 25px;
 
-    & a svg:hover path {
-        fill: #914db3;
-        transition: fill 200ms ease-out;
+            & path {
+                transition: fill 300ms ease-out;
+            }
+
+            &:hover path {
+                fill: #914db3;
+                transition: fill 200ms ease-out;
+            }
+        }
     }
 }
 
