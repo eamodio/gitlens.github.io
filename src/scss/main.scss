@@ -63,6 +63,7 @@ a {
     font-weight: 400;
     outline: none;
     text-decoration: none;
+    transition: color 250ms;
 
     &:hover,
     &:focus {
