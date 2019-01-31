@@ -16,6 +16,7 @@
         "build": "webpack --env.development",
         "bundle": "webpack --env.production",
         "pretty": "prettier --config .prettierrc --loglevel warn --write \"./**/*.{ts,md,json}\" && tslint --project tsconfig.json --fix",
+        "serve": "webpack-dev-server --env.production",
         "watch": "webpack-dev-server"
     },
     "devDependencies": {
