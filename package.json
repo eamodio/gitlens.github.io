@@ -10,7 +10,7 @@
     "author": "Eric Amodio",
     "license": "",
     "engines": {
-        "node": ">= 6.11.0"
+        "node": ">= 8.15.0"
     },
     "scripts": {
         "build": "webpack --env.development",
@@ -30,6 +30,7 @@
         "postcss-loader": "3.0.0",
         "prettier": "1.16.3",
         "prettier-tslint": "0.4.2",
+        "purgecss-webpack-plugin": "1.4.0",
         "sass-loader": "7.1.0",
         "style-loader": "0.23.1",
         "terser-webpack-plugin": "1.2.1",

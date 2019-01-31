@@ -1,8 +1,10 @@
 'use strict';
+const glob = require('glob');
 const path = require('path');
 const HtmlInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
@@ -15,6 +17,9 @@ module.exports = function(env, argv) {
         new WriteFilePlugin(),
         new MiniCssExtractPlugin({
             filename: 'main.css'
+        }),
+        new PurgecssPlugin({
+            paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true })
         }),
         new HtmlPlugin({
             template: 'src/index.html',
@@ -53,13 +58,13 @@ module.exports = function(env, argv) {
                     parallel: true,
                     sourceMap: !env.production,
                     terserOptions: {
-                        ecma: 5,
+                        ecma: 6,
                         compress: env.production,
                         mangle: env.production,
                         output: {
                             beautify: !env.production,
                             comments: false,
-                            ecma: 5
+                            ecma: 6
                         }
                     }
                 })

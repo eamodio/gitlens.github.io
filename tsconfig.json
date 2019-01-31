@@ -3,7 +3,6 @@
     "compileOnSave": false,
     "compilerOptions": {
         "baseUrl": "src",
-        "downlevelIteration": true,
         "forceConsistentCasingInFileNames": true,
         "lib": ["es5", "dom", "dom.iterable", "es2015.iterable"],
         "module": "es2015",
@@ -16,7 +15,7 @@
         "skipLibCheck": true,
         "sourceMap": true,
         "strict": true,
-        "target": "es5"
+        "target": "es2015"
     },
     "include": ["./src/**/*.ts"],
     "exclude": ["node_modules", "**/dist", "**/*.d.ts"]
