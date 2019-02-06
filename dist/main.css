@@ -127,6 +127,13 @@ body:not(.is-section--features) #section-features,
 body:not(.is-section--whats-new) #section-whats-new {
   display: none; }
 
+body.is-section--about #about-button,
+body.is-section--support-gitlens #support-gitlens-button,
+body.is-section--features #features-button,
+body.is-section--whats-new #whats-new-button {
+  background: white !important;
+  color: black !important; }
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -461,6 +468,9 @@ a {
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 0; }
+  .is-section--whats-new .sections__scroller {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5em; }
 
 @-webkit-keyframes fade-in {
   0% {

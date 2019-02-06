@@ -19,7 +19,8 @@ module.exports = function(env, argv) {
             filename: 'main.css'
         }),
         new PurgecssPlugin({
-            paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true })
+            paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true }),
+            whitelistPatterns: [/is-section--.*/]
         }),
         new HtmlPlugin({
             template: 'src/index.html',
