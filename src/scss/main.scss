@@ -577,6 +577,7 @@ a {
     flex-direction: column;
 
     & p {
+        align-self: flex-start;
         font-size: 0.9em;
         margin-bottom: 0;
     }

@@ -708,6 +708,8 @@ a {
       -ms-flex-direction: column;
           flex-direction: column; }
   .changelog__details--list p {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
     font-size: 0.9em;
     margin-bottom: 0; }
   .changelog__details--list p:last-child {
