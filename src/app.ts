@@ -1,6 +1,6 @@
 'use strict';
+/*global window document*/
 import { DOM } from './dom';
-// import { MainView } from './mainView';
 import { View } from './view';
 
 const sectionRegex = /^is-section\S*/;
@@ -8,14 +8,11 @@ const sectionRegex = /^is-section\S*/;
 export class App {
     activeView: string = '';
 
-    // readonly main: MainView;
     readonly views: View[];
 
     private _sectionCompleteTimer: NodeJS.Timer | undefined;
 
     constructor() {
-        // this.main = new MainView();
-
         this.views = [];
         for (const el of document.querySelectorAll<HTMLInputElement>('.section[data-view]')) {
             const view = el.dataset.view;
@@ -31,8 +28,6 @@ export class App {
     }
 
     switchView(view: string, loading: boolean = false) {
-        // const previous = this.activeView;
-
         if (this._sectionCompleteTimer !== undefined) {
             clearTimeout(this._sectionCompleteTimer);
             this._sectionCompleteTimer = undefined;
@@ -40,7 +35,7 @@ export class App {
 
         const classList = document.body.classList;
         switch (view) {
-            case '':
+            case '': {
                 this.activeView = '';
 
                 if (!loading) {
@@ -58,14 +53,10 @@ export class App {
                     classList.add('complete');
                 }
 
-                // this.main.activate(previous);
-
                 break;
-
-            default:
+            }
+            default: {
                 this.activeView = view;
-
-                // this.main.deactivate(view);
 
                 const sectionClass = `is-section--${view}`;
                 if (classList.contains(sectionClass)) {
@@ -102,6 +93,7 @@ export class App {
                 }
 
                 break;
+            }
         }
 
         if (loading) {

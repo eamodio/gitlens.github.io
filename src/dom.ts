@@ -1,4 +1,5 @@
 'use strict';
+/*global document*/
 
 export namespace DOM {
     export function listenAll<K extends keyof WindowEventMap>(
