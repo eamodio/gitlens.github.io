@@ -58,8 +58,7 @@ svg:not(:root) {
  * 2. Remove the margin in Firefox and Safari.
  */
 button,
-input,
-select {
+input {
   font-family: sans-serif;
   /* 1 */
   font-size: 100%;
@@ -82,8 +81,7 @@ input {
   * Remove the inheritance of text transform in Edge, Firefox, and IE.
   * 1. Remove the inheritance of text transform in Firefox.
   */
-button,
-select {
+button {
   /* 1 */
   text-transform: none; }
 
@@ -185,14 +183,6 @@ a {
   transition: color 250ms; }
   a:hover, a:focus {
     color: #914db3; }
-
-.setting-key {
-  background-color: rgba(255, 255, 255, 0.25);
-  border-bottom: 2px solid rgba(255, 255, 255, 0);
-  border-radius: 3px;
-  font-family: monospace;
-  padding: 1px 5px;
-  vertical-align: text-bottom; }
 
 .header {
   -webkit-box-align: baseline;
@@ -714,9 +704,6 @@ a {
     margin-bottom: 0; }
   .changelog__details--list p:last-child {
     margin-bottom: 1em; }
-
-.changelog__image-link {
-  text-align: center; }
 
 .changelog__image {
   margin: 1em 0 0 -2em;
