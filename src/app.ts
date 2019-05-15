@@ -18,7 +18,7 @@ export class App {
             const view = el.dataset.view;
             if (view === undefined) continue;
 
-            new View(view);
+            this.views.push(new View(view));
         }
 
         DOM.listenAll('.js-button__back', 'click', this.onBackButtonClicked.bind(this));
@@ -56,6 +56,11 @@ export class App {
                 break;
             }
             default: {
+                if (!this.views.some(v => v.name === view)) {
+                    this.switchView('', false);
+                    return;
+                }
+
                 this.activeView = view;
 
                 const sectionClass = `is-section--${view}`;
