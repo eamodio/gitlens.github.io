@@ -705,10 +705,6 @@ a {
   .changelog__details--list p:last-child {
     margin-bottom: 1em; }
 
-.changelog__image {
-  margin: 1em 0 0 -2em;
-  max-width: 65%; }
-
 .changelog__list {
   font-size: 0.45em;
   list-style-type: none;
@@ -724,11 +720,6 @@ a {
     font-size: 0.75em;
     padding: 3px 6px;
     vertical-align: middle; }
-
-.changelog__list-item--version {
-  border-top: 1px solid rgba(122, 122, 122, 0.15);
-  margin: 2em 0 0.5em 0;
-  padding-top: 2em; }
 
 .changelog__version {
   background-color: #914db3;
