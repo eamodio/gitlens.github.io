@@ -1,6 +1,7 @@
 'use strict';
-const glob = require('glob');
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+const glob = require('glob');
 const HtmlInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -11,7 +12,6 @@ const WriteFilePlugin = require('write-file-webpack-plugin');
 module.exports = function(env, argv) {
     env = env || {};
     env.production = Boolean(env.production);
-    env.prefixCss = true;
 
     const plugins = [
         new WriteFilePlugin(),
@@ -85,8 +85,9 @@ module.exports = function(env, argv) {
         module: {
             rules: [
                 {
-                    test: /\.ts$/,
                     enforce: 'pre',
+                    exclude: /node_modules|\.d\.ts$/,
+                    test: /\.tsx?$/,
                     use: [
                         {
                             loader: 'eslint-loader',
@@ -95,15 +96,15 @@ module.exports = function(env, argv) {
                                 failOnError: true
                             }
                         }
-                    ],
-                    exclude: /node_modules/
+                    ]
                 },
                 {
+                    exclude: /node_modules|\.d\.ts$/,
                     test: /\.tsx?$/,
-                    use: 'ts-loader',
-                    exclude: /node_modules|\.d\.ts$/
+                    use: 'ts-loader'
                 },
                 {
+                    exclude: /node_modules/,
                     test: /\.scss$/,
                     use: [
                         {
@@ -120,9 +121,7 @@ module.exports = function(env, argv) {
                             loader: 'postcss-loader',
                             options: {
                                 ident: 'postcss',
-                                plugins: env.prefixCss
-                                    ? [require('autoprefixer')({ browsers: ['last 2 versions'] })]
-                                    : [],
+                                plugins: [require('autoprefixer')()],
                                 sourceMap: true
                             }
                         },
@@ -132,8 +131,7 @@ module.exports = function(env, argv) {
                                 sourceMap: true
                             }
                         }
-                    ],
-                    exclude: /node_modules/
+                    ]
                 }
             ]
         },
