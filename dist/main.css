@@ -705,6 +705,10 @@ a {
   .changelog__details--list p:last-child {
     margin-bottom: 1em; }
 
+.changelog__image {
+  margin: 1em 0 0 -2em;
+  max-width: 65%; }
+
 .changelog__list {
   font-size: 0.45em;
   list-style-type: none;
