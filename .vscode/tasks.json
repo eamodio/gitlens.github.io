@@ -13,13 +13,19 @@
             "type": "npm",
             "script": "build",
             "group": "build",
-            "problemMatcher": ["$node-sass", "$ts-webpack", "$tslint-webpack"]
+            "problemMatcher": ["$node-sass", "$ts-webpack"]
         },
         {
             "type": "npm",
             "script": "bundle",
             "group": "build",
-            "problemMatcher": ["$node-sass", "$ts-webpack", "$tslint-webpack"]
+            "problemMatcher": ["$node-sass", "$ts-webpack"]
+        },
+        {
+            "type": "npm",
+            "script": "lint",
+            "group": "build",
+            "problemMatcher": ["$eslint-stylish"]
         },
         {
             "type": "npm",
@@ -29,33 +35,7 @@
                 "isDefault": true
             },
             "isBackground": true,
-            "problemMatcher": [
-                {
-                    "base": "$ts-webpack",
-                    "fileLocation": "absolute",
-                    "background": {
-                        "activeOnStart": true,
-                        "beginsPattern": {
-                            "regexp": "wd[ms].: (Project is running at|Compiling...)"
-                        },
-                        "endsPattern": {
-                            "regexp": "wdm.: (Compiled successfully|Failed to compile)."
-                        }
-                    }
-                },
-                {
-                    "base": "$tslint-webpack",
-                    "background": {
-                        "activeOnStart": true,
-                        "beginsPattern": {
-                            "regexp": "wd[ms].: (Project is running at|Compiling...)"
-                        },
-                        "endsPattern": {
-                            "regexp": "wdm.: (Compiled successfully|Failed to compile)."
-                        }
-                    }
-                }
-            ]
+            "problemMatcher": ["$ts-webpack-watch"]
         }
     ]
 }
