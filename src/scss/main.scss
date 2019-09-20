@@ -542,6 +542,10 @@ a {
     background-color: #0366d6;
 }
 
+.changelog__badge--removed {
+    background-color: #d73a49;
+}
+
 .changelog__badge--version {
     background-color: #914db3;
     font-size: 15px;
@@ -584,6 +588,12 @@ a {
 
     & p:last-child {
         margin-bottom: 1em;
+    }
+
+    ul {
+        list-style: none;
+        margin-top: 1rem;
+        margin-left: -1rem;
     }
 }
 
@@ -960,9 +970,11 @@ footer {
         font-size: 0.6em;
     }
 
-    .changelog__details--list p {
-        font-size: 0.8em;
-        margin-bottom: 0;
+    .changelog__details--list {
+        p {
+            font-size: 0.8em;
+            margin-bottom: 0;
+        }
     }
 }
 

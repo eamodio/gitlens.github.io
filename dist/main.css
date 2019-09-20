@@ -660,6 +660,9 @@ a {
 .changelog__badge--fixed {
   background-color: #0366d6; }
 
+.changelog__badge--removed {
+  background-color: #d73a49; }
+
 .changelog__badge--version {
   background-color: #914db3;
   font-size: 15px; }
@@ -704,10 +707,10 @@ a {
     margin-bottom: 0; }
   .changelog__details--list p:last-child {
     margin-bottom: 1em; }
-
-.changelog__image {
-  margin: 1em 0 0 -2em;
-  max-width: 65%; }
+  .changelog__details--list ul {
+    list-style: none;
+    margin-top: 1rem;
+    margin-left: -1rem; }
 
 .changelog__list {
   font-size: 0.45em;
@@ -724,11 +727,6 @@ a {
     font-size: 0.75em;
     padding: 3px 6px;
     vertical-align: middle; }
-
-.changelog__list-item--version {
-  border-top: 1px solid rgba(122, 122, 122, 0.15);
-  margin: 2em 0 0.5em 0;
-  padding-top: 2em; }
 
 .changelog__version {
   background-color: #914db3;
