@@ -6,7 +6,7 @@ import { View } from './view';
 const sectionRegex = /^is-section\S*/;
 
 export class App {
-    activeView: string = '';
+    activeView = '';
 
     readonly views: View[];
 
@@ -27,7 +27,7 @@ export class App {
         this.switchView(document.location!.hash && document.location!.hash.substring(1), true);
     }
 
-    switchView(view: string, loading: boolean = false) {
+    switchView(view: string, loading = false) {
         if (this._sectionCompleteTimer !== undefined) {
             clearTimeout(this._sectionCompleteTimer);
             this._sectionCompleteTimer = undefined;
