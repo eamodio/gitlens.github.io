@@ -90,7 +90,7 @@
                     <div class="section__cta">
                         <div class="cta__primary">
                             <a class="button button--flat-primary" href="vscode:extension/eamodio.gitlens">
-                                Install GitLens <span class="button__content--version">v10</span>
+                                Install GitLens <span class="button__content--version">v10.1</span>
                             </a>
                             <p class="button__info">
                                 or download from the
@@ -276,6 +276,126 @@
                         <h3>What's&nbsp;new&nbsp;in <span class="changelog__version">GitLens 10</span></h3>
                         <ul class="changelog__list">
                             <li>
+                                <span class="changelog__badge changelog__badge--version">10.1.0</span>
+                                <span class="changelog__date">OCTOBER &nbsp;2019</span>
+                                <div class="changelog__details"></div>
+                            </li>
+
+                            <li>
+                                <span class="changelog__badge changelog__badge--added">NEW</span>Adds a new <i>Git Commands</i>
+                                <div class="changelog__details changelog__details--list">
+                                    <ul>
+                                        <li>
+                                            Adds a new <i>branch</i> command with sub-commands for <i>create</i>,
+                                            <i>rename</i>, and <i>delete</i>
+                                        </li>
+                                        <li>
+                                            Adds a new <i>tag</i> command with sub-commands for <i>create</i>, and
+                                            <i>delete</i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--added">NEW</span>Adds better co-author
+                                support &mdash; closes
+                                <a title="Open Issue #373" href="https://github.com/eamodio/vscode-gitlens/issues/373"
+                                    >#373</a
+                                >
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--added">NEW</span>Adds support for GitHub
+                                Pull Request uri schemes (<code>pr://</code>) &mdash; closes
+                                <a title="Open Issue #678" href="https://github.com/eamodio/vscode-gitlens/issues/678"
+                                    >#678</a
+                                >
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--added">NEW</span>Adds new actions
+                                options to the status bar blame
+                                <div class="changelog__details changelog__details--list">
+                                    <ul>
+                                        <li>
+                                            Adds a <code>gitlens.showCommitsInView</code> option to show the commit in
+                                            the <i>Search Commits</i> view
+                                        </li>
+                                        <li>
+                                            Adds a <code>gitlens.revealCommitInView</code> option to to reveal the
+                                            commit in the <i>Repositories</i> view
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--added">NEW</span>Adds a new
+                                <i>Rename Branch...</i> command to branches in the <i>Repositories</i> view
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--changed">IMPROVED</span>Improves
+                                (drastically) the performance of revealing commits in the <i>Repositories</i> view
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--changed">IMPROVED</span>Changes the
+                                <i>Create Branch (via Terminal)...</i> command to <i>Create Branch...</i> and uses the
+                                <i>branch</i> <i>create</i> Git command
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--changed">IMPROVED</span>Changes the
+                                <i>Delete Branch (via Terminal)...</i> command to <i>Delete Branch...</i> and uses the
+                                <i>branch</i> <i>delete</i> Git command
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--changed">IMPROVED</span>Changes the
+                                <i>Create Tag (via Terminal)...</i> command to <i>Create Tag...</i> and uses the
+                                <i>tag</i> <i>create</i>
+                                Git command
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--changed">IMPROVED</span>Changes the
+                                <i>Delete Tag (via Terminal)...</i> command to <i>Delete Tag...</i> and uses the
+                                <i>tag</i> <i>delete</i> Git command
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes
+                                <a title="Open Issue #826" href="https://github.com/eamodio/vscode-gitlens/issues/826"
+                                    >#826</a
+                                >
+                                &mdash; Deleting stash doesn't remove the stash from the list - have to refresh
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes
+                                <a title="Open Issue #769" href="https://github.com/eamodio/vscode-gitlens/issues/769"
+                                    >#769</a
+                                >
+                                &mdash; compacting causes duplicate names
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes issues with
+                                issue linking in hovers
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes issues with the
+                                <i>Show commits in Search Commits view</i> Git code lens action with uncommitted changes
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes missing prefix
+                                while search nodes are loading
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+
+                            <li class="changelog__list-item--version">
                                 <span class="changelog__badge changelog__badge--version">10.0.0</span>
                                 <span class="changelog__date">SEPTEMBER &nbsp;2019</span>
                                 <div class="changelog__details"></div>
