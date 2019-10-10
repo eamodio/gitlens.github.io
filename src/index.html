@@ -90,7 +90,7 @@
                     <div class="section__cta">
                         <div class="cta__primary">
                             <a class="button button--flat-primary" href="vscode:extension/eamodio.gitlens">
-                                Install GitLens <span class="button__content--version">v10.1</span>
+                                Install GitLens <span class="button__content--version">v10.1.1</span>
                             </a>
                             <p class="button__info">
                                 or download from the
@@ -276,13 +276,62 @@
                         <h3>What's&nbsp;new&nbsp;in <span class="changelog__version">GitLens 10</span></h3>
                         <ul class="changelog__list">
                             <li>
+                                <span class="changelog__badge changelog__badge--version">10.1.1</span>
+                                <span class="changelog__date">OCTOBER &nbsp;2019</span>
+                                <div class="changelog__details"></div>
+                            </li>
+
+                            <li>
+                                <span class="changelog__badge changelog__badge--added">NEW</span>Adds new options to
+                                sort tags by date, similar to branches via the <code>gitlens.sortTagsBy</code> setting
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--added">NEW</span>Adds the tag reference
+                                and date to tags in the <i>Repositories</i> view
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--changed">IMPROVED</span>Bumps the
+                                required version of Git to be at least 2.7.2
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes
+                                <a title="Open Issue #872" href="https://github.com/eamodio/vscode-gitlens/issues/872"
+                                    >#872</a
+                                >
+                                &mdash; OpenFileInRemoteCommand Cannot read property 'range' of null
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes
+                                <a title="Open Issue #855" href="https://github.com/eamodio/vscode-gitlens/issues/855"
+                                    >#855</a
+                                >
+                                &mdash; Missing tags in Repositories view
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes an issue when
+                                creating tags with a message that contains spaces
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+                            <li>
+                                <span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes an issue when
+                                creating and switching to a new branch
+                                <div class="changelog__details changelog__details--list"></div>
+                            </li>
+
+                            <li class="changelog__list-item--version">
                                 <span class="changelog__badge changelog__badge--version">10.1.0</span>
                                 <span class="changelog__date">OCTOBER &nbsp;2019</span>
                                 <div class="changelog__details"></div>
                             </li>
 
                             <li>
-                                <span class="changelog__badge changelog__badge--added">NEW</span>Adds a new <i>Git Commands</i>
+                                <span class="changelog__badge changelog__badge--added">NEW</span>Adds a new
+                                <i>Git Commands</i>
                                 <div class="changelog__details changelog__details--list">
                                     <ul>
                                         <li>
