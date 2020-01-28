@@ -189,6 +189,178 @@
 						<h3>What's&nbsp;new&nbsp;in <span class="changelog__version">GitLens 10</span></h3>
 						<ul class="changelog__list">
 							<li>
+								<span class="changelog__badge changelog__badge--version">10.2.0</span>
+								<span class="changelog__date">NOVEMBER &nbsp;2019</span>
+								<div class="changelog__details"></div>
+							</li>
+
+							<li>
+								<span class="changelog__badge changelog__badge--added">NEW</span>Adds user-defined
+								autolinks to external resources in commit messages &mdash; closes
+								<a title="Open Issue #897" href="https://github.com/eamodio/vscode-gitlens/issues/897"
+									>#897</a
+								>
+								<div class="changelog__details changelog__details--list">
+									<ul>
+										<li>
+											Adds a <code>gitlens.autolinks</code> setting to configure the autolinks
+										</li>
+										<li>
+											For example to autolink Jira issues, e.g.
+											<code>JIRA-123 ⟶ https://jira.company.com/issue?query=123</code>, use
+											<code
+												>"gitlens.autolinks": [{ "prefix": "JIRA-", "url":
+												"https://jira.company.com/issue?query=&lt;num&gt;" }]</code
+											>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--added">NEW</span>Adds a
+								<i>Highlight Changes</i> command (<code>gitlens.views.highlightChanges</code>) to
+								commits in GitLens views to highlight the changes lines in the current file
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--added">NEW</span>Adds a
+								<i>Highlight Revision Changes</i> command
+								(<code>gitlens.views.highlightRevisionChanges</code>) to commits in GitLens views to
+								highlight the changes lines in the revision
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--added">NEW</span>Adds branch and tag
+								sorting options to the interactive settings editor
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--changed">IMPROVED</span>Changes commit
+								search to auto-detect full commit shas without the need to prefix it with
+								<code>commit:</code> or <code>#:</code>
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--changed">IMPROVED</span>Changes paging
+								in GitLens views to no longer be naive and now only loads the additional required data
+								for much better performance
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--changed">IMPROVED</span>Changes the
+								_Toggle File Layout_ command icon when in tree layout to match VS Code
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--changed">IMPROVED</span>Restores the
+								original commit icon in the editor toolbar
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes
+								<a title="Open Issue #893" href="https://github.com/eamodio/vscode-gitlens/issues/893"
+									>#893</a
+								>
+								&mdash; Problems with # symbol in branch names &mdash; thanks to
+								<a
+									title="Open Pull Request #894"
+									href="https://github.com/eamodio/vscode-gitlens/pull/894"
+									>PR #894</a
+								>
+								by Allan Karlson (<a title="@bees4ever" href="https://github.com/bees4ever"
+									>@bees4ever</a
+								>)
+
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes
+								<a title="Open Issue #677" href="https://github.com/eamodio/vscode-gitlens/issues/677"
+									>#677</a
+								>
+								&mdash; Line and file history not working in symlinked repository
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes
+								<a title="Open Issue #667" href="https://github.com/eamodio/vscode-gitlens/issues/667"
+									>#667</a
+								>
+								&mdash; Decoration rendered before code
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes issues where
+								line blame annotations would sometimes stop working
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes compact view
+								when branches are shown as a tree
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+
+							<li class="changelog__list-item--version">
+								<span class="changelog__badge changelog__badge--version">10.1.2</span>
+								<span class="changelog__date">NOVEMBER &nbsp;2019</span>
+								<div class="changelog__details"></div>
+							</li>
+
+							<li>
+								<span class="changelog__badge changelog__badge--changed">IMPROVED</span>Changes commit
+								icon to be closer to VS Code's
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--changed">IMPROVED</span>Changes webviews
+								(welcome, settings) to have inline CSS to avoid FOUC (flash of unstyled content)
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--changed">IMPROVED</span>Only applies
+								<code>--ignore-revs-file</code> custom blame flag if it is supported by the current Git
+								version and the file exists
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes
+								<a title="Open Issue #882" href="https://github.com/eamodio/vscode-gitlens/issues/882"
+									>#882</a
+								>
+								&mdash; Search for changes command is malformed
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes
+								<a title="Open Issue #875" href="https://github.com/eamodio/vscode-gitlens/issues/875"
+									>#875</a
+								>
+								&mdash; Editing causes all contextual blames to disappear
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes
+								<a title="Open Issue #890" href="https://github.com/eamodio/vscode-gitlens/issues/890"
+									>#890</a
+								>
+								&mdash; Version warning "Don't Show Again" button not working
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes
+								<a title="Open Issue #889" href="https://github.com/eamodio/vscode-gitlens/issues/889"
+									>#889</a
+								>
+								&mdash; Make the heart icon (support GitLens) rounder
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+							<li>
+								<span class="changelog__badge changelog__badge--fixed">FIXED</span>Fixes broken view
+								layout buttons in the interactive settings editor
+								<div class="changelog__details changelog__details--list"></div>
+							</li>
+
+							<li class="changelog__list-item--version">
 								<span class="changelog__badge changelog__badge--version">10.1.1</span>
 								<span class="changelog__date">OCTOBER &nbsp;2019</span>
 								<div class="changelog__details"></div>
