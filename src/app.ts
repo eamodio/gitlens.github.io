@@ -6,111 +6,94 @@ import { View } from './view';
 const sectionRegex = /^is-section\S*/;
 
 export class App {
-    activeView = '';
+	activeView = '';
 
-    readonly views: View[];
+	readonly views: View[];
 
-    private _sectionCompleteTimer: NodeJS.Timer | undefined;
+	private _sectionCompleteTimer: NodeJS.Timer | undefined;
 
-    constructor() {
-        this.views = [];
-        for (const el of document.querySelectorAll<HTMLInputElement>('.section[data-view]')) {
-            const view = el.dataset.view;
-            if (view === undefined) continue;
+	constructor() {
+		this.views = [];
+		for (const el of document.querySelectorAll<HTMLInputElement>('.section[data-view]')) {
+			const view = el.dataset.view;
+			if (view === undefined) continue;
 
-            this.views.push(new View(view));
-        }
+			this.views.push(new View(view));
+		}
 
-        DOM.listenAll('.js-button__back', 'click', this.onBackButtonClicked.bind(this));
-        window.addEventListener('hashchange', this.onHashChanged.bind(this), false);
+		DOM.listenAll('.js-button__back', 'click', this.onBackButtonClicked.bind(this));
+		window.addEventListener('hashchange', this.onHashChanged.bind(this), false);
 
-        this.switchView(document.location!.hash && document.location!.hash.substring(1), true);
-    }
+		this.switchView(document.location.hash && document.location.hash.substring(1), true);
+	}
 
-    switchView(view: string, loading = false) {
-        if (this._sectionCompleteTimer !== undefined) {
-            clearTimeout(this._sectionCompleteTimer);
-            this._sectionCompleteTimer = undefined;
-        }
+	switchView(view: string, loading = false) {
+		if (this._sectionCompleteTimer !== undefined) {
+			clearTimeout(this._sectionCompleteTimer);
+			this._sectionCompleteTimer = undefined;
+		}
 
-        const classList = document.body.classList;
-        switch (view) {
-            case '': {
-                this.activeView = '';
+		const classList = document.body.classList;
+		switch (view) {
+			case '': {
+				this.activeView = '';
 
-                if (!loading) {
-                    const classesToRemove = [];
-                    for (const c of classList) {
-                        if (c !== 'complete' && !c.match(sectionRegex)) continue;
+				if (!loading) {
+					classList.remove(...[...classList].filter(c => c === 'complete' || sectionRegex.test(c)));
+					document.location.hash = '';
+				} else {
+					classList.add('complete');
+				}
 
-                        classesToRemove.push(c);
-                    }
+				break;
+			}
+			default: {
+				if (!this.views.some(v => v.name === view)) {
+					this.switchView('', false);
+					return;
+				}
 
-                    classList.remove(...classesToRemove);
-                    document.location!.hash = '';
-                }
-                else {
-                    classList.add('complete');
-                }
+				this.activeView = view;
 
-                break;
-            }
-            default: {
-                if (!this.views.some(v => v.name === view)) {
-                    this.switchView('', false);
-                    return;
-                }
+				const sectionClass = `is-section--${view}`;
+				if (classList.contains(sectionClass)) {
+					classList.remove('is-section', 'complete', sectionClass);
+					document.location.hash = '';
 
-                this.activeView = view;
+					break;
+				}
 
-                const sectionClass = `is-section--${view}`;
-                if (classList.contains(sectionClass)) {
-                    classList.remove('is-section', 'complete', sectionClass);
-                    document.location!.hash = '';
+				if (classList.contains('is-section')) {
+					classList.remove(...[...classList].filter(c => sectionRegex.test(c)));
+				} else if (!loading && classList.contains('complete')) {
+					classList.remove('complete');
+				}
 
-                    break;
-                }
+				if (loading) {
+					classList.add('is-section', sectionClass, 'complete');
+				} else {
+					classList.add('is-section', sectionClass);
+				}
+				document.location.hash = view;
 
-                if (classList.contains('is-section')) {
-                    const classesToRemove = [];
-                    for (const c of classList) {
-                        if (!c.match(sectionRegex)) continue;
+				if (!loading) {
+					this._sectionCompleteTimer = setTimeout(() => classList.add('complete'), 1000) as any;
+				}
 
-                        classesToRemove.push(c);
-                    }
+				break;
+			}
+		}
 
-                    classList.remove(...classesToRemove);
-                }
-                else if (!loading && classList.contains('complete')) {
-                    classList.remove('complete');
-                }
+		if (loading) {
+			setTimeout(() => document.body.classList.remove('preload'), 1);
+		}
+	}
 
-                if (loading) {
-                    classList.add('is-section', sectionClass, 'complete');
-                }
-                else {
-                    classList.add('is-section', sectionClass);
-                }
-                document.location!.hash = view;
+	private onBackButtonClicked(e: MouseEvent) {
+		document.location.hash = '';
+	}
 
-                if (!loading) {
-                    this._sectionCompleteTimer = setTimeout(() => classList.add('complete'), 1000) as any;
-                }
-
-                break;
-            }
-        }
-
-        if (loading) {
-            setTimeout(() => document.body.classList.remove('preload'), 1);
-        }
-    }
-
-    private onBackButtonClicked(e: MouseEvent) {
-        document.location!.hash = '';
-    }
-
-    private onHashChanged(e: HashChangeEvent) {
-        this.switchView(document.location!.hash && document.location!.hash.substring(1));
-    }
+	private onHashChanged(e: HashChangeEvent) {
+		this.switchView(document.location.hash && document.location.hash.substring(1));
+	}
 }

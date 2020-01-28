@@ -1,53 +1,51 @@
 {
-    "name": "gitlens.github.io",
-    "version": "0.0.1",
-    "description": "",
-    "repository": {
-        "url": "https://github.com/eamodio/gitlens.github.io",
-        "type": "git"
-    },
-    "private": true,
-    "author": "Eric Amodio",
-    "license": "",
-    "engines": {
-        "node": ">= 8.12.0"
-    },
-    "scripts": {
-        "build": "webpack --env.development",
-        "bundle": "webpack --env.production",
-        "lint": "eslint src/**/*.ts --fix",
-        "pretty": "prettier --config .prettierrc --loglevel warn --write \"./**/*.{ts,md,json}\" && npm run lint",
-        "serve": "webpack-dev-server --env.production",
-        "watch": "webpack-dev-server"
-    },
-    "devDependencies": {
-        "@types/node": "10.1.4",
-        "@typescript-eslint/eslint-plugin": "2.3.2",
-        "@typescript-eslint/parser": "2.3.2",
-        "autoprefixer": "9.6.4",
-        "css-loader": "3.2.0",
-        "eslint": "6.5.1",
-        "eslint-cli": "1.1.1",
-        "eslint-config-prettier": "6.4.0",
-        "eslint-loader": "3.0.2",
-        "eslint-plugin-import": "2.18.2",
-        "eslint-plugin-prettiest": "0.0.2",
-        "html-webpack-inline-source-plugin": "0.0.10",
-        "html-webpack-plugin": "3.2.0",
-        "mini-css-extract-plugin": "0.8.0",
-        "node-sass": "4.12.0",
-        "postcss-loader": "3.0.0",
-        "prettier": "1.18.2",
-        "prettier-eslint": "9.0.0",
-        "purgecss-webpack-plugin": "1.6.0",
-        "sass-loader": "8.0.0",
-        "style-loader": "1.0.0",
-        "terser-webpack-plugin": "2.1.2",
-        "ts-loader": "6.2.0",
-        "typescript": "3.6.3",
-        "webpack": "4.41.0",
-        "webpack-cli": "3.3.9",
-        "webpack-dev-server": "3.8.2",
-        "write-file-webpack-plugin": "4.5.1"
-    }
+	"name": "gitlens.github.io",
+	"version": "0.0.1",
+	"description": "",
+	"repository": {
+		"url": "https://github.com/eamodio/gitlens.github.io",
+		"type": "git"
+	},
+	"private": true,
+	"author": "Eric Amodio",
+	"license": "",
+	"engines": {
+		"node": ">= 12.14.1"
+	},
+	"scripts": {
+		"build": "webpack --env.development",
+		"bundle": "webpack --env.production",
+		"lint": "eslint src/**/*.ts --fix",
+		"pretty": "prettier --config .prettierrc --loglevel warn --write \"./**/*.{ts,md,json,html,scss}\" && npm run lint",
+		"serve": "webpack-dev-server --env.production",
+		"watch": "webpack-dev-server"
+	},
+	"devDependencies": {
+		"@types/node": "12.12.6",
+		"@typescript-eslint/eslint-plugin": "2.18.0",
+		"@typescript-eslint/parser": "2.18.0",
+		"autoprefixer": "9.7.4",
+		"css-loader": "3.4.2",
+		"eslint": "6.8.0",
+		"eslint-cli": "1.1.1",
+		"eslint-config-prettier": "6.9.0",
+		"eslint-loader": "3.0.3",
+		"eslint-plugin-import": "2.20.0",
+		"html-webpack-inline-source-plugin": "0.0.10",
+		"html-webpack-plugin": "3.2.0",
+		"mini-css-extract-plugin": "0.9.0",
+		"node-sass": "4.13.1",
+		"postcss-loader": "3.0.0",
+		"prettier": "1.19.1",
+		"purgecss-webpack-plugin": "2.0.5",
+		"sass-loader": "8.0.2",
+		"style-loader": "1.1.3",
+		"terser-webpack-plugin": "2.3.2",
+		"ts-loader": "6.2.1",
+		"typescript": "3.7.5",
+		"webpack": "4.41.5",
+		"webpack-cli": "3.3.10",
+		"webpack-dev-server": "3.10.1",
+		"write-file-webpack-plugin": "4.5.1"
+	}
 }

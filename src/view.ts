@@ -1,34 +1,33 @@
 'use strict';
-import { DOM } from './dom';
 /*global document*/
+import { DOM } from './dom';
 
 export class View {
-    get buttonSelector(): string {
-        return `.js-button__${this.name}`;
-    }
+	get buttonSelector(): string {
+		return `.js-button__${this.name}`;
+	}
 
-    get selector(): string {
-        return `#${this.name}`;
-    }
+	get selector(): string {
+		return `#${this.name}`;
+	}
 
-    constructor(public name: string) {
-        DOM.listenAll(this.buttonSelector, 'click', this.onButtonClicked.bind(this));
-    }
+	constructor(public name: string) {
+		DOM.listenAll(this.buttonSelector, 'click', this.onButtonClicked.bind(this));
+	}
 
-    activate() {
-        document.location!.hash = this.name;
-    }
+	activate() {
+		document.location.hash = this.name;
+	}
 
-    deactivate() {
-        document.location!.hash = '';
-    }
+	deactivate() {
+		document.location.hash = '';
+	}
 
-    private onButtonClicked(e: MouseEvent) {
-        if (document.body.classList.contains(`is-section--${this.name}`)) {
-            this.deactivate();
-        }
-        else {
-            this.activate();
-        }
-    }
+	private onButtonClicked(e: MouseEvent) {
+		if (document.body.classList.contains(`is-section--${this.name}`)) {
+			this.deactivate();
+		} else {
+			this.activate();
+		}
+	}
 }
