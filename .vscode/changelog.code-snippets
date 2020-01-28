@@ -1,0 +1,114 @@
+{
+	// Place your gitlens.github.io workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"changelog": {
+		"scope": "html",
+		"prefix": "cl",
+		"body": [
+			"<li>",
+			"\t<span class=\"changelog__badge changelog__badge--version\">$1</span>",
+			"\t<span class=\"changelog__date\">${CURRENT_MONTH_NAME_SHORT/(.*)/${1:/upcase}/} &nbsp;$CURRENT_YEAR</span>",
+			"\t<div class=\"changelog__details\"></div>",
+			"</li>",
+			"$0"
+		],
+		"description": ""
+	},
+	"changelog-added": {
+		"scope": "html",
+		"prefix": "cl-added",
+		"body": [
+			"<li>",
+			"\t<span class=\"changelog__badge changelog__badge--added\">NEW</span>${1:$CLIPBOARD}",
+			"\t<div class=\"changelog__details changelog__details--list\">$2</div>",
+			"</li>",
+			"$0"
+		],
+		"description": ""
+	},
+	"changelog-changed": {
+		"scope": "html",
+		"prefix": "cl-changed",
+		"body": [
+			"<li>",
+			"\t<span class=\"changelog__badge changelog__badge--changed\">IMPROVED</span>${1:$CLIPBOARD}",
+			"\t<div class=\"changelog__details changelog__details--list\"></div>",
+			"</li>",
+			"$0"
+		],
+		"description": ""
+	},
+	"changelog-fixed": {
+		"scope": "html",
+		"prefix": "cl-fixed",
+		"body": [
+			"<li>",
+			"\t<span class=\"changelog__badge changelog__badge--fixed\">FIXED</span>${1:$CLIPBOARD}",
+			"\t<div class=\"changelog__details changelog__details--list\"></div>",
+			"</li>",
+			"$0"
+		],
+		"description": ""
+	},
+	"changelog-ifixed": {
+		"scope": "html",
+		"prefix": "cl-ifixed",
+		"body": [
+			"<li>",
+			"\t<span class=\"changelog__badge changelog__badge--fixed\">FIXED</span>Fixes",
+			"\t<a",
+			"\t\ttitle=\"Open Issue #${1:number}\"",
+			"\t\thref=\"https://github.com/eamodio/vscode-gitlens/issues/${1:number}\"",
+			"\t\t>#${1:number}</a",
+			"\t>",
+			"\t&mdash; ${2:$CLIPBOARD}",
+			"\t<div class=\"changelog__details changelog__details--list\"></div>",
+			"</li>",
+			"$0"
+		],
+		"description": ""
+	},
+	"changelog-issue": {
+		"scope": "html",
+		"prefix": "cl-issue",
+		"body": [
+			"<a",
+			"\ttitle=\"Open Issue #${1:number}\"",
+			"\thref=\"https://github.com/eamodio/vscode-gitlens/issues/${1:number}\"",
+			"\t>#${1:number}</a",
+			">",
+			"$0"
+		],
+		"description": ""
+	},
+	"changelog-pr": {
+		"scope": "html",
+		"prefix": "cl-pr",
+		"body": [
+			"&mdash; thanks to",
+			"<a",
+			"\ttitle=\"Open Pull Request #${1:number}\"",
+			"\thref=\"https://github.com/eamodio/vscode-gitlens/pull/${1:number}\"",
+			"\t>PR #${1:number}</a",
+			">",
+			"by ${2:name} (<a title=\"@${3:username}\" href=\"https://github.com/${3:username}\">@${3:username}</a>)",
+			"$0"
+		],
+		"description": ""
+	}
+}
