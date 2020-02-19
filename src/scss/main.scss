@@ -252,6 +252,7 @@ a {
 .button-group {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
 
 	& .button {
 		white-space: nowrap;
@@ -283,6 +284,13 @@ a {
 .button-group--cta-left {
 	float: right;
 	margin: 0.5em -1em -1em -1em;
+}
+
+p.button__badge {
+	font-size: 0.5em;
+	margin-top: 1em;
+	margin-bottom: -1em;
+	text-align: center;
 }
 
 .button__info {
@@ -713,7 +721,7 @@ a {
 }
 
 .gitlens__badges {
-	margin: 2em 0 0 0;
+	margin: 1em 0 0 0;
 	text-align: center;
 	flex: auto 0 0;
 
@@ -883,7 +891,7 @@ footer {
 }
 
 .sponsor__image {
-	max-width: 100%;
+	width: 75%;
 }
 
 .sponsor__image--hero {
