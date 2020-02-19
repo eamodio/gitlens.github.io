@@ -16,14 +16,14 @@
 		"build": "webpack --env.development",
 		"bundle": "webpack --env.production",
 		"lint": "eslint src/**/*.ts --fix",
-		"pretty": "prettier --config .prettierrc --loglevel warn --write \"./**/*.{ts,md,json,html,scss}\" && npm run lint",
+		"pretty": "prettier --config .prettierrc --loglevel warn --write \"./**/*.{ts,md,json,html,scss}\"",
 		"serve": "webpack-dev-server --env.production",
 		"watch": "webpack-dev-server"
 	},
 	"devDependencies": {
 		"@types/node": "12.12.6",
-		"@typescript-eslint/eslint-plugin": "2.19.2",
-		"@typescript-eslint/parser": "2.19.2",
+		"@typescript-eslint/eslint-plugin": "2.20.0",
+		"@typescript-eslint/parser": "2.20.0",
 		"autoprefixer": "9.7.4",
 		"css-loader": "3.4.2",
 		"eslint": "6.8.0",
