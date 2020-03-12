@@ -1,14 +1,14 @@
 @import '_normalize';
 
 body:not(.is-section--about) #section-about,
-body:not(.is-section--support-gitlens) #section-support-gitlens,
+body:not(.is-section--sponsor) #section-sponsor,
 body:not(.is-section--features) #section-features,
 body:not(.is-section--whats-new) #section-whats-new {
 	display: none;
 }
 
 body.is-section--about #about-button,
-body.is-section--support-gitlens #support-gitlens-button,
+body.is-section--sponsor #sponsor-button,
 body.is-section--features #features-button,
 body.is-section--whats-new #whats-new-button {
 	background: white !important;
@@ -22,6 +22,7 @@ html {
 	font-size: 1em;
 	height: 100%;
 	line-height: 1.4;
+	overflow: hidden;
 	width: 100%;
 }
 
@@ -96,14 +97,14 @@ a {
 	cursor: pointer;
 	flex: auto 1 0;
 	height: 26px; // no idea why
-	margin: 1px 0 0 -0.75em;
+	margin: 0;
 	max-width: 960px;
-	transform: translateY(-300%);
+	transform: translate(-0.75em, -300%);
 	transform-origin: top left;
 	transition: transform 500ms cubic-bezier(1, 0.4, 0.7, 1.5);
 
 	body.is-section & {
-		transform: translateY(5%);
+		transform: translate(-0.75em, 5%);
 		transition-delay: 600ms;
 	}
 
@@ -146,8 +147,11 @@ a {
 }
 
 .button--flat {
-	backdrop-filter: blur(5px);
-	background: rgba(0, 0, 0, 0.2);
+	background: rgba(0, 0, 0, 0.3);
+	@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+		backdrop-filter: blur(10px);
+		background: rgba(0, 0, 0, 0.2);
+	}
 	border: 1px solid rgba(255, 255, 255, 0.6);
 	color: white !important;
 	transition: background-color 250ms, border-color 250ms, color 250ms;
@@ -174,8 +178,11 @@ a {
 	transition: background-color 250ms, border-color 250ms, color 250ms;
 
 	&:hover {
-		backdrop-filter: blur(5px);
-		background: rgba(0, 0, 0, 0.2);
+		background: rgba(0, 0, 0, 0.3);
+		@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+			backdrop-filter: blur(10px);
+			background: rgba(0, 0, 0, 0.2);
+		}
 		border-color: rgba(255, 255, 255, 0.6);
 		color: white !important;
 
@@ -202,7 +209,7 @@ a {
 
 	&:hover {
 		background-color: white;
-		border-color: white;
+		border-color: black;
 		color: black !important;
 
 		& .button__icon--svg {
@@ -224,7 +231,7 @@ a {
 
 	&:hover {
 		background-color: white;
-		border-color: white;
+		border-color: black;
 		color: black !important;
 
 		& .button__icon--svg {
@@ -261,7 +268,7 @@ a {
 
 .button-group--sponsor-primary {
 	font-size: 0.5em;
-	justify-content: space-evenly;
+	justify-content: center;
 	margin: 1em 0;
 
 	& .button {
@@ -334,9 +341,12 @@ p.button__badge {
 
 .sections {
 	animation: fade-out 500ms ease-out 1 forwards;
-	backdrop-filter: blur(5px);
-	background: rgba(255, 255, 255, 0.8);
-	border: 1px solid rgba(127, 0, 255, 0.4);
+	background: rgba(255, 255, 255, 0.95);
+	@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+		backdrop-filter: blur(10px);
+		background: rgba(255, 255, 255, 0.85);
+	}
+	border: 1px solid rgba(127, 0, 255, 0.2);
 	border-radius: 0.5em;
 	bottom: 0;
 	color: #272727;
@@ -387,7 +397,7 @@ p.button__badge {
 	overflow-y: auto;
 	z-index: 0;
 
-	.is-section--whats-new & {
+	.section--has-footer & {
 		border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 		margin-bottom: 1.5em;
 	}
@@ -429,6 +439,7 @@ p.button__badge {
 
 .section {
 	margin: 0 1em;
+	position: relative;
 
 	& a {
 		color: #a14dcb;
@@ -440,7 +451,7 @@ p.button__badge {
 	}
 
 	& h3 {
-		margin: 0 0.5em;
+		margin: 0;
 		text-align: center;
 
 		& a {
@@ -460,9 +471,10 @@ p.button__badge {
 	}
 
 	& h4 {
-		font-size: 0.5em;
-		margin: 1.5em 0 1em 0;
+		font-size: 0.8em;
+		margin: 0 0 0.5em 0;
 		text-align: center;
+		font-weight: 200;
 	}
 
 	& h5 {
@@ -546,7 +558,7 @@ p.button__badge {
 	position: absolute;
 	top: 0;
 	transform: scale(0.75);
-	z-index: 1;
+	z-index: 10;
 
 	& svg circle {
 		transition: fill 300ms ease-out;
@@ -562,6 +574,7 @@ p.button__badge {
 	font-size: 0.45em;
 	list-style: disc;
 	margin: 0.5em 1em;
+	padding-left: 1em;
 }
 
 .section-list--nested {
@@ -587,6 +600,76 @@ p.button__badge {
 	}
 }
 
+.changelog__list {
+	font-size: 0.45em;
+	list-style-type: none;
+	margin: 2em 0;
+	padding: 0;
+
+	& i {
+		font-weight: 200;
+	}
+
+	& > li {
+		margin-bottom: 0.5em;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: flex-start;
+		position: relative;
+
+		&:after {
+			border-left: 1px solid rgba(122, 122, 122, 0.15);
+			content: ' ';
+			position: absolute;
+			top: 24px;
+			left: 31px;
+			height: calc(100% - 17px);
+			z-index: -1;
+		}
+
+		&.changelog__list-item--version {
+			margin: 2em 0 1em 0;
+
+			&:before {
+				border-top: 1px solid rgba(122, 122, 122, 0.15);
+				content: ' ';
+				position: absolute;
+				top: -1.5em;
+				left: 0;
+				width: 100%;
+				z-index: -1;
+			}
+
+			&:after {
+				border-left: 1px solid rgba(122, 122, 122, 0.15);
+				content: ' ';
+				position: absolute;
+				top: 28px;
+				left: 31px;
+				height: calc(100% + 0.5em - 21px);
+				z-index: -1;
+			}
+
+			&:first-child {
+				margin-top: 0;
+
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+
+	& code {
+		background: rgba(0, 0, 0, 0.05);
+		border-radius: 4px;
+		font-size: 0.75em;
+		padding: 3px 6px;
+		vertical-align: middle;
+	}
+}
+
 .changelog__badge {
 	background-color: #0366d6;
 	border-radius: 3px;
@@ -595,12 +678,14 @@ p.button__badge {
 	display: inline-block;
 	font-size: 11px;
 	font-weight: 600;
+	margin-top: 2px;
 	margin-right: 1.25em;
 	padding: 2px 5px;
 	text-align: center;
 	text-transform: uppercase;
 	vertical-align: middle;
 	width: 65px;
+	flex: 0 0 65px;
 }
 
 .changelog__badge--added {
@@ -619,6 +704,13 @@ p.button__badge {
 .changelog__badge--version {
 	background-color: #914db3;
 	font-size: 15px;
+	margin-top: 0;
+}
+
+.changelog__content {
+	text-indent: 2em;
+	margin-left: -2em;
+	flex: 1 1 calc(100% - 133px);
 }
 
 .changelog__date {
@@ -634,17 +726,8 @@ p.button__badge {
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	padding: 0 0 0 5em;
+	padding: 0 0 0 2em;
 	position: relative;
-
-	&:before {
-		border-left: 1px solid rgba(122, 122, 122, 0.15);
-		content: ' ';
-		height: calc(100% + 10px);
-		left: 31px;
-		position: absolute;
-		top: 1px;
-	}
 }
 
 .changelog__details--list {
@@ -674,35 +757,6 @@ p.button__badge {
 .changelog__image {
 	margin: 1em 0 0 -2em;
 	max-width: 65%;
-}
-
-.changelog__list {
-	font-size: 0.45em;
-	list-style-type: none;
-	margin: 2em 0;
-	padding: 0;
-
-	& i {
-		font-weight: 200;
-	}
-
-	& li {
-		margin-bottom: 0.5em;
-	}
-
-	& code {
-		background: rgba(0, 0, 0, 0.05);
-		border-radius: 4px;
-		font-size: 0.75em;
-		padding: 3px 6px;
-		vertical-align: middle;
-	}
-}
-
-.changelog__list-item--version {
-	border-top: 1px solid rgba(122, 122, 122, 0.15);
-	margin: 2em 0 0.5em 0;
-	padding-top: 2em;
 }
 
 .changelog__version {
@@ -793,6 +847,16 @@ blockquote {
 footer {
 	margin-top: 2em;
 	flex: auto 0 0;
+
+	& a {
+		color: rgba(255, 255, 255, 0.7);
+		letter-spacing: 0.1em;
+		transition: color 250ms;
+
+		&:hover {
+			color: white;
+		}
+	}
 }
 
 .footer__links {
@@ -834,7 +898,7 @@ footer {
 }
 
 .footer__copyright {
-	color: rgba(255, 255, 255, 0.25);
+	color: rgba(255, 255, 255, 0.5);
 	display: block;
 	font-size: 0.75rem;
 	font-weight: 100;
@@ -842,16 +906,6 @@ footer {
 	opacity: 0.99; /* no idea why this is required */
 	text-align: center;
 	text-transform: uppercase;
-
-	& a {
-		color: rgba(255, 255, 255, 0.4);
-		letter-spacing: 0.1em;
-		transition: color 250ms;
-
-		&:hover {
-			color: white;
-		}
-	}
 }
 
 .sponsors {
@@ -862,21 +916,6 @@ footer {
 
 	h2 {
 		font-weight: 200;
-	}
-}
-
-.sponsors--section {
-	h4 {
-		margin: 0 0 0.5em 0;
-		font-size: 0.8em;
-		font-weight: 200;
-	}
-
-	.sponsor__tag {
-		font-size: 0.3em;
-		margin-top: -10px;
-		max-width: 30em;
-		opacity: 0.7;
 	}
 }
 
@@ -910,13 +949,6 @@ footer {
 	text-align: center;
 }
 
-.sponsor__tag {
-	font-size: 0.6em;
-	margin: 0;
-	max-width: 32em;
-	text-align: center;
-}
-
 .heart {
 	background-clip: text;
 	background-color: #120024;
@@ -938,22 +970,64 @@ footer {
 	text-align: center !important;
 }
 
+div.center,
 img.center {
 	display: block;
 	margin: 0 auto;
+}
+
+.hide {
+	display: none;
+}
+
+.mb-0 {
+	margin-bottom: 0 !important;
+}
+
+.mb-05 {
+	margin-bottom: 0.5em !important;
+}
+
+.mb-1 {
+	margin-bottom: 1em !important;
 }
 
 .mt-0 {
 	margin-top: 0 !important;
 }
 
+.mt-05 {
+	margin-top: 0.5em !important;
+}
+
 .mt-1 {
 	margin-top: 1em !important;
 }
 
+.mt-2 {
+	margin-top: 2em !important;
+}
+
+.ml-05 {
+	margin-left: 0.5em !important;
+}
+
+.ml-1 {
+	margin-left: 1em !important;
+}
+
+.mr-05 {
+	margin-right: 0.5em !important;
+}
+
+.mr-1 {
+	margin-right: 1em !important;
+}
+
 @media all and (max-width: 1120px) {
 	.sections {
-		margin: 2em;
+		margin-left: 2em;
+		margin-right: 2em;
 	}
 }
 
@@ -970,7 +1044,8 @@ img.center {
 
 @media all and (max-width: 768px) {
 	.sections {
-		margin: 2em 1em;
+		margin-left: 1em;
+		margin-right: 1em;
 	}
 
 	.section-header,
@@ -1028,7 +1103,7 @@ img.center {
 	}
 
 	.sections {
-		margin: 2em 0.5em;
+		margin: 1.75em 0.5em;
 	}
 
 	.sections__footer {

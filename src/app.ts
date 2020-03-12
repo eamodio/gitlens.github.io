@@ -3,81 +3,77 @@
 import { DOM } from './dom';
 import { View } from './view';
 
-const sectionRegex = /^is-section\S*/;
-
 export class App {
 	activeView = '';
 
 	readonly views: View[];
 
-	private _sectionCompleteTimer: NodeJS.Timer | undefined;
+	private _sectionCompleteHandle = 0;
 
 	constructor() {
 		this.views = [];
-		for (const el of document.querySelectorAll<HTMLInputElement>('.section[data-view]')) {
-			const view = el.dataset.view;
-			if (view === undefined) continue;
+		for (const $el of DOM.$<HTMLInputElement>('.section[data-view]')) {
+			const view = $el.dataset.view;
+			if (view == null) continue;
 
 			this.views.push(new View(view));
 		}
 
-		DOM.listenAll('.js-button__back', 'click', this.onBackButtonClicked.bind(this));
+		DOM.on('[data-action="back"]', 'click', this.onBackButtonClicked.bind(this));
 		window.addEventListener('hashchange', this.onHashChanged.bind(this), false);
 
-		this.switchView(document.location.hash && document.location.hash.substring(1), true);
+		const [hash, paths] = this.getHashAndPaths();
+		this.switchView(hash, paths, true);
 	}
 
-	switchView(view: string, loading = false) {
-		if (this._sectionCompleteTimer !== undefined) {
-			clearTimeout(this._sectionCompleteTimer);
-			this._sectionCompleteTimer = undefined;
-		}
+	switchView(hash: string, paths: string[], loading = false) {
+		window.clearTimeout(this._sectionCompleteHandle);
+		this._sectionCompleteHandle = 0;
 
-		const classList = document.body.classList;
-		switch (view) {
+		const previous = this.activeView;
+
+		switch (hash) {
 			case '': {
 				this.activeView = '';
 
+				if (previous !== this.activeView) {
+					const prev = this.views.find(v => v.name === previous);
+					if (prev != null) {
+						prev.deactivate();
+					}
+				}
+
+				document.body.classList.toggle('complete', loading);
 				if (!loading) {
-					classList.remove(...[...classList].filter(c => c === 'complete' || sectionRegex.test(c)));
 					document.location.hash = '';
-				} else {
-					classList.add('complete');
 				}
 
 				break;
 			}
 			default: {
-				if (!this.views.some(v => v.name === view)) {
-					this.switchView('', false);
+				const view = this.views.find(v => v.name === hash);
+				if (view == null) {
+					this.switchView('', [], false);
 					return;
 				}
 
-				this.activeView = view;
+				this.activeView = hash;
 
-				const sectionClass = `is-section--${view}`;
-				if (classList.contains(sectionClass)) {
-					classList.remove('is-section', 'complete', sectionClass);
-					document.location.hash = '';
-
-					break;
+				if (previous !== this.activeView) {
+					const prev = this.views.find(v => v.name === previous);
+					if (prev != null) {
+						prev.deactivate();
+					}
 				}
 
-				if (classList.contains('is-section')) {
-					classList.remove(...[...classList].filter(c => sectionRegex.test(c)));
-				} else if (!loading && classList.contains('complete')) {
-					classList.remove('complete');
-				}
+				view.activate(paths, loading);
 
-				if (loading) {
-					classList.add('is-section', sectionClass, 'complete');
-				} else {
-					classList.add('is-section', sectionClass);
-				}
-				document.location.hash = view;
-
+				document.body.classList.toggle('complete', loading);
 				if (!loading) {
-					this._sectionCompleteTimer = setTimeout(() => classList.add('complete'), 1000) as any;
+					this._sectionCompleteHandle = window.setTimeout(
+						() => document.body.classList.add('complete'),
+						1000
+					);
 				}
 
 				break;
@@ -94,6 +90,29 @@ export class App {
 	}
 
 	private onHashChanged(e: HashChangeEvent) {
-		this.switchView(document.location.hash && document.location.hash.substring(1));
+		const [hash, paths] = this.getHashAndPaths();
+
+		if (this.redirect(hash, paths)) return;
+
+		this.switchView(hash, paths);
+	}
+
+	private getHashAndPaths(): [string, string[]] {
+		let hash = document.location.hash?.substring(1);
+		let paths: string[] = [];
+		if (hash) {
+			[hash, ...paths] = hash.split('/');
+		}
+
+		return [hash, paths];
+	}
+
+	private redirect(hash: string, paths: string[]): boolean {
+		if (hash === 'support-gitlens') {
+			document.location.hash = '#sponsor';
+			return true;
+		}
+
+		return false;
 	}
 }

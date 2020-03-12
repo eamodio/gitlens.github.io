@@ -5,12 +5,16 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"type": "chrome",
+			"type": "pwa-msedge",
 			"request": "launch",
-			"name": "Launch Chrome",
+			"name": "Launch",
+			// "runtimeExecutable": "dev",
 			"url": "http://localhost:8080",
+			"cwd": "${workspaceFolder}",
 			"webRoot": "${workspaceFolder}",
-			"preLaunchTask": "npm: watch"
+			"preLaunchTask": "npm: watch",
+			"sourceMaps": true,
+			"trace": true
 		}
 	]
 }

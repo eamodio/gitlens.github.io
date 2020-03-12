@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>GitLens &mdash; Git supercharged</title>
+		<meta name="description" content="GitLens is an open-source extension for Visual Studio Code." />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://gitlens.amod.io/" />
+		<meta property="og:title" content="GitLens &mdash; Git supercharged" />
+		<meta property="og:description" content="GitLens is an open-source extension for Visual Studio Code." />
+		<meta property="og:image" content="https://gitlens.amod.io/assets/summary.png" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@eamodio" />
+		<meta name="twitter:creator" content="@eamodio" />
+		<meta name="twitter:domain" content="gitlens.amod.io" />
+		<meta name="twitter:title" content="GitLens &mdash; Git supercharged" />
+		<meta name="twitter:description" content="GitLens is an open-source extension for Visual Studio Code." />
+		<meta name="twitter:image" content="https://gitlens.amod.io/assets/summary.png" />
+		<meta name="twitter:image:alt" content="GitLens logo" />
+		<meta name="twitter:url" content="https://gitlens.amod.io/" />
+
+		<link rel="shortcut icon" href="/favicon.ico?v=3" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" />
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110925859-2"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+			gtag('config', 'UA-110925859-2');
+		</script>
+	</head>
+
+	<body class="preload">
+		<header class="header">
+			<div class="header__headine" data-action="back">
+				<img class="header__headline-image" src="assets/gitlens-logo.png" />
+			</div>
+			<div class="button-group button-group--header">
+				<a id="whats-new-button" class="button button--flat" data-action="whats-new"
+					>What's New <span class="button__icon"> &#128227;</span>
+				</a>
+				<a id="features-button" class="button button--flat" data-action="features">Features</a>
+				<a id="sponsor-button" class="button button--flat" data-action="sponsor">&#x2764;</a>
+				<a id="about-button" class="button button--flat" data-action="about">About</a>
+				<a id="blog-button" class="button button--flat" href="https://blog.amod.io">Blog</a>
+			</div>
+		</header>
+
+		<section class="main">
+			<div class="hero">
+				<div class="section-header">
+					<div class="section-header__image">
+						<img class="gitlens__image" src="assets/gitlens-logo.png" />
+					</div>
+				</div>
+				<div class="section-body">
+					<p class="center">
+						GitLens is an
+						<a title="GitLens on GitHub" href="https://github.com/eamodio/vscode-gitlens" target="_blank"
+							>open-source</a
+						>
+						extension for
+						<a
+							title="Learn more about Visual Studio Code"
+							href="https://code.visualstudio.com"
+							target="_blank"
+							>Visual Studio Code</a
+						>, created by
+						<a title="Learn more about Eric" href="https://www.amod.io" target="_blank">Eric Amodio</a>.
+					</p>
+					<p>
+						GitLens <b>supercharges</b> the Git capabilities built into Visual Studio Code. It helps you to
+						<b>visualize code authorship</b> at a glance via Git blame annotations and code lens,
+						<b>seamlessly navigate and explore</b> Git repositories, <b>gain valuable insights</b> via
+						powerful comparison commands, and so much more.
+					</p>
+					<p>
+						GitLens simply helps you <b>better understand code</b>. Quickly glimpse into whom, why, and when
+						a line or code block was changed. Jump back through history to <b>gain further insights</b> as
+						to how and why the code evolved. Effortlessly explore the history and evolution of a codebase.
+					</p>
+
+					<div class="section__cta">
+						<div class="cta__primary">
+							<a class="button button--flat-primary" href="vscode:extension/eamodio.gitlens">
+								Install GitLens <span class="button__content--version">v10.2.1</span>
+							</a>
+							<p class="button__info">
+								or download from the
+								<a
+									title="GitLens on the Visual Studio Marketplace"
+									href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens"
+									target="_blank"
+									>Visual Studio Marketplace</a
+								>
+							</p>
+						</div>
+						<div class="cta__secondary">
+							<!--
+								<a class="button button--flat-inverse" href="https://github.com/eamodio/vscode-gitlens/releases/tag/v9.0.0-beta">
+									<img class="button__icon button__icon--svg" src="data:image/svg+xml;utf8,<svg viewBox='0 0 16 22' xmlns='http://www.w3.org/2000/svg'><path fill='#fff' d='M2.626 7.054l5.384 5.471 5.383-5.471H9.905V1H6.113v6.054zM13.671 17.367c-.014-.032-1.209-2.371-1.209-2.371-.262-.521-.952-.987-1.536-.987h-5.83c-.583 0-1.273.52-1.535 1.041 0 0-1.196 2.263-1.209 2.295-.183.476.078.66.624.66h10.07c.547 0 .807-.16.625-.638z'/><path fill='#fff' d='M14.033 17.781c.201.525-.062.822-.664.822H2.63c-.602 0-.866-.297-.664-.822-.29.214-.458.673-.458 1.059v1.17c0 .644.48.99 1.122.99h10.739c.643 0 1.122-.346 1.122-.99v-1.17c0-.386-.168-.845-.458-1.059z'/></svg>" />
+									GitLens <span class="button__content--version">v9.0-beta</span>
+								</a>
+							-->
+							<a class="button button--flat" data-action="sponsor"
+								>Sponsor GitLens <span class="button__icon"> &#x2764;</span>
+							</a>
+							<p class="button__info">
+								While GitLens is generously offered to everyone free of charge, if you find it useful,
+								please consider
+								<a data-action="sponsor" href="#sponsor">supporting</a> it.
+							</p>
+						</div>
+					</div>
+
+					<div class="sponsors on-section-change-fade">
+						<h2>Sponsored by</h2>
+						<a
+							class="sponsor__image-link"
+							title="Try CodeStream"
+							href="https://codestream.com/?utm_source=gitlens_web&utm_medium=banner&utm_campaign=gitlens"
+						>
+							<img
+								class="sponsor__image sponsor__image--hero"
+								src="https://alt-images.codestream.com/codestream_logo_gitlens_web_light.png"
+								alt="CodeStream Logo"
+							/>
+						</a>
+					</div>
+
+					<p class="gitlens__badges on-section-change-fade">
+						<a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens" target="_blank">
+							<img
+								src="https://vsmarketplacebadge.apphb.com/version-short/eamodio.gitlens.svg?colorA=482659&amp;colorB=914db3"
+								alt="marketplace"
+							/>
+						</a>
+						<a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens" target="_blank">
+							<img
+								src="https://vsmarketplacebadge.apphb.com/downloads-short/eamodio.gitlens.svg?colorA=482659&amp;colorB=914db3"
+								alt="downloads"
+							/>
+						</a>
+						<a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens" target="_blank">
+							<img
+								src="https://vsmarketplacebadge.apphb.com/rating-short/eamodio.gitlens.svg?colorA=482659&amp;colorB=914db3"
+								alt="rating"
+							/>
+						</a>
+						<a href="https://vscode-slack.amod.io" target="_blank">
+							<img
+								src="https://img.shields.io/badge/vscode--dev--community-gitlens-blue.svg?logo=slack&amp;colorA=482659&amp;colorB=914db3"
+								alt="slack"
+							/>
+						</a>
+					</p>
+				</div>
+			</div>
+
+			<div class="sections" data-target="sections">
+				<div class="sections__scroller">
+					<div class="section__back-button" data-action="back">
+						<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+							<circle r="30" cy="30" cx="30" stroke-width="0" fill="rgba(255,255,255,0.7)"></circle>
+							<path
+								d="m14.975,28.26c-1,0.97 -1,2.54 0,3.5l11.8,11.62c1.9,1.88 4.72,-0.94 2.83,-2.82l-7.88,-7.86c-0.4,-0.4 -0.26,-0.7 0.3,-0.7l21.75,0c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2l-21.76,0c-0.55,0 -0.68,-0.3 -0.3,-0.7l7.9,-7.86c1.88,-1.88 -0.95,-4.7 -2.84,-2.82l-11.8,11.66l0,-0.02z"
+								fill="#000"
+							/>
+						</svg>
+					</div>
+
+					<!-- prettier-ignore -->
+					<%= require('./partials/whats-new.ejs')() %>
+					<!-- prettier-ignore -->
+					<%= require('./partials/features.ejs')() %>
+					<!-- prettier-ignore -->
+					<%= require('./partials/sponsor.ejs')() %>
+					<!-- prettier-ignore -->
+					<%= require('./partials/about.ejs')() %>
+				</div>
+			</div>
+		</section>
+
+		<!-- prettier-ignore -->
+		<%= require('./partials/footer.ejs')() %>
+	</body>
+</html>

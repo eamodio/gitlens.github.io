@@ -13,13 +13,13 @@
 			"type": "npm",
 			"script": "build",
 			"group": "build",
-			"problemMatcher": ["$node-sass", "$ts-webpack"]
+			"problemMatcher": ["$node-sass", "$ts-checker-webpack", "$ts-checker-eslint-webpack"]
 		},
 		{
 			"type": "npm",
 			"script": "bundle",
 			"group": "build",
-			"problemMatcher": ["$node-sass", "$ts-webpack"]
+			"problemMatcher": ["$node-sass", "$ts-checker-webpack", "$ts-checker-eslint-webpack"]
 		},
 		{
 			"type": "npm",
@@ -35,7 +35,7 @@
 				"isDefault": true
 			},
 			"isBackground": true,
-			"problemMatcher": ["$ts-webpack-watch"]
+			"problemMatcher": ["$ts-checker-webpack-watch", "$ts-checker-eslint-webpack-watch"]
 		}
 	]
 }

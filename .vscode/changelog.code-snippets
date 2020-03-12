@@ -21,8 +21,8 @@
 		"prefix": "cl",
 		"body": [
 			"<li>",
-			"\t<span class=\"changelog__badge changelog__badge--version\">$1</span>",
-			"\t<span class=\"changelog__date\">${CURRENT_MONTH_NAME_SHORT/(.*)/${1:/upcase}/} &nbsp;$CURRENT_YEAR</span>",
+			"\t<div class=\"changelog__badge changelog__badge--version\">$1</div>",
+			"\t<div class=\"changelog__date\">${CURRENT_MONTH_NAME_SHORT/(.*)/${1:/upcase}/} &nbsp;$CURRENT_YEAR</div>",
 			"\t<div class=\"changelog__details\"></div>",
 			"</li>",
 			"$0"
@@ -34,7 +34,8 @@
 		"prefix": "cl-added",
 		"body": [
 			"<li>",
-			"\t<span class=\"changelog__badge changelog__badge--added\">NEW</span>${1:$CLIPBOARD}",
+			"\t<div class=\"changelog__badge changelog__badge--added\">NEW</div>",
+			"\t<div class=\"changelog__content\">${1:$CLIPBOARD}</div>",
 			"\t<div class=\"changelog__details changelog__details--list\">$2</div>",
 			"</li>",
 			"$0"
@@ -46,7 +47,8 @@
 		"prefix": "cl-changed",
 		"body": [
 			"<li>",
-			"\t<span class=\"changelog__badge changelog__badge--changed\">IMPROVED</span>${1:$CLIPBOARD}",
+			"\t<div class=\"changelog__badge changelog__badge--changed\">IMPROVED</div>",
+			"\t<div class=\"changelog__content\">${1:$CLIPBOARD}</div>",
 			"\t<div class=\"changelog__details changelog__details--list\"></div>",
 			"</li>",
 			"$0"
@@ -58,7 +60,8 @@
 		"prefix": "cl-fixed",
 		"body": [
 			"<li>",
-			"\t<span class=\"changelog__badge changelog__badge--fixed\">FIXED</span>${1:$CLIPBOARD}",
+			"\t<div class=\"changelog__badge changelog__badge--fixed\">FIXED</div>",
+			"\t<div class=\"changelog__content\">${1:$CLIPBOARD}</div>",
 			"\t<div class=\"changelog__details changelog__details--list\"></div>",
 			"</li>",
 			"$0"
@@ -70,13 +73,14 @@
 		"prefix": "cl-ifixed",
 		"body": [
 			"<li>",
-			"\t<span class=\"changelog__badge changelog__badge--fixed\">FIXED</span>Fixes",
+			"\t<div class=\"changelog__badge changelog__badge--fixed\">FIXED</div>",
+			"\t<div class=\"changelog__content\">Fixes",
 			"\t<a",
 			"\t\ttitle=\"Open Issue #${1:number}\"",
 			"\t\thref=\"https://github.com/eamodio/vscode-gitlens/issues/${1:number}\"",
 			"\t\t>#${1:number}</a",
 			"\t>",
-			"\t&mdash; ${2:$CLIPBOARD}",
+			"\t&mdash; ${2:$CLIPBOARD}</div>",
 			"\t<div class=\"changelog__details changelog__details--list\"></div>",
 			"</li>",
 			"$0"

@@ -1,6 +1,7 @@
 'use strict';
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
 const glob = require('glob');
 const HtmlInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
@@ -14,6 +15,11 @@ module.exports = function(env, argv) {
 	env.production = Boolean(env.production);
 
 	const plugins = [
+		new ForkTsCheckerPlugin({
+			async: false,
+			eslint: true,
+			useTypescriptIncrementalApi: true
+		}),
 		new WriteFilePlugin(),
 		new MiniCssExtractPlugin({
 			filename: 'main.css'
@@ -23,7 +29,7 @@ module.exports = function(env, argv) {
 			whitelistPatterns: [/is-section--.*/]
 		}),
 		new HtmlPlugin({
-			template: 'src/index.html',
+			template: 'src/index.ejs',
 			filename: path.resolve(__dirname, 'index.html'),
 			inject: true,
 			inlineSource: env.production ? '.(js|css)$' : undefined,
@@ -47,7 +53,7 @@ module.exports = function(env, argv) {
 	return {
 		entry: ['./src/index.ts', './src/scss/main.scss'],
 		mode: env.production ? 'production' : 'development',
-		devtool: 'source-map',
+		devtool: env.production ? undefined : 'source-map', //'eval-source-map',
 		output: {
 			filename: '[name].js',
 			path: path.resolve(__dirname, 'dist'),
@@ -85,23 +91,15 @@ module.exports = function(env, argv) {
 		module: {
 			rules: [
 				{
-					enforce: 'pre',
 					exclude: /node_modules|\.d\.ts$/,
 					test: /\.tsx?$/,
-					use: [
-						{
-							loader: 'eslint-loader',
-							options: {
-								cache: true,
-								failOnError: true
-							}
+					use: {
+						loader: 'ts-loader',
+						options: {
+							experimentalWatchApi: true,
+							transpileOnly: true
 						}
-					]
-				},
-				{
-					exclude: /node_modules|\.d\.ts$/,
-					test: /\.tsx?$/,
-					use: 'ts-loader'
+					}
 				},
 				{
 					exclude: /node_modules/,
@@ -113,7 +111,7 @@ module.exports = function(env, argv) {
 						{
 							loader: 'css-loader',
 							options: {
-								sourceMap: true,
+								sourceMap: !env.production,
 								url: false
 							}
 						},
@@ -122,16 +120,20 @@ module.exports = function(env, argv) {
 							options: {
 								ident: 'postcss',
 								plugins: [require('autoprefixer')()],
-								sourceMap: true
+								sourceMap: !env.production
 							}
 						},
 						{
 							loader: 'sass-loader',
 							options: {
-								sourceMap: true
+								sourceMap: !env.production
 							}
 						}
 					]
+				},
+				{
+					test: /\.ejs$/,
+					loader: 'ejs-loader'
 				}
 			]
 		},
