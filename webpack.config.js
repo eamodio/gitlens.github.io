@@ -1,4 +1,8 @@
 'use strict';
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const glob = require('glob');
@@ -27,7 +31,7 @@ class InlineChunkHtmlPlugin {
 		if (publicPath) {
 			chunkName = chunkName.replace(publicPath, '');
 		}
-		if (!this.patterns.some(pattern => chunkName.match(pattern))) {
+		if (!this.patterns.some((pattern) => chunkName.match(pattern))) {
 			return tag;
 		}
 
@@ -45,10 +49,10 @@ class InlineChunkHtmlPlugin {
 			publicPath += '/';
 		}
 
-		compiler.hooks.compilation.tap('InlineChunkHtmlPlugin', compilation => {
-			const getInlinedTagFn = tag => this.getInlinedTag(publicPath, compilation.assets, tag);
+		compiler.hooks.compilation.tap('InlineChunkHtmlPlugin', (compilation) => {
+			const getInlinedTagFn = (tag) => this.getInlinedTag(publicPath, compilation.assets, tag);
 
-			this.htmlPlugin.getHooks(compilation).alterAssetTagGroups.tap('InlineChunkHtmlPlugin', assets => {
+			this.htmlPlugin.getHooks(compilation).alterAssetTagGroups.tap('InlineChunkHtmlPlugin', (assets) => {
 				assets.headTags = assets.headTags.map(getInlinedTagFn);
 				assets.bodyTags = assets.bodyTags.map(getInlinedTagFn);
 			});
@@ -56,7 +60,7 @@ class InlineChunkHtmlPlugin {
 	}
 }
 
-module.exports = function(esnv, argv) {
+module.exports = function (esnv, argv) {
 	const mode = argv.mode || 'none';
 
 	const plugins = [
@@ -67,11 +71,11 @@ module.exports = function(esnv, argv) {
 		}),
 		new WriteFilePlugin(),
 		new MiniCssExtractPlugin({
-			filename: 'main.css'
+			filename: 'main.css',
 		}),
 		new PurgecssPlugin({
 			paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true }),
-			whitelistPatterns: [/is-section--.*/, /iframe/]
+			whitelistPatterns: [/is-section--.*/, /iframe/],
 		}),
 		new HtmlPlugin({
 			template: 'src/index.html',
@@ -90,21 +94,21 @@ module.exports = function(esnv, argv) {
 							removeStyleLinkTypeAttributes: true,
 							keepClosingSlash: true,
 							minifyCSS: true,
-							minifyJS: true
+							minifyJS: true,
 					  }
-					: false
+					: false,
 		}),
 		new InlineChunkHtmlPlugin(HtmlPlugin, mode === 'production' ? ['\\.(js|css)$'] : []),
 	];
 
 	return {
 		entry: ['./src/index.ts', './src/scss/main.scss'],
-		mode: mode === 'production' ? 'production' : 'development',
+		mode: mode,
 		devtool: mode === 'production' ? undefined : 'source-map', //'eval-source-map',
 		output: {
 			filename: '[name].js',
 			path: path.resolve(__dirname, 'dist'),
-			publicPath: '/dist/'
+			publicPath: '/dist/',
 		},
 		optimization: {
 			minimizer: [
@@ -119,10 +123,10 @@ module.exports = function(esnv, argv) {
 						output: {
 							beautify: mode !== 'production',
 							comments: false,
-							ecma: 6
-						}
-					}
-				})
+							ecma: 6,
+						},
+					},
+				}),
 			],
 			splitChunks: {
 				cacheGroups: {
@@ -130,10 +134,10 @@ module.exports = function(esnv, argv) {
 						name: 'styles',
 						test: /\.css$/,
 						chunks: 'all',
-						enforce: true
-					}
-				}
-			}
+						enforce: true,
+					},
+				},
+			},
 		},
 		module: {
 			rules: [
@@ -144,50 +148,46 @@ module.exports = function(esnv, argv) {
 						loader: 'ts-loader',
 						options: {
 							experimentalWatchApi: true,
-							transpileOnly: true
-						}
-					}
+							transpileOnly: true,
+						},
+					},
 				},
 				{
 					exclude: /node_modules/,
 					test: /\.scss$/,
 					use: [
 						{
-							loader: MiniCssExtractPlugin.loader
+							loader: MiniCssExtractPlugin.loader,
 						},
 						{
 							loader: 'css-loader',
 							options: {
 								sourceMap: mode !== 'production',
-								url: false
-							}
+								url: false,
+							},
 						},
 						{
 							loader: 'postcss-loader',
 							options: {
 								postcssOptions: {
-									plugins: [['autoprefixer', { }]],
+									plugins: [['autoprefixer', {}]],
 								},
-								sourceMap: mode !== 'production'
-							}
+								sourceMap: mode !== 'production',
+							},
 						},
 						{
 							loader: 'sass-loader',
 							options: {
-								sourceMap: mode !== 'production'
-							}
-						}
-					]
-				}
-				// {
-				// 	test: /\.ejs$/,
-				// 	loader: 'ejs-loader'
-				// }
-			]
+								sourceMap: mode !== 'production',
+							},
+						},
+					],
+				},
+			],
 		},
 		resolve: {
 			extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
-			modules: [path.resolve(__dirname, 'src'), 'node_modules']
+			modules: [path.resolve(__dirname, 'src'), 'node_modules'],
 		},
 		plugins: plugins,
 		stats: {
@@ -197,7 +197,7 @@ module.exports = function(esnv, argv) {
 			env: true,
 			errors: true,
 			timings: true,
-			warnings: true
-		}
+			warnings: true,
+		},
 	};
 };
