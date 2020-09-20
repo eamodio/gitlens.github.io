@@ -290,7 +290,10 @@ a {
 
 .button-group--cta-left {
 	float: right;
-	margin: 0.5em -1em -1em -1em;
+	.sponsor--github {
+		margin: 1em 0 0 0;
+	}
+	// margin: 0.5em -1em -1em -1em;
 }
 
 p.button__badge {
@@ -803,6 +806,10 @@ p.gitlens__tweet-caption {
 
 .twitter-tweet {
 	visibility: inherit !important;
+
+	& iframe {
+		visibility: inherit !important;
+	}
 }
 
 blockquote {
@@ -916,6 +923,14 @@ footer {
 
 	h2 {
 		font-weight: 200;
+	}
+
+	h2.footer {
+		font-size: 0.8em;
+	}
+
+	h4.footer {
+		font-size: 0.6em;
 	}
 }
 
@@ -1084,10 +1099,13 @@ img.center {
 	.button-group--cta-left {
 		font-size: 0.5em;
 
-		.button {
-			margin: 1em 1em 0 0;
-			padding: 1em;
-		}
+		// .sponsor--github {
+		// 	margin: 1em 0 0 0;
+		// }
+		// .button {
+		// 	margin: 1em 1em 0 0;
+		// 	padding: 1em;
+		// }
 	}
 
 	.button__icon {

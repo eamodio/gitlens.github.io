@@ -115,7 +115,7 @@
 							<p class="button__info">
 								While GitLens is generously offered to everyone free of charge, if you find it useful,
 								please consider
-								<a data-action="sponsor" href="#sponsor">supporting</a> it.
+								<a data-action="sponsor" href="#sponsor">sponsoring</a> it.
 							</p>
 						</div>
 					</div>
@@ -133,6 +133,7 @@
 								alt="CodeStream &mdash; The World's Best Code Discussion Tool"
 							/>
 						</a>
+						<h2 class="footer">And by other users like you!</h2>
 					</div>
 
 					<p class="gitlens__badges on-section-change-fade">
@@ -177,18 +178,18 @@
 					</div>
 
 					<!-- prettier-ignore -->
-					<%= require('./partials/whats-new.ejs')() %>
+					<%= require('html-loader!./partials/whats-new.html') %>
 					<!-- prettier-ignore -->
-					<%= require('./partials/features.ejs')() %>
+					<%= require('html-loader!./partials/features.html') %>
 					<!-- prettier-ignore -->
-					<%= require('./partials/sponsor.ejs')() %>
+					<%= require('html-loader!./partials/sponsor.html') %>
 					<!-- prettier-ignore -->
-					<%= require('./partials/about.ejs')() %>
+					<%= require('html-loader!./partials/about.html') %>
 				</div>
 			</div>
 		</section>
 
 		<!-- prettier-ignore -->
-		<%= require('./partials/footer.ejs')() %>
+		<%= require('html-loader!./partials/footer.html') %>
 	</body>
 </html>

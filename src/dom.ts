@@ -71,7 +71,7 @@ export namespace Storage {
 		const value = localStorage.getItem(key);
 		if (value == null) return undefined;
 
-		return JSON.parse(value);
+		return JSON.parse(value) as T;
 	}
 
 	export function remove(key: string): void {

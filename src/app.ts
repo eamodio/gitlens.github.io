@@ -26,7 +26,7 @@ export class App {
 		this.switchView(hash, paths, true);
 	}
 
-	switchView(hash: string, paths: string[], loading = false) {
+	switchView(hash: string, paths: string[], loading = false): void {
 		window.clearTimeout(this._sectionCompleteHandle);
 		this._sectionCompleteHandle = 0;
 

@@ -22,12 +22,12 @@ export class View {
 		return `#${this.name}`;
 	}
 
-	activate(paths?: string[], loading: boolean = false) {
+	activate(paths?: string[], loading: boolean = false): void {
 		// console.log(`View(${this.name}).activate`);
 		document.body.classList.add(...this.classes);
 	}
 
-	deactivate() {
+	deactivate(): void {
 		// console.log(`View(${this.name}).deactivate`);
 		document.body.classList.remove(...this.classes);
 	}
@@ -40,7 +40,7 @@ export class View {
 		return document.location.hash?.toLowerCase() === this.getHash(path);
 	}
 
-	protected setPath(path?: string) {
+	protected setPath(path?: string): void {
 		document.location.hash = this.getHash(path);
 	}
 

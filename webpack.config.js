@@ -1,24 +1,69 @@
 'use strict';
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
-const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
 const glob = require('glob');
-const HtmlInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
-module.exports = function(env, argv) {
-	env = env || {};
-	env.production = Boolean(env.production);
+class InlineChunkHtmlPlugin {
+	constructor(htmlPlugin, patterns) {
+		this.htmlPlugin = htmlPlugin;
+		this.patterns = patterns;
+	}
+
+	getInlinedTag(publicPath, assets, tag) {
+		if (
+			(tag.tagName !== 'script' || !(tag.attributes && tag.attributes.src)) &&
+			(tag.tagName !== 'link' || !(tag.attributes && tag.attributes.href))
+		) {
+			return tag;
+		}
+
+		let chunkName = tag.tagName === 'link' ? tag.attributes.href : tag.attributes.src;
+		if (publicPath) {
+			chunkName = chunkName.replace(publicPath, '');
+		}
+		if (!this.patterns.some(pattern => chunkName.match(pattern))) {
+			return tag;
+		}
+
+		const asset = assets[chunkName];
+		if (asset == null) {
+			return tag;
+		}
+
+		return { tagName: tag.tagName === 'link' ? 'style' : tag.tagName, innerHTML: asset.source(), closeTag: true };
+	}
+
+	apply(compiler) {
+		let publicPath = compiler.options.output.publicPath || '';
+		if (publicPath && !publicPath.endsWith('/')) {
+			publicPath += '/';
+		}
+
+		compiler.hooks.compilation.tap('InlineChunkHtmlPlugin', compilation => {
+			const getInlinedTagFn = tag => this.getInlinedTag(publicPath, compilation.assets, tag);
+
+			this.htmlPlugin.getHooks(compilation).alterAssetTagGroups.tap('InlineChunkHtmlPlugin', assets => {
+				assets.headTags = assets.headTags.map(getInlinedTagFn);
+				assets.bodyTags = assets.bodyTags.map(getInlinedTagFn);
+			});
+		});
+	}
+}
+
+module.exports = function(esnv, argv) {
+	const mode = argv.mode || 'none';
 
 	const plugins = [
 		new ForkTsCheckerPlugin({
 			async: false,
-			eslint: true,
-			useTypescriptIncrementalApi: true
+			eslint: { enabled: true, files: 'src/**/*.ts', options: { cache: true } },
+			formatter: 'basic',
 		}),
 		new WriteFilePlugin(),
 		new MiniCssExtractPlugin({
@@ -26,34 +71,36 @@ module.exports = function(env, argv) {
 		}),
 		new PurgecssPlugin({
 			paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true }),
-			whitelistPatterns: [/is-section--.*/]
+			whitelistPatterns: [/is-section--.*/, /iframe/]
 		}),
 		new HtmlPlugin({
-			template: 'src/index.ejs',
+			template: 'src/index.html',
+			excludeAssets: [/.+-styles\.js/],
 			filename: path.resolve(__dirname, 'index.html'),
 			inject: true,
-			inlineSource: env.production ? '.(js|css)$' : undefined,
-			minify: env.production
-				? {
-						removeComments: true,
-						collapseWhitespace: true,
-						removeRedundantAttributes: false,
-						useShortDoctype: true,
-						removeEmptyAttributes: true,
-						removeStyleLinkTypeAttributes: true,
-						keepClosingSlash: true,
-						minifyCSS: true,
-						minifyJS: true
-				  }
-				: false
+			inlineSource: mode === 'production' ? '.(js|css)$' : undefined,
+			minify:
+				mode === 'production'
+					? {
+							removeComments: true,
+							collapseWhitespace: true,
+							removeRedundantAttributes: false,
+							useShortDoctype: true,
+							removeEmptyAttributes: true,
+							removeStyleLinkTypeAttributes: true,
+							keepClosingSlash: true,
+							minifyCSS: true,
+							minifyJS: true
+					  }
+					: false
 		}),
-		new HtmlInlineSourcePlugin()
+		new InlineChunkHtmlPlugin(HtmlPlugin, mode === 'production' ? ['\\.(js|css)$'] : []),
 	];
 
 	return {
 		entry: ['./src/index.ts', './src/scss/main.scss'],
-		mode: env.production ? 'production' : 'development',
-		devtool: env.production ? undefined : 'source-map', //'eval-source-map',
+		mode: mode === 'production' ? 'production' : 'development',
+		devtool: mode === 'production' ? undefined : 'source-map', //'eval-source-map',
 		output: {
 			filename: '[name].js',
 			path: path.resolve(__dirname, 'dist'),
@@ -67,10 +114,10 @@ module.exports = function(env, argv) {
 					sourceMap: true,
 					terserOptions: {
 						ecma: 6,
-						compress: env.production,
-						mangle: env.production,
+						compress: mode === 'production',
+						mangle: mode === 'production',
 						output: {
-							beautify: !env.production,
+							beautify: mode !== 'production',
 							comments: false,
 							ecma: 6
 						}
@@ -111,30 +158,31 @@ module.exports = function(env, argv) {
 						{
 							loader: 'css-loader',
 							options: {
-								sourceMap: !env.production,
+								sourceMap: mode !== 'production',
 								url: false
 							}
 						},
 						{
 							loader: 'postcss-loader',
 							options: {
-								ident: 'postcss',
-								plugins: [require('autoprefixer')()],
-								sourceMap: !env.production
+								postcssOptions: {
+									plugins: [['autoprefixer', { }]],
+								},
+								sourceMap: mode !== 'production'
 							}
 						},
 						{
 							loader: 'sass-loader',
 							options: {
-								sourceMap: !env.production
+								sourceMap: mode !== 'production'
 							}
 						}
 					]
-				},
-				{
-					test: /\.ejs$/,
-					loader: 'ejs-loader'
 				}
+				// {
+				// 	test: /\.ejs$/,
+				// 	loader: 'ejs-loader'
+				// }
 			]
 		},
 		resolve: {
