@@ -20,6 +20,9 @@ export class App {
 		}
 
 		DOM.on('[data-action="back"]', 'click', this.onBackButtonClicked.bind(this));
+		DOM.on('.changelog__image', 'click', function (this: HTMLImageElement) {
+			this.classList.toggle('expand', !this.classList.contains('expand'));
+		});
 		window.addEventListener('hashchange', this.onHashChanged.bind(this), false);
 
 		const [hash, paths] = this.getHashAndPaths();
@@ -37,7 +40,7 @@ export class App {
 				this.activeView = '';
 
 				if (previous !== this.activeView) {
-					const prev = this.views.find(v => v.name === previous);
+					const prev = this.views.find((v) => v.name === previous);
 					if (prev != null) {
 						prev.deactivate();
 					}
@@ -51,7 +54,7 @@ export class App {
 				break;
 			}
 			default: {
-				const view = this.views.find(v => v.name === hash);
+				const view = this.views.find((v) => v.name === hash);
 				if (view == null) {
 					this.switchView('', [], false);
 					return;
@@ -60,7 +63,7 @@ export class App {
 				this.activeView = hash;
 
 				if (previous !== this.activeView) {
-					const prev = this.views.find(v => v.name === previous);
+					const prev = this.views.find((v) => v.name === previous);
 					if (prev != null) {
 						prev.deactivate();
 					}

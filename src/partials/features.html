@@ -1,5 +1,17 @@
 <section id="section-features" class="section" data-view="features">
-	<h3>GitLens Features</h3>
+	<div class="sponsor__header">
+		<h3>GitLens Features</h3>
+		<div class="button-group button-group--cta-left">
+			<iframe
+				class="sponsor--github"
+				src="https://github.com/sponsors/eamodio/button"
+				title="Sponsor Eric Amodio"
+				height="35"
+				width="116"
+				style="border: 0"
+			></iframe>
+		</div>
+	</div>
 	<p>
 		GitLens simply helps you <b>better understand code</b>. Quickly glimpse into whom, why, and when a line or code
 		block was changed. Jump back through history to <b>gain further insights</b> as to how and why the code evolved.
@@ -11,245 +23,127 @@
 		quick and easy to turn them off or change how they behave via the built-in
 		<a
 			title="Open the GitLens docs"
-			href="https://github.com/eamodio/vscode-gitlens/tree/master/#configuration"
+			href="https://github.com/eamodio/vscode-gitlens/#configuration-"
 			target="_blank"
 			>settings editor </a
 		>, an interactive editor covering many of GitLens' powerful settings. While for more advanced customizations,
 		refer to the
 		<a
 			title="Open the GitLens docs"
-			href="https://github.com/eamodio/vscode-gitlens/tree/master/#gitlens-settings-"
+			href="https://github.com/eamodio/vscode-gitlens/#gitlens-settings-"
 			target="_blank"
 			>GitLens settings docs</a
 		>
 		and edit your user settings.
 	</p>
-	<p>Here are just some of the <b>features</b> that GitLens provides,</p>
+	<p>Here are some of the <b>features</b> that GitLens provides,</p>
 	<ul class="section-list">
 		<li>
+			effortless
+			<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#revision-navigation-"
+				><b>revision navigation</b></a
+			>
+			(backwards and forwards) through the history of a file
+			<div class="feature_preview feature_preview--clip">
+				<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#revision-navigation-">
+					<img
+						src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/revision-navigation.gif"
+						alt="Revision Navigation"
+					/>
+				</a>
+			</div>
+		</li>
+		<li>
 			an unobtrusive
-			<a
-				title="Open the GitLens docs"
-				href="https://github.com/eamodio/vscode-gitlens/tree/master/#current-line-blame-"
+			<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#current-line-blame-"
+				><b>current line blame</b></a
 			>
-				current line blame
-			</a>
-			annotation at the end of the line with detailed blame information accessible via
-			<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/tree/master/#hovers-"
-				>hovers</a
-			>
+			annotation at the end of the line showing the commit and author who last modified the line, with more
+			detailed blame information accessible on
+			<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#hovers-"><b>hover</b></a>
 			<div class="feature_preview">
-				<a
-					title="Open the GitLens docs"
-					href="https://github.com/eamodio/vscode-gitlens/tree/master/#current-line-blame-"
-				>
+				<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#hovers-">
 					<img
-						src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/docs/current-line-blame.png"
-					/>
-				</a>
-				<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/tree/master/#hovers-">
-					<img
-						src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/docs/hovers-current-line.png"
+						src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/hovers-current-line.png"
 					/>
 				</a>
 			</div>
 		</li>
 		<li>
-			on-demand
-			<a
-				title="Open the GitLens docs"
-				href="https://github.com/eamodio/vscode-gitlens/tree/master/#gutter-blame-"
+			<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#code-lens-"
+				><b>authorship code lens</b></a
 			>
-				gutter blame
-			</a>
-			annotations, including a heatmap, for the whole file
+			showing the most recent commit and number of authors at the top of files and/or on code blocks
 			<div class="feature_preview">
-				<a
-					title="Open the GitLens docs"
-					href="https://github.com/eamodio/vscode-gitlens/tree/master/#gutter-blame-"
-				>
+				<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#code-lens-">
 					<img
-						src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/docs/gutter-blame.png"
-					/>
-				</a>
-			</div>
-		</li>
-		<li>
-			<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/tree/master/#code-lens-">
-				authorship code lens
-			</a>
-			showing the most recent commit and # of authors to the top of files and/or on code blocks
-			<div class="feature_preview">
-				<a
-					title="Open the GitLens docs"
-					href="https://github.com/eamodio/vscode-gitlens/tree/master/#code-lens-"
-				>
-					<img
-						src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/docs/code-lens.png"
-					/>
-				</a>
-			</div>
-		</li>
-		<li>
-			on-demand
-			<a
-				title="Open the GitLens docs"
-				href="https://github.com/eamodio/vscode-gitlens/tree/master/#gutter-heatmap-"
-			>
-				gutter heatmap
-			</a>
-			annotations to show how recently lines were changed, relative to all the other changes in the file and to
-			now (hot vs. cold)
-			<div class="feature_preview">
-				<a
-					title="Open the GitLens docs"
-					href="https://github.com/eamodio/vscode-gitlens/tree/master/#gutter-heatmap-"
-				>
-					<img
-						src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/docs/heatmap.png"
-					/>
-				</a>
-			</div>
-		</li>
-		<li>
-			on-demand
-			<a
-				title="Open the GitLens docs"
-				href="https://github.com/eamodio/vscode-gitlens/tree/master/#recent-changes-"
-			>
-				recent changes
-			</a>
-			annotations to highlight lines changed by the most recent commit
-			<div class="feature_preview">
-				<a
-					title="Open the GitLens docs"
-					href="https://github.com/eamodio/vscode-gitlens/tree/master/#recent-changes-"
-				>
-					<img
-						src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/docs/recent-changes.png"
+						src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/code-lens.png"
 					/>
 				</a>
 			</div>
 		</li>
 		<li>
 			a
-			<a
-				title="Open the GitLens docs"
-				href="https://github.com/eamodio/vscode-gitlens/tree/master/#status-bar-blame-"
+			<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#status-bar-blame-"
+				><b>status bar blame</b></a
 			>
-				status bar blame
-			</a>
-			annotation showing author and date for the current line
+			annotation showing the commit and author who last modified the current line
 			<div class="feature_preview">
-				<a
-					title="Open the GitLens docs"
-					href="https://github.com/eamodio/vscode-gitlens/tree/master/#status-bar-blame-"
-				>
+				<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#status-bar-blame-">
 					<img
-						src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/docs/status-bar.png"
+						src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/status-bar.png"
 					/>
 				</a>
 			</div>
 		</li>
 		<li>
-			many rich Side Bar views
+			on-demand <b>file annotations</b> in the editor gutter, including
 			<ul class="section-list section-list--nested">
 				<li>
-					a
-					<a
-						title="Open the GitLens docs"
-						href="https://github.com/eamodio/vscode-gitlens/tree/master/#repositories-view-"
+					<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#gutter-blame-"
+						><b>blame</b></a
 					>
-						<i>Repositories</i> view
-					</a>
-					to visualize, navigate, and explore Git repositories
+					&mdash; shows the commit and author who last modified each line of a file
 					<div class="feature_preview">
 						<a
 							title="Open the GitLens docs"
-							href="https://github.com/eamodio/vscode-gitlens/tree/master/#repositories-view-"
+							href="https://github.com/eamodio/vscode-gitlens/#gutter-blame-"
 						>
 							<img
-								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/docs/view-repositories.png"
+								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/gutter-blame.png"
 							/>
 						</a>
 					</div>
 				</li>
 				<li>
-					a
-					<a
-						title="Open the GitLens docs"
-						href="https://github.com/eamodio/vscode-gitlens/tree/master/#file-history-view-"
+					<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#recent-changes-"
+						><b>changes</b></a
 					>
-						<i>File History</i> view
-					</a>
-					to visualize, navigate, and explore the revision history of the current file
+					&mdash; highlights any local (unpublished) changes or lines changed by the most recent commit
 					<div class="feature_preview">
 						<a
 							title="Open the GitLens docs"
-							href="https://github.com/eamodio/vscode-gitlens/tree/master/#file-history-view-"
+							href="https://github.com/eamodio/vscode-gitlens/#gutter-changes-"
 						>
 							<img
-								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/docs/view-file-history.png"
+								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/gutter-changes.png"
 							/>
 						</a>
 					</div>
 				</li>
 				<li>
-					a
-					<a
-						title="Open the GitLens docs"
-						href="https://github.com/eamodio/vscode-gitlens/tree/master/#line-history-view-"
+					<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#gutter-heatmap-"
+						><b>heatmap</b></a
 					>
-						<i>Line History</i> view
-					</a>
-					to visualize, navigate, and explore the revision history of the selected lines of current file
+					&mdash; shows how recently lines were changed, relative to all the other changes in the file and to
+					now (hot vs. cold)
 					<div class="feature_preview">
 						<a
 							title="Open the GitLens docs"
-							href="https://github.com/eamodio/vscode-gitlens/tree/master/#line-history-view-"
+							href="https://github.com/eamodio/vscode-gitlens/#gutter-heatmap-"
 						>
 							<img
-								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/docs/view-line-history.png"
-							/>
-						</a>
-					</div>
-				</li>
-				<li>
-					a
-					<a
-						title="Open the GitLens docs"
-						href="https://github.com/eamodio/vscode-gitlens/tree/master/#search-commits-view-"
-					>
-						<i>Search Commits</i> view
-					</a>
-					to search and explore commit histories by message, author, files, id, etc
-					<div class="feature_preview">
-						<a
-							title="Open the GitLens docs"
-							href="https://github.com/eamodio/vscode-gitlens/tree/master/#search-commits-view-"
-						>
-							<img
-								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/docs/view-search.png"
-							/>
-						</a>
-					</div>
-				</li>
-				<li>
-					a
-					<a
-						title="Open the GitLens docs"
-						href="https://github.com/eamodio/vscode-gitlens/tree/master/#compare-view-"
-					>
-						<i>Compare</i> view
-					</a>
-					to visualize comparisons between branches, tags, commits, and more
-					<div class="feature_preview">
-						<a
-							title="Open the GitLens docs"
-							href="https://github.com/eamodio/vscode-gitlens/tree/master/#compare-view-"
-						>
-							<img
-								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/docs/view-compare.png"
+								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/gutter-heatmap.png"
 							/>
 						</a>
 					</div>
@@ -257,27 +151,294 @@
 			</ul>
 		</li>
 		<li>
-			many
+			many rich <b>Side Bar views</b>
+			<ul class="section-list section-list--nested">
+				<li>
+					a
+					<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#commits-view-">
+						<b>Commits view</b>
+					</a>
+					to visualize, explore, and manage Git commits
+					<div class="feature_preview">
+						<a
+							title="Open the GitLens docs"
+							href="https://github.com/eamodio/vscode-gitlens/#commits-view-"
+						>
+							<img
+								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/commits-view.png"
+							/>
+						</a>
+					</div>
+				</li>
+				<li>
+					a
+					<a
+						title="Open the GitLens docs"
+						href="https://github.com/eamodio/vscode-gitlens/#file-history-view-"
+					>
+						<b>File History view</b>
+					</a>
+					to visualize, navigate, and explore the revision history of the current file or just the selected
+					lines of the current file and explore the revision history of the selected lines of current file
+					<div class="feature_preview">
+						<a
+							title="Open the GitLens docs"
+							href="https://github.com/eamodio/vscode-gitlens/#file-history-view-"
+						>
+							<img
+								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/file-history-view.png"
+							/>
+						</a>
+					</div>
+				</li>
+				<li>
+					a
+					<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#branches-view-">
+						<b>Branches view</b>
+					</a>
+					to visualize, explore, and manage Git branches
+					<div class="feature_preview">
+						<a
+							title="Open the GitLens docs"
+							href="https://github.com/eamodio/vscode-gitlens/#branches-view-"
+						>
+							<img
+								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/branches-view.png"
+							/>
+						</a>
+					</div>
+				</li>
+				<li>
+					a
+					<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#remotes-view-">
+						<b>Remotes view</b>
+					</a>
+					to visualize, explore, and manage Git remotes and remote branches
+					<div class="feature_preview">
+						<a
+							title="Open the GitLens docs"
+							href="https://github.com/eamodio/vscode-gitlens/#remotes-view-"
+						>
+							<img
+								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/remotes-view.png"
+							/>
+						</a>
+					</div>
+				</li>
+				<li>
+					a
+					<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#stashes-view-">
+						<b>Stashes view</b>
+					</a>
+					to visualize, explore, and manage Git stashes
+					<div class="feature_preview">
+						<a
+							title="Open the GitLens docs"
+							href="https://github.com/eamodio/vscode-gitlens/#stashes-view-"
+						>
+							<img
+								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/stashes-view.png"
+							/>
+						</a>
+					</div>
+				</li>
+				<li>
+					a
+					<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#tags-view-">
+						<b>Tags view</b>
+					</a>
+					to visualize, explore, and manage Git tags
+					<div class="feature_preview">
+						<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#tags-view-">
+							<img
+								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/tags-view.png"
+							/>
+						</a>
+					</div>
+				</li>
+				<li>
+					a
+					<a
+						title="Open the GitLens docs"
+						href="https://github.com/eamodio/vscode-gitlens/#contributors-view-"
+					>
+						<b>Contributors view</b>
+					</a>
+					to visualize, navigate, and explore contributors
+					<div class="feature_preview">
+						<a
+							title="Open the GitLens docs"
+							href="https://github.com/eamodio/vscode-gitlens/#contributors-view-"
+						>
+							<img
+								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/contributors-view.png"
+							/>
+						</a>
+					</div>
+				</li>
+				<li>
+					a
+					<a
+						title="Open the GitLens docs"
+						href="https://github.com/eamodio/vscode-gitlens/#search--compare-view-"
+					>
+						<b>Search &amp; Compare view</b>
+					</a>
+					to search and explore commit histories by message, author, files, id, etc, or visualize comparisons
+					between branches, tags, commits, and more
+					<div class="feature_preview">
+						<a
+							title="Open the GitLens docs"
+							href="https://github.com/eamodio/vscode-gitlens/#search--compare-view-"
+						>
+							<img
+								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/search-and-compare-view.png"
+							/>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</li>
+		<li>
+			a
+			<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#git-command-palette-"
+				><b>Git Command Palette</b></a
+			>
+			to provide guided (step-by-step) access to many common Git commands, as well as quick access to
+			<div class="feature_preview">
+				<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#git-command-palette-">
+					<img
+						src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/git-command-palette.png"
+					/>
+				</a>
+			</div>
+			<ul class="section-list section-list--nested">
+				<li>
+					<a
+						title="Open the GitLens docs"
+						href="https://github.com/eamodio/vscode-gitlens/#quick-commit-access-"
+						><b>commits</b></a
+					>
+					&mdash; history and search
+					<!-- <div class="feature_preview">
+						<a
+							title="Open the GitLens docs"
+							href="https://github.com/eamodio/vscode-gitlens/#quick-commit-access-"
+						>
+							<img
+								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/menu-branch-history.png"
+								alt="Branch History Quick Pick Menu"
+							/>
+						</a>
+					</div>
+					<div class="feature_preview">
+						<a
+							title="Open the GitLens docs"
+							href="https://github.com/eamodio/vscode-gitlens/#quick-commit-access-"
+						>
+							<img
+								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/menu-file-history.png"
+								alt="File History Quick Pick Menu"
+							/>
+						</a>
+					</div>
+					<div class="feature_preview">
+						<a
+							title="Open the GitLens docs"
+							href="https://github.com/eamodio/vscode-gitlens/#quick-commit-access-"
+						>
+							<img
+								src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/menu-commit-search.png"
+								alt="Commit Search Quick Pick Menu"
+							/>
+						</a>
+					</div> -->
+				</li>
+				<li>
+					<a
+						title="Open the GitLens docs"
+						href="https://github.com/eamodio/vscode-gitlens/#quick-stash-access-"
+						><b>stashes</b></a
+					>
+				</li>
+				<li>
+					<a
+						title="Open the GitLens docs"
+						href="https://github.com/eamodio/vscode-gitlens/#quick-status-access-"
+						><b>status</b></a
+					>
+					&mdash; current branch and working tree status
+				</li>
+			</ul>
+		</li>
+		<li>
+			a user-friendly
 			<a
 				title="Open the GitLens docs"
-				href="https://github.com/eamodio/vscode-gitlens/tree/master/#navigate-and-explore-"
-				>powerful commands</a
+				href="https://github.com/eamodio/vscode-gitlens/#interactive-rebase-editor-"
+				><b>interactive rebase editor</b></a
 			>
-			for exploring commits and histories, comparing and navigating revisions, stash access, repository status,
-			etc
+			to easily configure an interactive rebase session
+			<div class="feature_preview feature_preview--clip">
+				<a
+					title="Open the GitLens docs"
+					href="https://github.com/eamodio/vscode-gitlens/#interactive-rebase-editor-"
+				>
+					<img
+						src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/rebase.gif"
+						alt="Interactive Rebase Editor"
+					/>
+				</a>
+			</div>
 		</li>
 		<li>
-			supports user-defined
-			<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/tree/master/#modes-"
-				>modes</a
+			<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#terminal-links-"
+				><b>terminal links</b></a
 			>
+			&mdash; <code>ctrl+click</code> on autolinks in the integrated terminal to quickly jump to more details for
+			commits, branches, tags, and more
+			<div class="feature_preview feature_preview--clip">
+				<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#terminal-links-">
+					<img
+						src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/terminal-links.gif"
+						alt="Terminal Links"
+					/>
+				</a>
+			</div>
+		</li>
+		<li>
+			<a
+				title="Open the GitLens docs"
+				href="https://github.com/eamodio/vscode-gitlens/#remote-provider-integrations-"
+				><b>remote provider integrations</b></a
+			>
+			&mdash; GitHub, GitLab, Bitbucket, Azure DevOps
+			<ul class="section-list section-list--nested">
+				<li>issue and pull request auto-linking</li>
+				<li>rich hover information provided for linked issues and pull requests <i>(GitHub only)</i></li>
+				<li>associates pull requests with branches and commits <i>(GitHub only)</i></li>
+			</ul>
+			<!-- <div class="feature_preview feature_preview--clip">
+				<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#remote-provider-integrations-">
+					<img
+						src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/terminal-links.gif"
+						alt="Terminal Links"
+					/>
+				</a>
+			</div> -->
+		</li>
+		<li>
+			many
+			<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#powerful-commands-"
+				><b>powerful commands</b></a
+			>
+			for navigating and comparing revisions, and more
+		</li>
+		<li>
+			user-defined
+			<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/#modes-"><b>modes</b></a>
 			for quickly toggling between sets of settings
 		</li>
-		<li>
-			and so much
-			<a title="Open the GitLens docs" href="https://github.com/eamodio/vscode-gitlens/tree/master/#and-more-"
-				>more</a
-			>
-		</li>
+		<li>and so much more 😁</li>
 	</ul>
 </section>

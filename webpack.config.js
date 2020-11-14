@@ -11,7 +11,6 @@ const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const WriteFilePlugin = require('write-file-webpack-plugin');
 
 class InlineChunkHtmlPlugin {
 	constructor(htmlPlugin, patterns) {
@@ -69,7 +68,6 @@ module.exports = function (esnv, argv) {
 			eslint: { enabled: true, files: 'src/**/*.ts', options: { cache: true } },
 			formatter: 'basic',
 		}),
-		new WriteFilePlugin(),
 		new MiniCssExtractPlugin({
 			filename: 'main.css',
 		}),
@@ -79,7 +77,8 @@ module.exports = function (esnv, argv) {
 		}),
 		new HtmlPlugin({
 			template: 'src/index.html',
-			excludeAssets: [/.+-styles\.js/],
+			chucks: ['site'],
+			excludeAssets: [/css\.js/],
 			filename: path.resolve(__dirname, 'index.html'),
 			inject: true,
 			inlineSource: mode === 'production' ? '.(js|css)$' : undefined,
@@ -102,9 +101,15 @@ module.exports = function (esnv, argv) {
 	];
 
 	return {
-		entry: ['./src/index.ts', './src/scss/main.scss'],
+		entry: {
+			main: './src/index.ts',
+			css: './src/scss/main.scss',
+		},
 		mode: mode,
-		devtool: mode === 'production' ? undefined : 'source-map', //'eval-source-map',
+		devServer: {
+			writeToDisk: (filePath) => !/css\.js/.test(filePath),
+		},
+		devtool: 'source-map',
 		output: {
 			filename: '[name].js',
 			path: path.resolve(__dirname, 'dist'),
@@ -113,9 +118,7 @@ module.exports = function (esnv, argv) {
 		optimization: {
 			minimizer: [
 				new TerserPlugin({
-					cache: true,
 					parallel: true,
-					sourceMap: true,
 					terserOptions: {
 						ecma: 6,
 						compress: mode === 'production',
@@ -142,7 +145,6 @@ module.exports = function (esnv, argv) {
 		module: {
 			rules: [
 				{
-					exclude: /node_modules|\.d\.ts$/,
 					test: /\.tsx?$/,
 					use: {
 						loader: 'ts-loader',
@@ -151,9 +153,9 @@ module.exports = function (esnv, argv) {
 							transpileOnly: true,
 						},
 					},
+					exclude: /\.d\.ts$/,
 				},
 				{
-					exclude: /node_modules/,
 					test: /\.scss$/,
 					use: [
 						{
@@ -162,7 +164,7 @@ module.exports = function (esnv, argv) {
 						{
 							loader: 'css-loader',
 							options: {
-								sourceMap: mode !== 'production',
+								sourceMap: true,
 								url: false,
 							},
 						},
@@ -172,16 +174,17 @@ module.exports = function (esnv, argv) {
 								postcssOptions: {
 									plugins: [['autoprefixer', {}]],
 								},
-								sourceMap: mode !== 'production',
+								sourceMap: true,
 							},
 						},
 						{
 							loader: 'sass-loader',
 							options: {
-								sourceMap: mode !== 'production',
+								sourceMap: true,
 							},
 						},
 					],
+					exclude: /node_modules/,
 				},
 			],
 		},
@@ -191,13 +194,13 @@ module.exports = function (esnv, argv) {
 		},
 		plugins: plugins,
 		stats: {
-			all: false,
+			preset: 'errors-warnings',
 			assets: true,
-			builtAt: true,
+			colors: true,
 			env: true,
-			errors: true,
+			errorsCount: true,
+			warningsCount: true,
 			timings: true,
-			warnings: true,
 		},
 	};
 };

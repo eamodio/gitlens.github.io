@@ -6,23 +6,29 @@ export interface Disposable {
 }
 
 export namespace DOM {
-	export function on<K extends keyof DocumentEventMap>(
+	export function on<K extends keyof DocumentEventMap, T extends Element>(
 		selector: string,
 		name: K,
-		listener: (this: Element, ev: DocumentEventMap[K]) => any,
+		listener: (this: T, ev: DocumentEventMap[K]) => any,
 		options?: boolean | AddEventListenerOptions,
 		el?: Element
 	): Disposable;
-	export function on<K extends keyof DocumentEventMap>(
+	export function on<K extends keyof DocumentEventMap, T extends Element>(
 		el: Document | Element,
 		name: K,
-		listener: (this: Element, ev: DocumentEventMap[K]) => any,
+		listener: (this: T, ev: DocumentEventMap[K]) => any,
 		options?: boolean | AddEventListenerOptions
 	): Disposable;
-	export function on<K extends keyof DocumentEventMap>(
-		selectorOrElement: string | Document | Element,
+	export function on<K extends keyof WindowEventMap, T extends Element>(
+		el: Window,
 		name: K,
-		listener: (this: Element, ev: DocumentEventMap[K]) => any,
+		listener: (this: T, ev: WindowEventMap[K]) => any,
+		options?: boolean | AddEventListenerOptions
+	): Disposable;
+	export function on<K extends keyof (DocumentEventMap | WindowEventMap), T extends Element>(
+		selectorOrElement: string | Window | Document | Element,
+		name: K,
+		listener: (this: T, ev: (DocumentEventMap | WindowEventMap)[K]) => any,
 		options?: boolean | AddEventListenerOptions,
 		el?: Element
 	): Disposable {
@@ -42,7 +48,7 @@ export namespace DOM {
 					for (const $el of $els) {
 						$el.removeEventListener(name, listener as EventListener, options ?? false);
 					}
-				}
+				},
 			};
 		}
 
@@ -53,7 +59,7 @@ export namespace DOM {
 				disposed = true;
 
 				selectorOrElement.removeEventListener(name, listener as EventListener, options ?? false);
-			}
+			},
 		};
 	}
 
