@@ -709,9 +709,9 @@ p.button__badge {
 			}
 		}
 
-		&.changelog__list-item--sub + :not(.changelog__list-item--sub),
+		&.changelog__list-item--sub + :not(.changelog__list-item--sub):not(.changelog__list-item--version),
 		&:not(.changelog__list-item--sub) + .changelog__list-item--sub,
-		&:not(.changelog__list-item--sub) + :not(.changelog__list-item--sub) {
+		&:not(.changelog__list-item--sub) + :not(.changelog__list-item--sub):not(.changelog__list-item--version) {
 			margin-top: 0.5rem;
 		}
 	}
