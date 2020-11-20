@@ -14,6 +14,92 @@
 	</div>
 	<ul class="changelog__list">
 		<li class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">11.0.2</div>
+			<div class="changelog__date">NOVEMBER &nbsp;2020</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">Refines the <i>Interactive Rebase Editor</i></div>
+			<div class="changelog__details"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds a quick-access button to disable the rebase editor &mdash; closes
+				<a href="https://github.com/eamodio/vscode-gitlens/issues/1153">#1153</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">Adds shortcut keys to start and abort a rebase</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds a <i>Disable Interactive Rebase Editor</i> command (<code>gitlens.disableRebaseEditor</code>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds an <i>Enable Interactive Rebase Editor</i> command (<code>gitlens.enableRebaseEditor</code>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds an <i>Interactive Rebase Editor</i> section to the GitLens Interactive Settings
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--changed">~</div>
+			<div class="changelog__content">
+				Changes the layout spacing of the <i>Interactive Rebase Editor</i> to allow for more commits to be shown
+				at once
+			</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1187" href="https://github.com/eamodio/vscode-gitlens/issues/1187">#1187</a>
+				&mdash; Warning about incorrect regexp in DevTools console &mdash; thanks to
+				<a href="https://github.com/eamodio/vscode-gitlens/pull/1188">PR #1188</a> by Andrii Dieiev (<a
+					href="https://github.com/IllusionMH"
+					>@IllusionMH</a
+				>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1151" href="https://github.com/eamodio/vscode-gitlens/issues/1151">#1151</a>
+				&mdash; Icons not showing in interactive rebase
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1166" href="https://github.com/eamodio/vscode-gitlens/issues/1166">#1166</a>
+				&mdash; Enormous avatars in interactive rebase view
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<li class="changelog__list-item--version">
 			<div class="changelog__badge changelog__badge--version">11.0.1</div>
 			<div class="changelog__date">NOVEMBER &nbsp;2020</div>
 			<div class="changelog__details"></div>
@@ -22,7 +108,7 @@
 		<li>
 			<div class="changelog__badge changelog__badge--added">NEW</div>
 			<div class="changelog__content">
-				Adds a _Compare References..._ command (<code>gitlens.compareWith</code>) to compare two selected
+				Adds a <i>Compare References...</i> command (<code>gitlens.compareWith</code>) to compare two selected
 				references
 			</div>
 			<div class="changelog__details"></div>
