@@ -6,7 +6,13 @@ export class View {
 	private classes: string[];
 
 	constructor(public name: string) {
+		// eslint-disable-next-line @typescript-eslint/no-this-alias
+		const me = this;
+
 		DOM.on(`[data-action="${this.name}"]`, 'click', this.onButtonClicked.bind(this));
+		DOM.on('[data-action="scrollTo"]', 'click', function (this: HTMLElement, e: MouseEvent) {
+			me.onScrollToClicked(this, e);
+		});
 
 		const $el = DOM.$<HTMLDivElement>(`.section[data-view="${this.name}"]`)[0];
 
@@ -50,5 +56,11 @@ export class View {
 		} else {
 			this.setPath();
 		}
+	}
+
+	private onScrollToClicked($el: HTMLElement, e: MouseEvent) {
+		const scrollTo = $el.dataset.scrollTo!;
+		const $scrollTo = document.getElementById(scrollTo)!;
+		$scrollTo.scrollIntoView({ behavior: 'smooth' });
 	}
 }
