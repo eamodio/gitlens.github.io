@@ -59,7 +59,7 @@ class InlineChunkHtmlPlugin {
 	}
 }
 
-module.exports = function (esnv, argv) {
+module.exports = function (env, argv) {
 	const mode = argv.mode || 'none';
 
 	const plugins = [
