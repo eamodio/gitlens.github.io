@@ -1026,7 +1026,7 @@ footer {
 	}
 }
 
-.sponsors {
+.section-sponsors {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -1043,6 +1043,14 @@ footer {
 	h4.footer {
 		font-size: 0.6em;
 	}
+}
+
+.sponsors {
+	display: flex;
+	// flex-direction: column;
+	// flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 }
 
 .sponsor-me__image {
