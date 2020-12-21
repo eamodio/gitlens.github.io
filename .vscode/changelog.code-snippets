@@ -42,6 +42,19 @@
 		],
 		"description": ""
 	},
+	"changelog-sub-added": {
+		"scope": "html",
+		"prefix": "cl-sub-added",
+		"body": [
+			"<li class=\"changelog__list-item--sub\">",
+			"\t<div class=\"changelog__badge changelog__badge--added\">+</div>",
+			"\t<div class=\"changelog__content\">${1:$CLIPBOARD}</div>",
+			"\t<div class=\"changelog__details changelog__details--list\">$2</div>",
+			"</li>",
+			"$0"
+		],
+		"description": ""
+	},
 	"changelog-changed": {
 		"scope": "html",
 		"prefix": "cl-changed",
@@ -50,6 +63,19 @@
 			"\t<div class=\"changelog__badge changelog__badge--changed\">IMPROVED</div>",
 			"\t<div class=\"changelog__content\">${1:$CLIPBOARD}</div>",
 			"\t<div class=\"changelog__details changelog__details--list\"></div>",
+			"</li>",
+			"$0"
+		],
+		"description": ""
+	},
+	"changelog-sub-changed": {
+		"scope": "html",
+		"prefix": "cl-sub-changed",
+		"body": [
+			"<li class=\"changelog__list-item--sub\">",
+			"\t<div class=\"changelog__badge changelog__badge--changed\">~</div>",
+			"\t<div class=\"changelog__content\">${1:$CLIPBOARD}</div>",
+			"\t<div class=\"changelog__details changelog__details--list\">$2</div>",
 			"</li>",
 			"$0"
 		],
