@@ -107,6 +107,10 @@ module.exports = function (env, argv) {
 		},
 		mode: mode,
 		devServer: {
+			contentBase: __dirname,
+			liveReload: true,
+			port: 8090,
+			watchContentBase: true,
 			writeToDisk: (filePath) => !/css\.js/.test(filePath),
 		},
 		devtool: 'source-map',

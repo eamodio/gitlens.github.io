@@ -301,7 +301,8 @@ i {
 }
 
 p.button__badge {
-	font-size: 0.5em;
+	font-size: 0.5em !important;
+	letter-spacing: 0.25em;
 	margin-top: 1em;
 	margin-bottom: -1em;
 	text-align: center;
