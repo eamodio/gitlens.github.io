@@ -2,8 +2,11 @@
 !\[(.+?)\]\((.+?)\)
 <img class="changelog__image" src="$2" alt="$1" />
 
-\[(.+?)\]\((.+?)\)
-<a href="$2">$1</a>
+\[(.+?)\]\((.+?/issues/.+?)\)
+<a title="Open Issue $1" href="$2">$1</a>
+
+\[(.+?)\]\((.+?/pull/.+?)\)
+<a title="Open Pull Request $1" href="$2">$1</a>
 
 \*\*(.+?)\*\*
 <b>$1</b>

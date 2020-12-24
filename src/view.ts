@@ -13,6 +13,9 @@ export class View {
 		DOM.on('[data-action="scrollTo"]', 'click', function (this: HTMLElement, e: MouseEvent) {
 			me.onScrollToClicked(this, e);
 		});
+		DOM.on('[data-action="showVersion"]', 'click', function (this: HTMLElement, e: MouseEvent) {
+			me.onShowVersionClicked(this, e);
+		});
 
 		const $el = DOM.$<HTMLDivElement>(`.section[data-view="${this.name}"]`)[0];
 
@@ -62,5 +65,10 @@ export class View {
 		const scrollTo = $el.dataset.scrollTo!;
 		const $scrollTo = document.getElementById(scrollTo)!;
 		$scrollTo.scrollIntoView({ behavior: 'smooth' });
+	}
+
+	private onShowVersionClicked($el: HTMLElement, e: MouseEvent) {
+		const $view = DOM.$<HTMLDivElement>(`.section[data-view="${this.name}"]`)[0];
+		$view.dataset.version = $el.dataset.version;
 	}
 }

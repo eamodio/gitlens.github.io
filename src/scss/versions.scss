@@ -1,0 +1,46 @@
+[data-action='showVersion'][data-version] {
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: -25%;
+		width: 150%;
+		height: 100%;
+		border-bottom: 2px solid #914db3;
+		opacity: 0;
+		transform: scaleX(0);
+		transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
+	}
+
+	&:hover {
+		&::after {
+			transform: scaleX(0.4);
+			opacity: 0.5;
+		}
+	}
+}
+
+[data-view='whats-new'] {
+	&[data-version='11.1'] {
+		[data-action='showVersion'][data-version='11.1']::after {
+			transform: scaleX(1);
+			opacity: 1;
+		}
+
+		[data-visibility='version'][data-version][data-version]:not([data-version='11.1']) {
+			display: none !important;
+		}
+	}
+
+	&[data-version='11.0'] {
+		[data-action='showVersion'][data-version='11.0']::after {
+			transform: scaleX(1);
+			opacity: 1;
+		}
+
+		[data-visibility='version'][data-version]:not([data-version='11.0']) {
+			display: none !important;
+		}
+	}
+}
