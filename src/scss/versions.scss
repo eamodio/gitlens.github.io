@@ -1,3 +1,4 @@
+.changelog__version-link,
 [data-action='showVersion'][data-version] {
 	&::after {
 		content: '';
@@ -18,6 +19,13 @@
 			transform: scaleX(0.4);
 			opacity: 0.5;
 		}
+	}
+}
+
+.changelog__version-link {
+	&.active::after {
+		transform: scaleX(1);
+		opacity: 1;
 	}
 }
 

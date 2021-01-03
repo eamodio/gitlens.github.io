@@ -399,10 +399,13 @@ p.button__badge {
 	bottom: 0;
 	margin-bottom: 0;
 	margin-top: 0;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	width: calc(100% - 3em);
+	width: calc(100% - 2em);
+
+	p {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
 }
 
 .sections__scroller {
@@ -414,7 +417,7 @@ p.button__badge {
 
 	.section--has-footer & {
 		border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-		margin-bottom: 2.25em;
+		margin-bottom: 1.4em;
 	}
 }
 
@@ -623,19 +626,27 @@ p.button__badge {
 	}
 }
 
-.changelog__versions {
+.changelog__versions--minor {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-evenly;
 	font-size: 1em;
-	font-size: 0.75em;
-	margin: 0.5em 0 0 0;
+	font-size: 0.7em;
+	margin: 0.25em 0 -0.5em 0;
+	padding-bottom: 0.5em;
+
+	position: sticky;
+	top: -1.8em;
+	background: rgb(220, 217, 223);
+	z-index: 1;
 }
 
-.changelog__versions--footer {
+.changelog__versions--patch {
+	flex: 0 0 100%;
 	display: flex;
 	justify-content: space-evenly;
-	font-size: 0.45em;
-	margin-bottom: -0.5em;
+	font-size: 0.7em;
+	margin: 0.25em 0 0 0;
 }
 
 .changelog__version-link {
@@ -647,7 +658,7 @@ p.button__badge {
 	font-size: 0.45em;
 	list-style-type: none;
 	margin: 1em 0 0 0;
-	padding: 0 0 100% 0;
+	padding: 0 0 130% 0;
 
 	& i {
 		font-weight: 200;
@@ -1027,7 +1038,7 @@ footer {
 	display: block;
 	font-size: 0.75rem;
 	font-weight: 100;
-	letter-spacing: 0.25em;
+	letter-spacing: 0.1em;
 	opacity: 0.99; /* no idea why this is required */
 	text-align: center;
 	text-transform: uppercase;
@@ -1277,7 +1288,7 @@ img.center {
 	}
 
 	.sections__footer {
-		bottom: 0.5em;
+		bottom: -0.25em;
 	}
 
 	.footer__links {

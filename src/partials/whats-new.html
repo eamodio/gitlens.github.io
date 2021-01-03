@@ -19,12 +19,117 @@
 		</div>
 	</div>
 
-	<div class="changelog__versions">
+	<div class="changelog__versions--minor">
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.1">11.1</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.0">11.0</a>
+
+		<div class="changelog__versions--patch" data-target="patches" data-visibility="version" data-version="11.1">
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.1.2"
+				>11.1.2</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.1.1"
+				>11.1.1</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.1.0"
+				>11.1.0</a
+			>
+		</div>
+
+		<div class="changelog__versions--patch" data-target="patches" data-visibility="version" data-version="11.0">
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.0.6"
+				>11.0.6</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.0.5"
+				>11.0.5</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.0.4"
+				>11.0.4</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.0.3"
+				>11.0.3</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.0.2"
+				>11.0.2</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.0.1"
+				>11.0.1</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.0.0"
+				>11.0.0</a
+			>
+		</div>
 	</div>
 
 	<ul class="changelog__list" data-visibility="version" data-version="11.1">
+		<!-- #region 11.1.2 -->
+
+		<li id="11.1.2" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">11.1.2</div>
+			<div class="changelog__date">JANUARY &nbsp;2021</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes the outdated documentation url on the <i>Connect Remote Provider</i> quick pick menu &mdash;
+				thanks to
+				<a title="Open Pull Request #1300" href="https://github.com/eamodio/vscode-gitlens/pull/1300"
+					>PR #1300</a
+				>
+				by Ahmadou Waly NDIAYE (<a href="https://github.com/sir-kain">@sir-kain</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+		<!-- #region 11.1.1 -->
+
+		<li id="11.1.1" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">11.1.1</div>
+			<div class="changelog__date">JANUARY &nbsp;2021</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Improves the performance of the <i>Stashes</i> and <i>Contributors</i> views
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1302" href="https://github.com/eamodio/vscode-gitlens/issues/1302">#1302</a>
+				&mdash; Welcome screen on every editor window is very tedious
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1285" href="https://github.com/eamodio/vscode-gitlens/issues/1285">#1285</a>
+				&mdash; Uncommitted staged changes after pull
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1294" href="https://github.com/eamodio/vscode-gitlens/issues/1294">#1294</a>
+				&mdash; Error when open commits list
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+		<!-- #region 11.1.0 -->
+
 		<li id="11.1.0" class="changelog__list-item--version">
 			<div class="changelog__badge changelog__badge--version">11.1.0</div>
 			<div class="changelog__date">DECEMBER &nbsp;2020</div>
@@ -194,10 +299,10 @@
 				closes
 				<a title="Open Issue #1165" href="https://github.com/eamodio/vscode-gitlens/issues/1165">#1165</a>
 				thanks to
-				<a title="Open Pull Request PR #1171" href="https://github.com/eamodio/vscode-gitlens/pull/1171"
+				<a title="Open Pull Request #1171" href="https://github.com/eamodio/vscode-gitlens/pull/1171"
 					>PR #1171</a
 				>
-				by Raaj Patil ([@arrpee](https://github.com/arrpee))
+				by Raaj Patil (<a href="https://github.com/arrpee">@arrpee</a>)
 			</div>
 			<div class="changelog__details changelog__details--list"></div>
 		</li>
@@ -307,10 +412,10 @@
 				Setup) experience on first install &mdash; closes
 				<a title="Open Issue #1049" href="https://github.com/eamodio/vscode-gitlens/issues/1049">#1049</a>
 				thanks to
-				<a title="Open Pull Request PR #1258" href="https://github.com/eamodio/vscode-gitlens/pull/1258"
+				<a title="Open Pull Request #1258" href="https://github.com/eamodio/vscode-gitlens/pull/1258"
 					>PR #1258</a
 				>
-				by Rickard ([@rickardp](https://github.com/rickardp))
+				by Rickard (<a href="https://github.com/rickardp">@rickardp</a>)
 			</div>
 			<div class="changelog__details changelog__details--list"></div>
 		</li>
@@ -581,9 +686,278 @@
 			</div>
 			<div class="changelog__details changelog__details--list"></div>
 		</li>
+
+		<!-- #endregion -->
 	</ul>
 
 	<ul class="changelog__list" data-visibility="version" data-version="11.0">
+		<!-- #region 11.0.6 -->
+
+		<li id="11.0.6" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">11.0.6</div>
+			<div class="changelog__date">NOVEMBER &nbsp;2020</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes the <i>Where did my views go?</i> view to show on this next upgrade, since somehow (still not
+				sure how) it was never shown to many (most?) users
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes GitHub connection rejection to be per-workspace (rather than global)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1205" href="https://github.com/eamodio/vscode-gitlens/issues/1205">#1205</a>
+				&mdash; Setting heatmap's <code>coldColor</code> and <code>hotColor</code> breaks file blame & related
+				functionality
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">Fixes invalid branch status showing up for remote branches</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+		<!-- #region 11.0.5 -->
+
+		<li id="11.0.5" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">11.0.5</div>
+			<div class="changelog__date">NOVEMBER &nbsp;2020</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1204" href="https://github.com/eamodio/vscode-gitlens/issues/1204">#1204</a>
+				&mdash; Compare file changes: "new" and "old" sides of the compare are backwards
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+		<!-- #region 11.0.4 -->
+
+		<li id="11.0.4" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">11.0.4</div>
+			<div class="changelog__date">NOVEMBER &nbsp;2020</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1161" href="https://github.com/eamodio/vscode-gitlens/issues/1161">#1161</a>
+				&mdash; Compare file differences between branches
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1157" href="https://github.com/eamodio/vscode-gitlens/issues/1157">#1157</a>
+				&mdash; GitLens report `X files changed` when comparing working tree with a branch having identical
+				files
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+		<!-- #region 11.0.3 -->
+
+		<li id="11.0.3" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">11.0.3</div>
+			<div class="changelog__date">NOVEMBER &nbsp;2020</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1163" href="https://github.com/eamodio/vscode-gitlens/issues/1163">#1163</a>
+				&mdash; Use Interactive Rebase Editor when run from GitLens command (regardless of Git config)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1197" href="https://github.com/eamodio/vscode-gitlens/issues/1197">#1197</a>
+				&mdash; Can't squash commit in interactive rebase editor
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">Fixes the <code>gitlens.codeLens.scopes</code> setting json schema</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+		<!-- #region 11.0.2 -->
+
+		<li id="11.0.2" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">11.0.2</div>
+			<div class="changelog__date">NOVEMBER &nbsp;2020</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">Refines the <i>Interactive Rebase Editor</i></div>
+			<div class="changelog__details"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds a quick-access button to disable the rebase editor &mdash; closes
+				<a title="Open Issue #1153" href="https://github.com/eamodio/vscode-gitlens.issues/1153">#1153</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">Adds shortcut keys to start and abort a rebase</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds a <i>Disable Interactive Rebase Editor</i> command (<code>gitlens.disableRebaseEditor</code>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds an <i>Enable Interactive Rebase Editor</i> command (<code>gitlens.enableRebaseEditor</code>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds an <i>Interactive Rebase Editor</i> section to the GitLens Interactive Settings
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--changed">~</div>
+			<div class="changelog__content">
+				Changes the layout spacing of the <i>Interactive Rebase Editor</i> to allow for more commits to be shown
+				at once
+			</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1187" href="https://github.com/eamodio/vscode-gitlens/issues/1187">#1187</a>
+				&mdash; Warning about incorrect regexp in DevTools console &mdash; thanks to
+				<a title="Open Pull Request #1188" href="https://github.com/eamodio/vscode-gitlens.issues/1188"
+					>#1188</a
+				>
+				by Andrii Dieiev (<a href="https://github.com/IllusionMH">@IllusionMH</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1151" href="https://github.com/eamodio/vscode-gitlens/issues/1151">#1151</a>
+				&mdash; Icons not showing in interactive rebase
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1166" href="https://github.com/eamodio/vscode-gitlens/issues/1166">#1166</a>
+				&mdash; Enormous avatars in interactive rebase view
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+		<!-- #region 11.0.1 -->
+
+		<li id="11.0.1" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">11.0.1</div>
+			<div class="changelog__date">NOVEMBER &nbsp;2020</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a <i>Compare References...</i> command (<code>gitlens.compareWith</code>) to compare two selected
+				references
+			</div>
+			<div class="changelog__details"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds ability to enter reference ranges (e.g. <code>main...release/1.0</code>) to the
+				<i>Git Command Palette</i>'s <i>history</i> command
+			</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1148" href="https://github.com/eamodio/vscode-gitlens/issues/1148">#1148</a>
+				&mdash; Follow renames on File History cannot load more history
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1157" href="https://github.com/eamodio/vscode-gitlens/issues/1157">#1157</a>
+				&mdash; GitLens report `X files changed` when comparing working tree with a branch having identical
+				files
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1150" href="https://github.com/eamodio/vscode-gitlens/issues/1150">#1150</a>
+				&mdash; Cannot read property 'provider' of undefined
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+		<!-- #region 11.0.0 -->
+
 		<li id="11.0.0" class="changelog__list-item--version">
 			<div class="changelog__badge changelog__badge--version">11.0.0</div>
 			<div class="changelog__date">NOVEMBER &nbsp;2020</div>
@@ -1978,284 +2352,10 @@
 			<div class="changelog__details changelog__details--list"></div>
 		</li>
 
-		<li id="11.0.1" class="changelog__list-item--version">
-			<div class="changelog__badge changelog__badge--version">11.0.1</div>
-			<div class="changelog__date">NOVEMBER &nbsp;2020</div>
-			<div class="changelog__details"></div>
-		</li>
-
-		<li>
-			<div class="changelog__badge changelog__badge--added">NEW</div>
-			<div class="changelog__content">
-				Adds a <i>Compare References...</i> command (<code>gitlens.compareWith</code>) to compare two selected
-				references
-			</div>
-			<div class="changelog__details"></div>
-		</li>
-		<li>
-			<div class="changelog__badge changelog__badge--added">NEW</div>
-			<div class="changelog__content">
-				Adds ability to enter reference ranges (e.g. <code>main...release/1.0</code>) to the
-				<i>Git Command Palette</i>'s <i>history</i> command
-			</div>
-			<div class="changelog__details"></div>
-		</li>
-
-		<li>
-			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
-			<div class="changelog__content">
-				Fixes
-				<a title="Open Issue #1148" href="https://github.com/eamodio/vscode-gitlens/issues/1148">#1148</a>
-				&mdash; Follow renames on File History cannot load more history
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-		<li>
-			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
-			<div class="changelog__content">
-				Fixes
-				<a title="Open Issue #1157" href="https://github.com/eamodio/vscode-gitlens/issues/1157">#1157</a>
-				&mdash; GitLens report `X files changed` when comparing working tree with a branch having identical
-				files
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-		<li>
-			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
-			<div class="changelog__content">
-				Fixes
-				<a title="Open Issue #1150" href="https://github.com/eamodio/vscode-gitlens/issues/1150">#1150</a>
-				&mdash; Cannot read property 'provider' of undefined
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-
-		<li id="11.0.2" class="changelog__list-item--version">
-			<div class="changelog__badge changelog__badge--version">11.0.2</div>
-			<div class="changelog__date">NOVEMBER &nbsp;2020</div>
-			<div class="changelog__details"></div>
-		</li>
-
-		<li>
-			<div class="changelog__badge changelog__badge--added">NEW</div>
-			<div class="changelog__content">Refines the <i>Interactive Rebase Editor</i></div>
-			<div class="changelog__details"></div>
-		</li>
-		<li class="changelog__list-item--sub">
-			<div class="changelog__badge changelog__badge--added">+</div>
-			<div class="changelog__content">
-				Adds a quick-access button to disable the rebase editor &mdash; closes
-				<a title="Open Issue #1153" href="https://github.com/eamodio/vscode-gitlens.issues/1153">#1153</a>
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-		<li class="changelog__list-item--sub">
-			<div class="changelog__badge changelog__badge--added">+</div>
-			<div class="changelog__content">Adds shortcut keys to start and abort a rebase</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-		<li class="changelog__list-item--sub">
-			<div class="changelog__badge changelog__badge--added">+</div>
-			<div class="changelog__content">
-				Adds a <i>Disable Interactive Rebase Editor</i> command (<code>gitlens.disableRebaseEditor</code>)
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-		<li class="changelog__list-item--sub">
-			<div class="changelog__badge changelog__badge--added">+</div>
-			<div class="changelog__content">
-				Adds an <i>Enable Interactive Rebase Editor</i> command (<code>gitlens.enableRebaseEditor</code>)
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-		<li class="changelog__list-item--sub">
-			<div class="changelog__badge changelog__badge--added">+</div>
-			<div class="changelog__content">
-				Adds an <i>Interactive Rebase Editor</i> section to the GitLens Interactive Settings
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-		<li class="changelog__list-item--sub">
-			<div class="changelog__badge changelog__badge--changed">~</div>
-			<div class="changelog__content">
-				Changes the layout spacing of the <i>Interactive Rebase Editor</i> to allow for more commits to be shown
-				at once
-			</div>
-			<div class="changelog__details"></div>
-		</li>
-
-		<li>
-			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
-			<div class="changelog__content">
-				Fixes
-				<a title="Open Issue #1187" href="https://github.com/eamodio/vscode-gitlens/issues/1187">#1187</a>
-				&mdash; Warning about incorrect regexp in DevTools console &mdash; thanks to
-				<a title="Open Pull Request #1188" href="https://github.com/eamodio/vscode-gitlens.issues/1188"
-					>#1188</a
-				>
-				by Andrii Dieiev (<a href="https://github.com/IllusionMH">@IllusionMH</a>)
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-		<li>
-			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
-			<div class="changelog__content">
-				Fixes
-				<a title="Open Issue #1151" href="https://github.com/eamodio/vscode-gitlens/issues/1151">#1151</a>
-				&mdash; Icons not showing in interactive rebase
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-		<li>
-			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
-			<div class="changelog__content">
-				Fixes
-				<a title="Open Issue #1166" href="https://github.com/eamodio/vscode-gitlens/issues/1166">#1166</a>
-				&mdash; Enormous avatars in interactive rebase view
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-
-		<li id="11.0.3" class="changelog__list-item--version">
-			<div class="changelog__badge changelog__badge--version">11.0.3</div>
-			<div class="changelog__date">NOVEMBER &nbsp;2020</div>
-			<div class="changelog__details"></div>
-		</li>
-
-		<li>
-			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
-			<div class="changelog__content">
-				Fixes
-				<a title="Open Issue #1163" href="https://github.com/eamodio/vscode-gitlens/issues/1163">#1163</a>
-				&mdash; Use Interactive Rebase Editor when run from GitLens command (regardless of Git config)
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-		<li>
-			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
-			<div class="changelog__content">
-				Fixes
-				<a title="Open Issue #1197" href="https://github.com/eamodio/vscode-gitlens/issues/1197">#1197</a>
-				&mdash; Can't squash commit in interactive rebase editor
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-		<li>
-			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
-			<div class="changelog__content">Fixes the <code>gitlens.codeLens.scopes</code> setting json schema</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-
-		<li id="11.0.4" class="changelog__list-item--version">
-			<div class="changelog__badge changelog__badge--version">11.0.4</div>
-			<div class="changelog__date">NOVEMBER &nbsp;2020</div>
-			<div class="changelog__details"></div>
-		</li>
-
-		<li>
-			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
-			<div class="changelog__content">
-				Fixes
-				<a title="Open Issue #1161" href="https://github.com/eamodio/vscode-gitlens/issues/1161">#1161</a>
-				&mdash; Compare file differences between branches
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-		<li>
-			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
-			<div class="changelog__content">
-				Fixes
-				<a title="Open Issue #1157" href="https://github.com/eamodio/vscode-gitlens/issues/1157">#1157</a>
-				&mdash; GitLens report `X files changed` when comparing working tree with a branch having identical
-				files
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-
-		<li id="11.0.5" class="changelog__list-item--version">
-			<div class="changelog__badge changelog__badge--version">11.0.5</div>
-			<div class="changelog__date">NOVEMBER &nbsp;2020</div>
-			<div class="changelog__details"></div>
-		</li>
-
-		<li>
-			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
-			<div class="changelog__content">
-				Fixes
-				<a title="Open Issue #1204" href="https://github.com/eamodio/vscode-gitlens/issues/1204">#1204</a>
-				&mdash; Compare file changes: "new" and "old" sides of the compare are backwards
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-
-		<li id="11.0.6" class="changelog__list-item--version">
-			<div class="changelog__badge changelog__badge--version">11.0.6</div>
-			<div class="changelog__date">NOVEMBER &nbsp;2020</div>
-			<div class="changelog__details"></div>
-		</li>
-
-		<li>
-			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
-			<div class="changelog__content">
-				Changes the <i>Where did my views go?</i> view to show on this next upgrade, since somehow (still not
-				sure how) it was never shown to many (most?) users
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-		<li>
-			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
-			<div class="changelog__content">
-				Changes GitHub connection rejection to be per-workspace (rather than global)
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-		<li>
-			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
-			<div class="changelog__content">
-				Fixes
-				<a title="Open Issue #1205" href="https://github.com/eamodio/vscode-gitlens/issues/1205">#1205</a>
-				&mdash; Setting heatmap's <code>coldColor</code> and <code>hotColor</code> breaks file blame & related
-				functionality
-			</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
-		<li>
-			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
-			<div class="changelog__content">Fixes invalid branch status showing up for remote branches</div>
-			<div class="changelog__details changelog__details--list"></div>
-		</li>
+		<!-- #endregion -->
 	</ul>
 
 	<div class="sections__footer">
-		<div class="changelog__versions--footer" data-visibility="version" data-version="11.1">
-			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.1.0"
-				>11.1.0</a
-			>
-		</div>
-
-		<div class="changelog__versions--footer" data-visibility="version" data-version="11.0">
-			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.0.0"
-				>11.0.0</a
-			>
-			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.0.1"
-				>11.0.1</a
-			>
-			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.0.2"
-				>11.0.2</a
-			>
-			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.0.3"
-				>11.0.3</a
-			>
-			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.0.4"
-				>11.0.4</a
-			>
-			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.0.5"
-				>11.0.5</a
-			>
-			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.0.6"
-				>11.0.6</a
-			>
-		</div>
 		<p>
 			See the
 			<a

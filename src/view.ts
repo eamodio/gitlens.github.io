@@ -4,6 +4,10 @@ import { DOM } from './dom';
 
 export class View {
 	private classes: string[];
+	private observer: IntersectionObserver | undefined;
+
+	private activeVersion: string | undefined = '11.1.0';
+	private versions = new Map<string, boolean>();
 
 	constructor(public name: string) {
 		// eslint-disable-next-line @typescript-eslint/no-this-alias
@@ -24,6 +28,16 @@ export class View {
 		const classes = $el.dataset.classes;
 		if (classes != null) {
 			this.classes.push(...classes.split(' '));
+		}
+
+		this.observer = new IntersectionObserver(this.onObserver.bind(this), {
+			rootMargin: '0px 0px 0px 0px',
+		});
+
+		for (const el of document.querySelectorAll('.changelog__list>.changelog__list-item--version[id]')) {
+			this.versions.set(el.id, false);
+
+			this.observer.observe(el);
 		}
 	}
 
@@ -61,14 +75,74 @@ export class View {
 		}
 	}
 
+	private onObserver(entries: IntersectionObserverEntry[], _observer: IntersectionObserver) {
+		for (const entry of entries) {
+			this.versions.set(entry.target.id, entry.isIntersecting);
+		}
+
+		let nextActive: string | undefined;
+		for (const [id, visible] of this.versions.entries()) {
+			if (visible) {
+				nextActive = id;
+
+				break;
+			}
+		}
+
+		if (nextActive === undefined) {
+			if (entries.length !== 1) return;
+
+			const entry = entries[0];
+			if (entry.boundingClientRect == null || entry.rootBounds == null) return;
+
+			nextActive = entry.target.id;
+			if (entry.boundingClientRect.top >= entry.rootBounds.bottom) {
+				const keys = [...this.versions.keys()];
+				const index = keys.indexOf(nextActive);
+				if (index <= 0) return;
+
+				nextActive = keys[index - 1];
+			}
+		}
+
+		if (this.activeVersion === nextActive) return;
+
+		if (this.activeVersion !== undefined) {
+			this.toggleVersionLink(this.activeVersion, false);
+		}
+
+		this.activeVersion = nextActive;
+		this.toggleVersionLink(this.activeVersion, true);
+	}
+
 	private onScrollToClicked($el: HTMLElement, e: MouseEvent) {
 		const scrollTo = $el.dataset.scrollTo!;
 		const $scrollTo = document.getElementById(scrollTo)!;
-		$scrollTo.scrollIntoView({ behavior: 'smooth' });
+		const $section = $scrollTo.closest<HTMLDivElement>('section[id]')!;
+
+		const offset =
+			DOM.$(`[data-target="patches"][data-version="${$section.dataset.version!}"]`)[0].getBoundingClientRect()
+				.height + 8;
+
+		const scrollerTop = $section.getBoundingClientRect().top;
+		const elementTop = $scrollTo.getBoundingClientRect().top;
+		const top = elementTop - scrollerTop - offset;
+
+		$section.parentElement!.scrollTo({
+			top: top,
+			behavior: 'smooth',
+		});
 	}
 
 	private onShowVersionClicked($el: HTMLElement, e: MouseEvent) {
-		const $view = DOM.$<HTMLDivElement>(`.section[data-view="${this.name}"]`)[0];
+		const $view = DOM.$<HTMLDivElement>(`[data-view="whats-new"][data-view="${this.name}"]`)[0];
 		$view.dataset.version = $el.dataset.version;
+	}
+
+	private toggleVersionLink(version: string, active: boolean) {
+		const el = document.querySelector(`a[data-action="scrollTo"][data-scroll-to="${version}"]`);
+		if (el != null) {
+			el.classList.toggle('active', active);
+		}
 	}
 }
