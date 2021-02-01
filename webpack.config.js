@@ -84,7 +84,7 @@ module.exports = function (env, argv) {
 			excludeAssets: [/css\.js/],
 			filename: path.resolve(__dirname, 'index.html'),
 			inject: true,
-			inlineSource: mode === 'production' ? '.(js|css)$' : undefined,
+			scriptLoading: mode === 'production' ? 'blocking' : 'defer',
 			minify:
 				mode === 'production'
 					? {
