@@ -6,7 +6,7 @@ export class View {
 	private classes: string[];
 	private observer: IntersectionObserver | undefined;
 
-	private activeVersion: string | undefined = '11.1.0';
+	private activeVersion: string | undefined = '11.2.0';
 	private versions = new Map<string, boolean>();
 
 	constructor(public name: string) {
@@ -14,12 +14,21 @@ export class View {
 		const me = this;
 
 		DOM.on(`[data-action="${this.name}"]`, 'click', this.onButtonClicked.bind(this));
-		DOM.on('[data-action="scrollTo"]', 'click', function (this: HTMLElement, e: MouseEvent) {
-			me.onScrollToClicked(this, e);
-		});
-		DOM.on('[data-action="showVersion"]', 'click', function (this: HTMLElement, e: MouseEvent) {
-			me.onShowVersionClicked(this, e);
-		});
+
+		DOM.on(
+			`[data-view="${this.name}"] [data-action="scrollTo"]`,
+			'click',
+			function (this: HTMLElement, e: MouseEvent) {
+				me.onScrollToClicked(this, e);
+			}
+		);
+		DOM.on(
+			`[data-view="${this.name}"] [data-action="showVersion"]`,
+			'click',
+			function (this: HTMLElement, e: MouseEvent) {
+				me.onShowVersionClicked(this, e);
+			}
+		);
 
 		const $el = DOM.$<HTMLDivElement>(`.section[data-view="${this.name}"]`)[0];
 
@@ -105,7 +114,10 @@ export class View {
 			}
 		}
 
-		if (this.activeVersion === nextActive) return;
+		if (this.activeVersion === nextActive) {
+			this.toggleVersionLink(this.activeVersion, true);
+			return;
+		}
 
 		if (this.activeVersion !== undefined) {
 			this.toggleVersionLink(this.activeVersion, false);
@@ -135,7 +147,7 @@ export class View {
 	}
 
 	private onShowVersionClicked($el: HTMLElement, e: MouseEvent) {
-		const $view = DOM.$<HTMLDivElement>(`[data-view="whats-new"][data-view="${this.name}"]`)[0];
+		const $view = DOM.$<HTMLDivElement>(`[data-view="${this.name}"]`)[0];
 		$view.dataset.version = $el.dataset.version;
 	}
 

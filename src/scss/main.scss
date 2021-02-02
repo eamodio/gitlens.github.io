@@ -876,6 +876,7 @@ p.button__badge {
 	transform-origin: left;
 
 	&.expand {
+		position: relative;
 		filter: drop-shadow(0px 0px 7px #000);
 		transform: scale(4) translate(0%, calc(50% - 0.75rem));
 		z-index: 1000;

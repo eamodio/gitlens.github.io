@@ -3,7 +3,7 @@
 	class="section"
 	data-view="whats-new"
 	data-classes="section--has-footer"
-	data-version="11.1"
+	data-version="11.2"
 >
 	<div class="sponsor__header">
 		<h3>What's&nbsp;new&nbsp;in <span class="changelog__version">GitLens 11</span></h3>
@@ -20,10 +20,20 @@
 	</div>
 
 	<div class="changelog__versions--minor">
+		<a class="changelog__version-link" data-action="showVersion" data-version="11.2">11.2</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.1">11.1</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.0">11.0</a>
 
+		<div class="changelog__versions--patch" data-target="patches" data-visibility="version" data-version="11.2">
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.2.0"
+				>11.2.0</a
+			>
+		</div>
+
 		<div class="changelog__versions--patch" data-target="patches" data-visibility="version" data-version="11.1">
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.1.3"
+				>11.1.3</a
+			>
 			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.1.2"
 				>11.1.2</a
 			>
@@ -60,7 +70,498 @@
 		</div>
 	</div>
 
+	<ul class="changelog__list" data-visibility="version" data-version="11.2">
+		<!-- #region 11.2.0 -->
+
+		<li id="11.2.0" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">11.2.0</div>
+			<div class="changelog__date">FEBRUARY &nbsp;2021</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds rebase and/or merge status when applicable to the <i>Commits</i> and <i>Repositories</i> views
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				<b>Merging into &lt;branch&gt;</b> or
+				<b>Resolve conflicts before merging into &lt;branch&gt;</b>
+			</div>
+			<div class="changelog__details changelog__details--list">
+				<img
+					class="changelog__image"
+					src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/commits-view-merge.png"
+					alt="Merging"
+				/>
+				<ul>
+					<li>
+						Lists any conflicted files. Conflicted files show comparisons with the common base of the
+						current and incoming changes to aid in resolving the conflict by making it easier to see where
+						changes originated
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				<b>Rebasing &lt;branch&gt;</b> or <b>Resolve conflicts to continue rebasing &lt;branch&gt;</b>
+			</div>
+			<div class="changelog__details changelog__details--list">
+				<img
+					class="changelog__image"
+					src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/commits-view-rebase.png"
+					alt="Merging"
+				/>
+				<ul>
+					<li>
+						Shows the number of rebase steps left, the commit the rebase is paused at, and lists any
+						conflicted files. Conflicted files show comparisons with the common base of the current and
+						incoming changes to aid in resolving the conflict by making it easier to see where changes
+						originated
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds rebase and/or merge conflict status when applicable to the
+				<i>File History</i> and <i>Line History</i> views
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				<b>Merge Changes</b>
+			</div>
+			<div class="changelog__details changelog__details--list">
+				<img
+					class="changelog__image"
+					src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/file-history-view-merge-conflict.png"
+					alt="Merge Conflict"
+				/>
+				<ul>
+					<li>
+						Show comparisons with the common base of the current and incoming changes to aid in resolving
+						the conflict by making it easier to see where changes originated
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">Adds status indicator colors to pull request icons in GitLens views</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a new <i>Quick Open File History</i> command to all places where <i>Open File History</i> already
+				exists &mdash; closes
+				<a title="Open Issue #1156" href="https://github.com/eamodio/vscode-gitlens/issues/1156">#1156</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds the <i>Add Remote</i> command to the branch status in the <i>Branches</i>, <i>Commits</i>, and
+				<i>Repositories</i> views when there are no Git remotes configured
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a new
+				<i>Browse Repository from Before Here</i>
+				(<code>gitlens.browseRepoBeforeRevision</code>) and
+				<i>Browse Repository from Before Here in New Window</i>
+				(<code>gitlens.browseRepoBeforeRevisionInNewWindow</code>) commands
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds <i>Repository from Before Here</i> and <i>Repository from Before Here in New Window</i> to the
+				<i>Browse</i> submenu of commits in the views
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a new
+				<i>Copy Current Branch Name</i> (<code>gitlens.copyCurrentBranch</code>) command to copy the current
+				branch name to the clipboard &mdash; closes
+				<a title="Open Issue #1306" href="https://github.com/eamodio/vscode-gitlens/issues/1306">#1306</a>
+				&mdash; thanks to
+				<a title="Open Pull Request PR #1307" href="https://github.com/eamodio/vscode-gitlens/pull/1307"
+					>PR #1307</a
+				>
+				by Ken Hom (<a href="https://github.com/kh0m">@kh0m</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a <i>Switch to Text</i> button on the <i>Interactive Rebase Editor</i> to open the text rebase todo
+				file &mdash; note that closing either document will start the rebase
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a notification which asks if you want to create a pull request after publishing a new branch
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">Adds CodeStream partnership</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a <code>gitlens.views.branches.reveal</code> setting to specify whether to reveal branches in the
+				<i>Branches</i> view, otherwise they will be revealed in the <i>Repositories</i> view
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a <code>gitlens.views.commits.reveal</code> setting to specify whether to reveal commits in the
+				<i>Commits</i> view, otherwise they will be revealed in the <i>Repositories</i> view
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a <code>gitlens.views.remotes.reveal</code> setting to specify whether to reveal remotes in the
+				<i>Remotes</i> view, otherwise they will be revealed in the <i>Repositories</i> view
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a <code>gitlens.views.stashes.reveal</code> setting to specify whether to reveal stashes in the
+				<i>Stashes</i> view, otherwise they will be revealed in the <i>Repositories</i> view
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a <code>gitlens.views.tags.reveal</code> setting to specify whether to reveal tags in the
+				<i>Tags</i> view, otherwise they will be revealed in the <i>Repositories</i> view
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a <code>gitlens.advanced.abbreviateShaOnCopy</code> setting to specify to whether to copy full or
+				abbreviated commit SHAs to the clipboard. Abbreviates to the length of
+				<code>gitlens.advanced.abbreviatedShaLength</code> &mdash; closes
+				<a title="Open Issue #1062" href="https://github.com/eamodio/vscode-gitlens/issues/1062">#1062</a>
+				&mdash; thanks to
+				<a title="Open Pull Request PR #1316" href="https://github.com/eamodio/vscode-gitlens/pull/1316"
+					>PR #1316</a
+				>
+				by Brendon Smith (<a href="https://github.com/br3ndonland">@br3ndonland</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a <code>gitlens.advanced.externalDiffTool</code> setting to specify an optional external diff tool
+				to use when comparing files. Must be a configured
+				<a href="https://git-scm.com/docs/git-config#Documentation/git-config.txt-difftool">Git difftool</a>.
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a <code>gitlens.advanced.externalDirectoryDiffTool</code> setting to specify an optional external
+				diff tool to use when comparing directories. Must be a configured
+				<a href="https://git-scm.com/docs/git-config#Documentation/git-config.txt-difftool">Git difftool</a>.
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a new <code>regex</code> option to <code>gitlens.remotes</code> to better support custom remote
+				matching &mdash; closes
+				<a title="Open Issue #1196" href="https://github.com/eamodio/vscode-gitlens/issues/1196">#1196</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes <code>gitlens.statusBar.reduceFlicker</code> to be on by default and improves it's display
+				&mdash; closes
+				<a title="Open Issue #1353" href="https://github.com/eamodio/vscode-gitlens/issues/1353">#1353</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes the <i>Interactive Rebase Editor</i> to abort the rebase if you just close it without choosing
+				an action
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes <i>Push to Commit...</i> on the HEAD commit to be <i>Push</i> instead as there is no need for a
+				commit specific push in that case
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Renames <i>Browse from Here</i> command to <i>Browse Repository from Here</i> in the command palette and
+				quick pick menus
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Renames <i>Browse from Here in New Window</i> command to
+				<i>Browse Repository from Here in New Window</i> in the command palette and quick pick menus
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Renames <i>Browse from Here</i> to <i>Repository from Here</i> on the <i>Browse</i> submenu of commits
+				in the views
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Renames <i>Browse from Here in New Window</i> to <i>Repository from Here in New Window</i> on the
+				<i>Browse</i> submenu of commits in the views
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1267" href="https://github.com/eamodio/vscode-gitlens/issues/1267">#1267</a>
+				&mdash; File history fails on Git for Windows 2.27 ("There are no editors open that can provide file
+				history information.")
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1006" href="https://github.com/eamodio/vscode-gitlens/issues/1006">#1006</a>
+				&mdash; "GitLens: Open File on Remote" opens wrong Bitbucket URL
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #901" href="https://github.com/eamodio/vscode-gitlens/issues/901">#901</a>
+				&mdash; Bitbucket Server fails when url = https://DOMAIN/stash/scm/PROJECT/REPO.git
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1354" href="https://github.com/eamodio/vscode-gitlens/issues/1354">#1354</a>
+				&mdash; Stuck after merge a branch with a single quote in the name
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #863" href="https://github.com/eamodio/vscode-gitlens/issues/863">#863</a>
+				&mdash; Pulling all repositories doesn't work unless built-in Git knows about the repo (requires VS Code
+				v1.53 or later)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1332" href="https://github.com/eamodio/vscode-gitlens/issues/1332">#1332</a>
+				&mdash; Stashes created with command line don't show up in the "Stashes" section
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1045" href="https://github.com/eamodio/vscode-gitlens/issues/1045">#1045</a>
+				&mdash; View File History not working - absolute path used &mdash; thanks to
+				<a title="Open Pull Request PR #1334" href="https://github.com/eamodio/vscode-gitlens/pull/1334"
+					>PR #1334</a
+				>
+				by egfx-notifications (<a href="https://github.com/egfx-notifications">@egfx-notifications</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1323" href="https://github.com/eamodio/vscode-gitlens/issues/1323">#1323</a>
+				&mdash; Interactive rebase hangs
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1183" href="https://github.com/eamodio/vscode-gitlens/issues/1183">#1183</a>
+				&mdash; stash all changes has no effect when the number of files is large
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1308" href="https://github.com/eamodio/vscode-gitlens/issues/1308">#1308</a>
+				&mdash; Escape quotes for PRs titles
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1309" href="https://github.com/eamodio/vscode-gitlens/issues/1309">#1309</a>
+				&mdash; "Fetch" not working on remote branches
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes an issue where many views wouldn't refresh properly when going from no items to some items
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes an issue where <i>Publish Branch</i> was incorrectly showing up on remote branches
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes an issue where the <i>Open Directory Compare *</i> commands failed to work
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes an issue where pinning a file/line to the <i>File History</i> view or <i>Line History</i> view
+				would get lost if the view was collapsed and expanded
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--removed">REMOVED</div>
+			<div class="changelog__content">
+				Removes the <code>gitlens.repositories.enabled</code> setting, since the view is toggleable as any other
+				view now
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--removed">REMOVED</div>
+			<div class="changelog__content">
+				Removes the <code>gitlens.lineHistory.enabled</code> setting, since the view is toggleable as any other
+				view now
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--removed">REMOVED</div>
+			<div class="changelog__content">
+				Removes the <i>Hide Repositories view</i> command, since the view is toggleable as any other view now
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--removed">REMOVED</div>
+			<div class="changelog__content">
+				Removes the <i>Hide Line History view</i> command, since the view is toggleable as any other view now
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+	</ul>
+
 	<ul class="changelog__list" data-visibility="version" data-version="11.1">
+		<!-- #region 11.1.3 -->
+
+		<li id="11.1.3" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">11.1.3</div>
+			<div class="changelog__date">JANUARY &nbsp;2021</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1303" href="https://github.com/eamodio/vscode-gitlens/issues/1303">#1303</a>
+				&mdash; Open on Remote is creating invalid URLs for Azure Devops &mdash; thanks to
+				<a title="Open Pull Request PR #1304" href="https://github.com/eamodio/vscode-gitlens/pull/1304"
+					>PR #1304</a
+				>
+				by Travis Collins (<a href="https://github.com/TravisTX">@TravisTX</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
 		<!-- #region 11.1.2 -->
 
 		<li id="11.1.2" class="changelog__list-item--version">
