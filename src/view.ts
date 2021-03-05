@@ -6,7 +6,7 @@ export class View {
 	private classes: string[];
 	private observer: IntersectionObserver | undefined;
 
-	private activeVersion: string | undefined = '11.2.0';
+	private activeVersion: string | undefined = '11.3.0';
 	private versions = new Map<string, boolean>();
 
 	constructor(public name: string) {
