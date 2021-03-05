@@ -230,18 +230,18 @@
 					</div>
 
 					<!-- prettier-ignore -->
-					<%= require('html-loader!./partials/whats-new.html') %>
+					<%= require('html-loader?{"esModule":false}!./partials/whats-new.html') %>
 					<!-- prettier-ignore -->
-					<%= require('html-loader!./partials/features.html') %>
+					<%= require('html-loader?{"esModule":false}!./partials/features.html') %>
 					<!-- prettier-ignore -->
-					<%= require('html-loader!./partials/sponsor.html') %>
+					<%= require('html-loader?{"esModule":false}!./partials/sponsor.html') %>
 					<!-- prettier-ignore -->
-					<%= require('html-loader!./partials/about.html') %>
+					<%= require('html-loader?{"esModule":false}!./partials/about.html') %>
 				</div>
 			</div>
 		</section>
 
 		<!-- prettier-ignore -->
-		<%= require('html-loader!./partials/footer.html') %>
+		<%= require('html-loader?{"esModule":false}!./partials/footer.html') %>
 	</body>
 </html>
