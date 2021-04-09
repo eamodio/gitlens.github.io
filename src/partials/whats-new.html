@@ -3,7 +3,7 @@
 	class="section"
 	data-view="whats-new"
 	data-classes="section--has-footer"
-	data-version="11.3"
+	data-version="11.4"
 >
 	<div class="sponsor__header">
 		<h3>What's&nbsp;new&nbsp;in <span class="changelog__version">GitLens 11</span></h3>
@@ -20,10 +20,17 @@
 	</div>
 
 	<div class="changelog__versions--minor">
+		<a class="changelog__version-link" data-action="showVersion" data-version="11.4">11.4</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.3">11.3</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.2">11.2</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.1">11.1</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.0">11.0</a>
+
+		<div class="changelog__versions--patch" data-target="patches" data-visibility="version" data-version="11.4">
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.4.0"
+				>11.4.0</a
+			>
+		</div>
 
 		<div class="changelog__versions--patch" data-target="patches" data-visibility="version" data-version="11.3">
 			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.3.0"
@@ -79,6 +86,200 @@
 			>
 		</div>
 	</div>
+
+	<ul class="changelog__list" data-visibility="version" data-version="11.4">
+		<!-- #region 11.4.0 -->
+
+		<li id="11.4.0" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">11.4.0</div>
+			<div class="changelog__date">APRIL &nbsp;2021</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a new status indicator (decoration), on the right, and a themeable colorization to branches in the
+				views
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				<code>!</code> &mdash; indicates that the branch is missing its upstream (likely deleted from the
+				remote)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a new <code>⚠</code> indicator to branches in quick pick menus when a branch is missing its
+				upstream
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds <i>Open Folder History</i> command to folders in the <i>Explorer</i> view to show the folder's
+				history in the <i>File History</i> view
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds <a href="https://gitea.io/">Gitea</a> remote provider support &mdash; closes
+				<a title="Open Issue #1379" href="https://github.com/eamodio/vscode-gitlens/issues/1379">#1379</a>
+				thanks to
+				<a title="Open Pull Request #1396" href="https://github.com/eamodio/vscode-gitlens/pull/1396"
+					>PR #1396</a
+				>
+				by Nils K (<a href="https://github.com/septatrix">septatrix</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a <code>gitlens.advanced.commitOrdering</code> setting to specify the order by which commits will
+				be shown. If unspecified, commits will be shown in reverse chronological order &mdash; closes
+				<a title="Open Issue #1257" href="https://github.com/eamodio/vscode-gitlens/issues/1257">#1257</a>
+				thanks to
+				<a title="Open Pull Request #1344" href="https://github.com/eamodio/vscode-gitlens/pull/1344"
+					>PR #1344</a
+				>
+				by Andy Tang (<a href="https://github.com/thewindsofwinter">thewindsofwinter</a>) and Shashank Shastri
+				(<a href="https://github.com/Shashank-Shastri">Shashank-Shastri</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds
+				<a href="https://github.com/eamodio/vscode-gitlens#side-bar-views-">documentation</a>
+				for the <i>GitLens: Set Views Layout</i> command &mdash; thanks to
+				<a title="Open Pull Request #1404" href="https://github.com/eamodio/vscode-gitlens/pull/1404"
+					>PR #1404</a
+				>
+				by Asif Kamran Malick (<a href="https://github.com/akmalick">@akmalick</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds an <i>Enable Debug Logging</i> command (<code>gitlens.enableDebugLogging</code>) to enable debug
+				logging to the GitLens output channel
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a <i>Disable Debug Logging</i> command (<code>gitlens.disableDebugLogging</code>) to disable debug
+				logging to the GitLens output channel
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1423" href="https://github.com/eamodio/vscode-gitlens/issues/1423">#1423</a>
+				&mdash; Create tag with message fails
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1428" href="https://github.com/eamodio/vscode-gitlens/issues/1428">#1428</a>
+				&mdash; Incorrect branch name when no commits exist on new repo
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1444" href="https://github.com/eamodio/vscode-gitlens/issues/1444">#1444</a>
+				&mdash; File history view "Open Changes with Working File" does not work for the very first commit
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1448" href="https://github.com/eamodio/vscode-gitlens/issues/1448">#1448</a>
+				&mdash; Hashes (#) are percent encoded in custom remote urls
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1447" href="https://github.com/eamodio/vscode-gitlens/issues/1447">#1447</a>
+				&mdash; <i>Open File on Remote From...</i> is missing remote branches
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1442" href="https://github.com/eamodio/vscode-gitlens/issues/1442">#1442</a>
+				&mdash; Interactive Rebase Editor not opened but plain text file when called from terminal
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1439" href="https://github.com/eamodio/vscode-gitlens/issues/1439">#1439</a>
+				&mdash; Copying a remote file URL for a file on Azure DevOps does not work &mdash; thanks to
+				<a title="Open Pull Request #1440" href="https://github.com/eamodio/vscode-gitlens/pull/1440"
+					>PR #1440</a
+				>
+				by Lee C. (<a href="https://github.com/MeltingMosaic">MeltingMosaic</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1445" href="https://github.com/eamodio/vscode-gitlens/issues/1439">#1445</a>
+				&mdash; Improve documentation for hiding default added editor actions
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1411" href="https://github.com/eamodio/vscode-gitlens/issues/1411">#1411</a>
+				&mdash; Click on branch compare node does not expand the tree
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes an issue where the <i>Changes to pull from *</i>'s <i>* files changed</i> was always 0
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+	</ul>
 
 	<ul class="changelog__list" data-visibility="version" data-version="11.3">
 		<!-- #region 11.3.0 -->
@@ -297,7 +498,7 @@
 			<div class="changelog__badge changelog__badge--added">NEW</div>
 			<div class="changelog__content">
 				Adds supported remote types in README &mdash; thanks to
-				<a title="Open Pull Request PR #1371" href="https://github.com/eamodio/vscode-gitlens/pull/1371"
+				<a title="Open Pull Request #1371" href="https://github.com/eamodio/vscode-gitlens/pull/1371"
 					>PR #1371</a
 				>
 				by Vladislav Guleaev (<a href="https://github.com/vguleaev">@vguleaev</a>)
@@ -394,7 +595,7 @@
 			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
 			<div class="changelog__content">
 				Fixes typo in README &mdash; thanks to
-				<a title="Open Pull Request PR #1374" href="https://github.com/eamodio/vscode-gitlens/pull/1374"
+				<a title="Open Pull Request #1374" href="https://github.com/eamodio/vscode-gitlens/pull/1374"
 					>PR #1374</a
 				>
 				by David Rees (<a href="https://github.com/studgeek">@studgeek</a>)
@@ -438,7 +639,7 @@
 				Fixes
 				<a title="Open Issue #1357" href="https://github.com/eamodio/vscode-gitlens/issues/1357">#1357</a>
 				&mdash; Branch sorting may be reversed &mdash; thanks to
-				<a title="Open Pull Request PR #1358" href="https://github.com/eamodio/vscode-gitlens/pull/1358"
+				<a title="Open Pull Request #1358" href="https://github.com/eamodio/vscode-gitlens/pull/1358"
 					>PR #1358</a
 				>
 				by sueka (<a href="https://github.com/sueka">@sueka</a>)
@@ -580,7 +781,7 @@
 				branch name to the clipboard &mdash; closes
 				<a title="Open Issue #1306" href="https://github.com/eamodio/vscode-gitlens/issues/1306">#1306</a>
 				&mdash; thanks to
-				<a title="Open Pull Request PR #1307" href="https://github.com/eamodio/vscode-gitlens/pull/1307"
+				<a title="Open Pull Request #1307" href="https://github.com/eamodio/vscode-gitlens/pull/1307"
 					>PR #1307</a
 				>
 				by Ken Hom (<a href="https://github.com/kh0m">@kh0m</a>)
@@ -655,7 +856,7 @@
 				<code>gitlens.advanced.abbreviatedShaLength</code> &mdash; closes
 				<a title="Open Issue #1062" href="https://github.com/eamodio/vscode-gitlens/issues/1062">#1062</a>
 				&mdash; thanks to
-				<a title="Open Pull Request PR #1316" href="https://github.com/eamodio/vscode-gitlens/pull/1316"
+				<a title="Open Pull Request #1316" href="https://github.com/eamodio/vscode-gitlens/pull/1316"
 					>PR #1316</a
 				>
 				by Brendon Smith (<a href="https://github.com/br3ndonland">@br3ndonland</a>)
@@ -808,7 +1009,7 @@
 				Fixes
 				<a title="Open Issue #1045" href="https://github.com/eamodio/vscode-gitlens/issues/1045">#1045</a>
 				&mdash; View File History not working - absolute path used &mdash; thanks to
-				<a title="Open Pull Request PR #1334" href="https://github.com/eamodio/vscode-gitlens/pull/1334"
+				<a title="Open Pull Request #1334" href="https://github.com/eamodio/vscode-gitlens/pull/1334"
 					>PR #1334</a
 				>
 				by egfx-notifications (<a href="https://github.com/egfx-notifications">@egfx-notifications</a>)
@@ -929,7 +1130,7 @@
 				Fixes
 				<a title="Open Issue #1303" href="https://github.com/eamodio/vscode-gitlens/issues/1303">#1303</a>
 				&mdash; Open on Remote is creating invalid URLs for Azure Devops &mdash; thanks to
-				<a title="Open Pull Request PR #1304" href="https://github.com/eamodio/vscode-gitlens/pull/1304"
+				<a title="Open Pull Request #1304" href="https://github.com/eamodio/vscode-gitlens/pull/1304"
 					>PR #1304</a
 				>
 				by Travis Collins (<a href="https://github.com/TravisTX">@TravisTX</a>)
