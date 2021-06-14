@@ -3,7 +3,7 @@
 	class="section"
 	data-view="whats-new"
 	data-classes="section--has-footer"
-	data-version="11.4"
+	data-version="11.5"
 >
 	<div class="sponsor__header">
 		<h3>What's&nbsp;new&nbsp;in <span class="changelog__version">GitLens 11</span></h3>
@@ -20,13 +20,23 @@
 	</div>
 
 	<div class="changelog__versions--minor">
+		<a class="changelog__version-link" data-action="showVersion" data-version="11.5">11.5</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.4">11.4</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.3">11.3</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.2">11.2</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.1">11.1</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.0">11.0</a>
 
+		<div class="changelog__versions--patch" data-target="patches" data-visibility="version" data-version="11.5">
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.5.0"
+				>11.5.0</a
+			>
+		</div>
+
 		<div class="changelog__versions--patch" data-target="patches" data-visibility="version" data-version="11.4">
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.4.1"
+				>11.4.1</a
+			>
 			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.4.0"
 				>11.4.0</a
 			>
@@ -87,7 +97,227 @@
 		</div>
 	</div>
 
+	<ul class="changelog__list" data-visibility="version" data-version="11.5">
+		<!-- #region 11.5.0 -->
+
+		<li id="11.5.0" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">11.5.0</div>
+			<div class="changelog__date">JUNE &nbsp;2021</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">Adds support for Workspace Trust</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds rich hovers to commits in the views &mdash; including associated pull requests (when connected to
+				GitHub) and auto-linked issues
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a new section for associated pull requests (when connected to GitHub) and auto-linked issues to the
+				<i>Details</i> hover
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds the ability to filter comparisons to show only either the left-side or right-side file differences
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds the <i>Open Folder History</i> command to root folders &mdash; closes
+				<a title="Open Issue #1505" href="https://github.com/eamodio/vscode-gitlens/issues/1505">#1505</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds alternate <code>j</code>/<code>k</code> and <code>shift+j</code>/<code>shift+k</code> keyboard
+				shortcuts to the Interactive Rebase Editor &mdash; closes
+				<a title="Open Issue #1538" href="https://github.com/eamodio/vscode-gitlens/issues/1538">#1538</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds the ability to show contributor statistics, files changed as well as lines added and deleted (can
+				take a while to compute depending on the repository) &mdash; closes
+				<a title="Open Issue #1489" href="https://github.com/eamodio/vscode-gitlens/issues/1489">#1489</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds a <i>Show Statistics</i> / <i>Hide Statistics</i> toggle to the <code>...</code> menu of the
+				<i>Contributors</i> view
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds a <code>gitlens.views.contributors.showStatistics</code> setting to specify whether to show
+				contributor statistics in the <i>Contributors</i> view
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds <i>Create Pull Request...</i> inline command to branches in the views
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">Adopts more VS Code codicons</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes the <i>Restore</i> command title to <i>Restore (Checkout)</i> &mdash; closes
+				<a title="Open Issue #1493" href="https://github.com/eamodio/vscode-gitlens/issues/1493">#1493</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes <i>Compare with Working</i> icon to better align with VS Code compare changes codicon
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Renames the <i>Discuss / Collab...</i> button on the <i>Details</i> hover to <i>Team...</i>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Reverses the resulting comparison of the <i>Compare with HEAD</i>, <i>Compare with Working</i>, and
+				<i>Compare with Upstream</i> commands in the views
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1538" href="https://github.com/eamodio/vscode-gitlens/issues/1538">#1538</a>
+				&mdash; Wrong initial keyboard focus in interactive rebase
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1498" href="https://github.com/eamodio/vscode-gitlens/issues/1498">#1498</a>
+				&mdash; "Search & Compare" broken entries
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1507" href="https://github.com/eamodio/vscode-gitlens/issues/1507">#1507</a>
+				&mdash; Communicate git error instead of "unable to find git"
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1512" href="https://github.com/eamodio/vscode-gitlens/issues/1512">#1512</a>
+				&mdash; Git tag command can add an extra <code>-m</code>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1402" href="https://github.com/eamodio/vscode-gitlens/issues/1402">#1402</a>
+				&mdash; File history missing commits from other branches
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes an issue where the current line blame intermittently fails to appear
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes an issue where auto-linking of GitHub 3rd party issue links was broken
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes an issue where view decorations on macOS wouldn't show the correct icon
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+	</ul>
+
 	<ul class="changelog__list" data-visibility="version" data-version="11.4">
+		<!-- #region 11.4.1 -->
+
+		<li id="11.4.1" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">11.4.1</div>
+			<div class="changelog__date">APRIL &nbsp;2021</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds an alternate <i>Copy Remote File Url</i> command
+				(<code>gitlens.copyRemoteFileUrlWithoutRange</code>) to copy the remote url of the file without
+				including any line range
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1458" href="https://github.com/eamodio/vscode-gitlens/issues/1458">#1458</a>
+				&mdash; "Copy Remote File Url" not showing line ranges
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+
 		<!-- #region 11.4.0 -->
 
 		<li id="11.4.0" class="changelog__list-item--version">
