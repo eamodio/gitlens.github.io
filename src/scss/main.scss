@@ -1078,6 +1078,7 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .sponsor-me__image {
@@ -1108,6 +1109,7 @@ footer {
 
 .sponsor__image-link {
 	text-align: center;
+	padding-bottom: 0.25rem;
 }
 
 .heart {
