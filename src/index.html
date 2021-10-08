@@ -46,6 +46,15 @@
 			src="assets/snowman.png"
 		/> -->
 
+		<div class="acquisition-banner">
+			<a
+				title="Learn more about GitKraken and GitLens joining forces!"
+				href="https://www.gitkraken.com/blog/gitkraken-acquires-gitlens-for-visual-studio-code"
+				target="_blank"
+			>
+				<img src="assets/gk+gl-banner.png" alt="GitKraken and GitLens are joining forces!" />
+			</a>
+		</div>
 		<header class="header">
 			<div class="header__headine" data-action="back">
 				<img class="header__headline-image" src="assets/gitlens-logo.png" />
@@ -55,9 +64,9 @@
 					>What's New <span class="button__icon"> &#128227;</span>
 				</a>
 				<a id="features-button" class="button button--flat" data-action="features">Features</a>
-				<a id="sponsor-button" class="button button--flat" data-action="sponsor">&#x2764;</a>
+				<a id="faq-button" class="button button--flat" data-action="faq">FAQ</a>
 				<a id="about-button" class="button button--flat" data-action="about">About</a>
-				<a id="blog-button" class="button button--flat" href="https://blog.amod.io">Blog</a>
+				<!-- <a id="blog-button" class="button button--flat" href="https://blog.amod.io">Blog</a> -->
 			</div>
 		</header>
 
@@ -67,6 +76,17 @@
 					<div class="section-header__image">
 						<img class="gitlens__image" src="assets/gitlens-logo.png" />
 					</div>
+				</div>
+				<div class="acquisition-notice">
+					<figure>
+						<a
+							title="Learn more about GitKraken and GitLens joining forces!"
+							href="https://www.gitkraken.com/blog/gitkraken-acquires-gitlens-for-visual-studio-code"
+							target="_blank"
+						>
+							<img src="assets/gk+gl-notice.png" />
+						</a>
+					</figure>
 				</div>
 				<div class="section-body">
 					<p class="center">
@@ -80,8 +100,6 @@
 							href="https://code.visualstudio.com"
 							target="_blank"
 							>Visual Studio Code</a
-						>, created, developed, and maintained by
-						<a title="Learn more about Eric" href="https://www.amod.io" target="_blank">Eric&nbsp;Amodio</a
 						>.
 					</p>
 					<p>
@@ -96,9 +114,9 @@
 						to how and why the code evolved. Effortlessly explore the history and evolution of a codebase.
 					</p>
 					<p>
-						Today, with almost <b>10 million installs</b>, GitLens is
-						<b>loved and relied upon by millions</b> of users, on teams of all sizes, ranging from single
-						developers to large enterprise teams.
+						Today, with over <b>11 million installs</b> and 71 million downloads, GitLens is
+						<b>loved and relied upon by millions</b> of users, ranging from single developers to large
+						enterprise teams.
 					</p>
 					<div class="section__cta">
 						<div class="cta__primary">
@@ -122,88 +140,14 @@
 								>
 							</p>
 						</div>
+						<!--
 						<div class="cta__secondary">
-							<!--
 								<a class="button button--flat-inverse" href="https://github.com/eamodio/vscode-gitlens/releases/tag/v9.0.0-beta">
 									<img class="button__icon button__icon--svg" src="data:image/svg+xml;utf8,<svg viewBox='0 0 16 22' xmlns='http://www.w3.org/2000/svg'><path fill='#fff' d='M2.626 7.054l5.384 5.471 5.383-5.471H9.905V1H6.113v6.054zM13.671 17.367c-.014-.032-1.209-2.371-1.209-2.371-.262-.521-.952-.987-1.536-.987h-5.83c-.583 0-1.273.52-1.535 1.041 0 0-1.196 2.263-1.209 2.295-.183.476.078.66.624.66h10.07c.547 0 .807-.16.625-.638z'/><path fill='#fff' d='M14.033 17.781c.201.525-.062.822-.664.822H2.63c-.602 0-.866-.297-.664-.822-.29.214-.458.673-.458 1.059v1.17c0 .644.48.99 1.122.99h10.739c.643 0 1.122-.346 1.122-.99v-1.17c0-.386-.168-.845-.458-1.059z'/></svg>" />
 									GitLens <span class="button__content--version">v9.0-beta</span>
 								</a>
-							-->
-							<a class="button button--flat" data-action="sponsor"
-								>Sponsor GitLens <span class="button__icon"> &#x2764;</span>
-							</a>
-							<p class="button__info">
-								If you find <b>GitLens</b> useful, please consider
-								<a data-action="sponsor" href="#sponsor"><b>sponsoring</b></a> it. And if you use
-								<b>GitLens</b> for work, please encourage your employer to
-								<a data-action="sponsor" href="#sponsor"><b>sponsor</b></a> it.
-							</p>
-						</div>
-					</div>
-
-					<div class="section-sponsors">
-						<h2>Sponsored by</h2>
-						<div class="sponsors on-section-change-fade">
-							<a
-								class="sponsor__image-link"
-								title="Try CodeStream &mdash; Pull Requests and Code Reviews in your IDE"
-								href="https://sponsorlink.codestream.com/?utm_source=gitlens_web&utm_medium=banner&utm_campaign=gitlens"
-							>
-								<img
-									class="sponsor__image sponsor__image--hero"
-									src="https://alt-images.codestream.com/codestream_logo_gitlens_web_light.png"
-									alt="CodeStream &mdash; Pull Requests and Code Reviews in your IDE"
-								/>
-							</a>
-							<a
-								class="sponsor__image-link"
-								title="Visit Embark Studios"
-								href="https://embark-studios.com"
-							>
-								<img
-									class="sponsor__image sponsor__image--hero"
-									src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/sponsors/embark-studios_light.png"
-									alt="Embark Studios Logo"
-								/>
-							</a>
-							<a class="sponsor__image-link" title="Visit Localize" href="https://localizejs.com">
-								<img
-									class="sponsor__image sponsor__image--hero"
-									src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/sponsors/localize_light.png"
-									alt="Localize Logo"
-								/>
-							</a>
-							<a
-								class="sponsor__image-link"
-								title="Try Tabnine Autocomplete"
-								href="http://wd5a.2.vu/GitLens"
-							>
-								<img
-									class="sponsor__image sponsor__image--hero"
-									src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/sponsors/tabnine.png"
-									alt="Tabnine Logo"
-								/>
-							</a>
-							<a
-								class="sponsor__image-link"
-								title="Try Dendron — the IDE for General Knowledge"
-								href="https://www.dendron.so"
-							>
-								<img
-									class="sponsor__image sponsor__image--hero"
-									src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/sponsors/dendron.png"
-									alt="Dendron Logo"
-								/>
-							</a>
-							<a class="sponsor__image-link" title="Try Stepsize" href="https://bit.ly/3A5zaNg">
-								<img
-									class="sponsor__image sponsor__image--hero"
-									src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/sponsors/stepsize.png"
-									alt="Stepsize Logo"
-								/>
-							</a>
-						</div>
-						<h2 class="footer">And by others just like you!</h2>
+							</div>
+						-->
 					</div>
 
 					<p class="gitlens__badges on-section-change-fade">
@@ -252,7 +196,7 @@
 					<!-- prettier-ignore -->
 					<%= require('html-loader?{"esModule":false}!./partials/features.html') %>
 					<!-- prettier-ignore -->
-					<%= require('html-loader?{"esModule":false}!./partials/sponsor.html') %>
+					<%= require('html-loader?{"esModule":false}!./partials/faq.html') %>
 					<!-- prettier-ignore -->
 					<%= require('html-loader?{"esModule":false}!./partials/about.html') %>
 				</div>

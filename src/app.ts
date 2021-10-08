@@ -92,7 +92,7 @@ export class App {
 		document.location.hash = '';
 	}
 
-	private onHashChanged(e: HashChangeEvent) {
+	private onHashChanged(e: Event) {
 		const [hash, paths] = this.getHashAndPaths();
 
 		if (this.redirect(hash, paths)) return;
@@ -111,8 +111,8 @@ export class App {
 	}
 
 	private redirect(hash: string, paths: string[]): boolean {
-		if (hash === 'support-gitlens') {
-			document.location.hash = '#sponsor';
+		if (hash === 'support-gitlens' || hash === 'sponsor') {
+			document.location.hash = '#';
 			return true;
 		}
 

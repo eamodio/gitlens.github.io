@@ -12,53 +12,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-class InlineChunkHtmlPlugin {
-	constructor(htmlPlugin, patterns) {
-		this.htmlPlugin = htmlPlugin;
-		this.patterns = patterns;
-	}
-
-	getInlinedTag(publicPath, assets, tag) {
-		if (
-			(tag.tagName !== 'script' || !(tag.attributes && tag.attributes.src)) &&
-			(tag.tagName !== 'link' || !(tag.attributes && tag.attributes.href))
-		) {
-			return tag;
-		}
-
-		let chunkName = tag.tagName === 'link' ? tag.attributes.href : tag.attributes.src;
-		if (publicPath) {
-			chunkName = chunkName.replace(publicPath, '');
-		}
-		if (!this.patterns.some((pattern) => chunkName.match(pattern))) {
-			return tag;
-		}
-
-		const asset = assets[chunkName];
-		if (asset == null) {
-			return tag;
-		}
-
-		return { tagName: tag.tagName === 'link' ? 'style' : tag.tagName, innerHTML: asset.source(), closeTag: true };
-	}
-
-	apply(compiler) {
-		let publicPath = compiler.options.output.publicPath || '';
-		if (publicPath && !publicPath.endsWith('/')) {
-			publicPath += '/';
-		}
-
-		compiler.hooks.compilation.tap('InlineChunkHtmlPlugin', (compilation) => {
-			const getInlinedTagFn = (tag) => this.getInlinedTag(publicPath, compilation.assets, tag);
-
-			this.htmlPlugin.getHooks(compilation).alterAssetTagGroups.tap('InlineChunkHtmlPlugin', (assets) => {
-				assets.headTags = assets.headTags.map(getInlinedTagFn);
-				assets.bodyTags = assets.bodyTags.map(getInlinedTagFn);
-			});
-		});
-	}
-}
-
 module.exports = function (env, argv) {
 	const mode = argv.mode || 'none';
 
@@ -110,11 +63,19 @@ module.exports = function (env, argv) {
 		},
 		mode: mode,
 		devServer: {
-			contentBase: __dirname,
+			hot: false,
+			// client: {
+			// 	webSocketURL: 'https://strange-eagle-13.loca.lt/',
+			// },
+			devMiddleware: {
+				writeToDisk: (filePath) => !/css\.js/.test(filePath),
+			},
 			liveReload: true,
 			port: 8090,
-			watchContentBase: true,
-			writeToDisk: (filePath) => !/css\.js/.test(filePath),
+			static: {
+				directory: __dirname,
+				watch: true,
+			},
 		},
 		devtool: 'source-map',
 		output: {
@@ -193,6 +154,10 @@ module.exports = function (env, argv) {
 					],
 					exclude: /node_modules/,
 				},
+				{
+					test: /\.(png|jpg|svg)$/,
+					loader: 'url-loader',
+				},
 			],
 		},
 		resolve: {
@@ -211,3 +176,50 @@ module.exports = function (env, argv) {
 		},
 	};
 };
+
+class InlineChunkHtmlPlugin {
+	constructor(htmlPlugin, patterns) {
+		this.htmlPlugin = htmlPlugin;
+		this.patterns = patterns;
+	}
+
+	getInlinedTag(publicPath, assets, tag) {
+		if (
+			(tag.tagName !== 'script' || !(tag.attributes && tag.attributes.src)) &&
+			(tag.tagName !== 'link' || !(tag.attributes && tag.attributes.href))
+		) {
+			return tag;
+		}
+
+		let chunkName = tag.tagName === 'link' ? tag.attributes.href : tag.attributes.src;
+		if (publicPath) {
+			chunkName = chunkName.replace(publicPath, '');
+		}
+		if (!this.patterns.some((pattern) => chunkName.match(pattern))) {
+			return tag;
+		}
+
+		const asset = assets[chunkName];
+		if (asset == null) {
+			return tag;
+		}
+
+		return { tagName: tag.tagName === 'link' ? 'style' : tag.tagName, innerHTML: asset.source(), closeTag: true };
+	}
+
+	apply(compiler) {
+		let publicPath = compiler.options.output.publicPath || '';
+		if (publicPath && !publicPath.endsWith('/')) {
+			publicPath += '/';
+		}
+
+		compiler.hooks.compilation.tap('InlineChunkHtmlPlugin', (compilation) => {
+			const getInlinedTagFn = (tag) => this.getInlinedTag(publicPath, compilation.assets, tag);
+
+			this.htmlPlugin.getHooks(compilation).alterAssetTagGroups.tap('InlineChunkHtmlPlugin', (assets) => {
+				assets.headTags = assets.headTags.map(getInlinedTagFn);
+				assets.bodyTags = assets.bodyTags.map(getInlinedTagFn);
+			});
+		});
+	}
+}
