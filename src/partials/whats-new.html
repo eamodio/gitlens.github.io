@@ -3,13 +3,14 @@
 	class="section"
 	data-view="whats-new"
 	data-classes="section--has-footer"
-	data-version="11.6"
+	data-version="11.7"
 >
 	<div class="section__header">
 		<h3>What's&nbsp;new&nbsp;in <span class="changelog__version">GitLens 11</span></h3>
 	</div>
 
 	<div class="changelog__versions--minor">
+		<a class="changelog__version-link" data-action="showVersion" data-version="11.7">11.7</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.6">11.6</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.5">11.5</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.4">11.4</a>
@@ -17,6 +18,12 @@
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.2">11.2</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.1">11.1</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.0">11.0</a>
+
+		<div class="changelog__versions--patch" data-target="patches" data-visibility="version" data-version="11.7">
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.7.0"
+				>11.7.0</a
+			>
+		</div>
 
 		<div class="changelog__versions--patch" data-target="patches" data-visibility="version" data-version="11.6">
 			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.6.1"
@@ -99,6 +106,236 @@
 			>
 		</div>
 	</div>
+
+	<ul class="changelog__list" data-visibility="version" data-version="11.7">
+		<!-- #region 11.7.0 -->
+
+		<li id="11.7.0" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">11.7.0</div>
+			<div class="changelog__date">NOVEMBER &nbsp;2021</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a new rich commit details hover to the blame information in the status bar
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds a <code>gitlens.statusBar.tooltipFormat</code> setting to specify the format (in markdown) of hover
+				shown over the blame information in the status bar
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">Adds a new rich hover to the GitLens mode in the status bar</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds functional groupings to all GitLens settings when using the VS Code settings UI. Groups will be
+				displayed in the table of contents in the settings UI &mdash; thanks to Raymond Zhao (<a
+					href="https://github.com/rzhao271"
+					>@rzhao271</a
+				>) on the VS Code team for allowing extensions to add groups to VS Code settings UI
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds new action buttons on many quick pick menu options, including in the
+				<i>Git Command Palette</i> &mdash; thanks to Tyler Leonhardt (<a
+					href="https://github.com/tylerLeonhardt"
+					>@tylerLeonhardt</a
+				>) on the VS Code team for the API support
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds <a href="https://www.gerritcodereview.com/">Gerrit</a> remote provider support &mdash; closes
+				<a title="Open Issue #720" href="https://github.com/eamodio/vscode-gitlens/issues/720">#720</a>
+				thanks to
+				<a title="Open Pull Request #1535" href="https://github.com/eamodio/vscode-gitlens/pull/1535"
+					>PR #1535</a
+				>
+				by Andrew Savage (<a href="https://github.com/andrewsavage1">@andrewsavage1</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds new <i>Open File</i> command (with <i>Open Revision</i> as an <code>alt-click</code>) to files in
+				comparisons &mdash; closes
+				<a title="Open Issue #1710" href="https://github.com/eamodio/vscode-gitlens/issues/1710">#1710</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a new <i>Cherry Pick without Committing</i> confirmation option to the <i>Git Command Palette</i>'s
+				<i>cherry-pick</i> command &mdash; closes
+				<a title="Open Issue #1693" href="https://github.com/eamodio/vscode-gitlens/issues/1693">#1693</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a new <i>Merge without Fast-Forwarding or Committing</i> confirmation option to the
+				<i>Git Command Palette</i>'s <i>merge</i> command &mdash; closes
+				<a title="Open Issue #1178" href="https://github.com/eamodio/vscode-gitlens/issues/1178">#1178</a>
+				thanks to
+				<a title="Open Pull Request #1621" href="https://github.com/eamodio/vscode-gitlens/pull/1621"
+					>PR #1621</a
+				>
+				by Dmitry Ulupov (<a href="https://github.com/dimaulupov">@dimaulupov</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds commit message autolinking of merged pull requests for Azure Repos &mdash; closes
+				<a title="Open Issue #1486" href="https://github.com/eamodio/vscode-gitlens/issues/1486">#1486</a>
+				thanks to
+				<a title="Open Pull Request #1487" href="https://github.com/eamodio/vscode-gitlens/pull/1487"
+					>PR #1487</a
+				>
+				by Mark Molinaro (<a href="https://github.com/markjm">@markjm</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a new <code>AzureDevOps</code> type to <code>gitlens.remotes</code> to better support Azure DevOps
+				remote matching &mdash; thanks to
+				<a title="Open Pull Request #1487" href="https://github.com/eamodio/vscode-gitlens/pull/1487"
+					>PR #1487</a
+				>
+				by Dmitry Gurovich (<a href="https://github.com/yrtimiD">@yrtimiD</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes the <i>No Fast-forward Merge</i> confirmation option in the <i>Git Command Palette</i>'s
+				<i>merge</i> command to
+				<i>Merge without Fast-Forwarding</i>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1669" href="https://github.com/Axosoft/vscode-gitlens/issues/1669">#1669</a>
+				&mdash; Workitem Link (Hover ) for Repository (DevOps) with Blank is broken
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1695" href="https://github.com/Axosoft/vscode-gitlens/issues/1695">#1695</a>
+				&mdash; gitlens.remotes: ${repo} has '%2520' instead of '%20' for a space
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1531" href="https://github.com/eamodio/vscode-gitlens/issues/1531">#1531</a>
+				&mdash; Typo in <code>gitlens.defaultGravatarsStyle</code> options &mdash; thanks to
+				<a title="Open Pull Request #1532" href="https://github.com/eamodio/vscode-gitlens/pull/1532"
+					>PR #1532</a
+				>
+				by Alwin Wang (<a href="https://github.com/alwinw">@alwinw</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1511" href="https://github.com/eamodio/vscode-gitlens/issues/1511">#1511</a>
+				&mdash; Avatars are blurry on retina displays &mdash; thanks to
+				<a title="Open Pull Request #1595" href="https://github.com/eamodio/vscode-gitlens/pull/1595"
+					>PR #1595</a
+				>
+				by Adaex Yang (<a href="https://github.com/adaex">@adaex</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1609" href="https://github.com/eamodio/vscode-gitlens/issues/1609">#1609</a>
+				&mdash; X.globalState.setKeysForSync is not a function &mdash; thanks to
+				<a title="Open Pull Request #1610" href="https://github.com/eamodio/vscode-gitlens/pull/1610"
+					>PR #1610</a
+				>
+				by Stanislav Lvovsky (<a href="https://github.com/slavik-lvovsky">@slavik-lvovsky</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1131" href="https://github.com/eamodio/vscode-gitlens/issues/1131">#1131</a>
+				&mdash; Order matters for search filters in 'search commits' &mdash; with help from
+				<a title="Open Pull Request #1575" href="https://github.com/eamodio/vscode-gitlens/pull/1575"
+					>PR #1575</a
+				>
+				by Lior Kletter (<a href="https://github.com/Git-Lior">@Git-Lior</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1583" href="https://github.com/eamodio/vscode-gitlens/issues/1583">#1583</a>
+				&mdash; Should hide the context menu on unrelated tabs &mdash; thanks to
+				<a title="Open Pull Request #1589" href="https://github.com/eamodio/vscode-gitlens/pull/1589"
+					>PR #1589</a
+				>
+				by Takashi Tamura (<a href="https://github.com/tamuratak">@tamuratak</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1587" href="https://github.com/eamodio/vscode-gitlens/issues/1587">#1587</a>
+				&mdash; Hover on blame can duplicate &mdash; thanks to
+				<a title="Open Pull Request #1588" href="https://github.com/eamodio/vscode-gitlens/pull/1588"
+					>PR #1588</a
+				>
+				by Takashi Tamura (<a href="https://github.com/tamuratak">@tamuratak</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+	</ul>
 
 	<ul class="changelog__list" data-visibility="version" data-version="11.6">
 		<!-- #region 11.6.1 -->

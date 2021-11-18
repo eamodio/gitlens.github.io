@@ -30,6 +30,17 @@
 }
 
 [data-view='whats-new'] {
+	&[data-version='11.7'] {
+		[data-action='showVersion'][data-version='11.7']::after {
+			transform: scaleX(1);
+			opacity: 1;
+		}
+
+		[data-visibility='version'][data-version][data-version]:not([data-version='11.7']) {
+			display: none !important;
+		}
+	}
+
 	&[data-version='11.6'] {
 		[data-action='showVersion'][data-version='11.6']::after {
 			transform: scaleX(1);
