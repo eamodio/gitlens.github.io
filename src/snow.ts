@@ -47,7 +47,7 @@ export class Snow {
 	private readonly _clearBound: () => void;
 	private readonly _updateBound: () => void;
 
-	constructor(public snowing: boolean = true) {
+	constructor(public snowing: boolean = false) {
 		this._clearBound = this.clear.bind(this);
 		this._updateBound = this.update.bind(this);
 
@@ -72,6 +72,9 @@ export class Snow {
 		document.body.classList.toggle('snowing', this.snowing);
 
 		if (this.snowing) {
+			const audio = new Audio('assets/bells.mp3');
+			void audio.play();
+
 			this.createSnowflakes();
 			requestAnimationFrame(this._updateBound);
 		}

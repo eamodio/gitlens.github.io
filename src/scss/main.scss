@@ -219,6 +219,30 @@ i {
 	}
 }
 
+.button--flat-cta {
+	background-color: rgb(250, 187, 22);
+	border: 1px solid rgb(250, 187, 22);
+	color: black !important;
+	font-size: 0.9em;
+	font-weight: 600;
+	transition: background-color 250ms, border-color 250ms, color 250ms;
+	margin: 0;
+
+	&:hover {
+		background-color: white;
+		border-color: black;
+		color: black !important;
+
+		& .button__icon--svg {
+			filter: invert(100%);
+		}
+	}
+
+	body.preload & {
+		transition-duration: 0s !important;
+	}
+}
+
 .button--flat-primary {
 	background-color: #914db3;
 	border: 1px solid #914db3;
@@ -344,13 +368,71 @@ p.button__badge {
 	overflow: hidden;
 	z-index: 100;
 	flex: 0 0 auto;
-	box-shadow: 0 4px 10px -4px rgba(211, 184, 224, 0.4);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 2em 6em;
+	margin: 1.2em 0 0 0;
+}
+
+.acquisition-banner__bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	filter: brightness(1.8);
+	background: url(../assets/gk/bg-stripes.png) no-repeat, rgba(0, 0, 0, 0.3);
+	background-size: 100% 70%;
+	background-position-y: 17%;
+	z-index: -1;
+}
+
+.acquisition-banner__border--bottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	filter: brightness(0.4);
+}
+
+.acquisition-banner__border--top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	filter: brightness(0.4);
+}
+
+.acquisition-banner__text {
+	flex: 1 1 50%;
+	padding-right: 2em;
+	display: flex;
+	flex-wrap: wrap;
+
+	& h1 {
+		font-size: 2.5em;
+		font-weight: 600;
+		margin: 0;
+	}
+
+	& h2 {
+		font-size: 1.5em;
+		margin: 0.25em 0 0.75em 0;
+	}
+}
+
+.acquisition-banner__logo {
+	flex: 1 1 50%;
+	display: flex;
+	max-height: 250px;
+	min-width: 225px;
 
 	& img {
-		display: block;
-		width: 120%;
-		margin-left: 50%;
-		transform: translateX(-50%);
+		display: flex;
+		width: 100%;
 	}
 }
 
@@ -1248,6 +1330,15 @@ img.center {
 		margin-right: 1em;
 	}
 
+	.acquisition-banner {
+		padding: 2em 2em;
+		margin: 1em 0 0 0;
+	}
+
+	.acquisition-banner__text {
+		padding-right: 1em;
+	}
+
 	.section-header,
 	.section-body {
 		margin: 0 2em;
@@ -1344,6 +1435,38 @@ img.center {
 		display: none;
 	}
 
+	.acquisition-banner {
+		padding: 2em 1em;
+		margin: 1em 0 0 0;
+		flex-wrap: wrap;
+	}
+
+	.acquisition-banner__text {
+		flex-basis: auto;
+		padding-right: 0;
+		margin-bottom: 3em;
+		justify-content: center;
+		text-align: center;
+
+		& h1 {
+			font-size: 3em;
+		}
+
+		& h2 {
+			font-size: 2em;
+		}
+	}
+
+	.acquisition-banner__logo {
+		flex-basis: auto;
+		max-height: 150px;
+	}
+
+	.acquisition-banner__bg {
+		background-size: 100% 60%;
+		background-position-y: 60%;
+	}
+
 	.section-header,
 	.section-body {
 		margin: 0 1em;
@@ -1422,4 +1545,4 @@ img.center {
 }
 
 @import 'versions';
-// @import 'snow';
+@import 'snow';
