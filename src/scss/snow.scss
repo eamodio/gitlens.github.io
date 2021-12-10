@@ -7,20 +7,32 @@ canvas.snow {
 
 .snow__trigger {
 	cursor: pointer;
-	width: 36px;
-	opacity: 0.6;
+	width: 76px;
+	opacity: 0.5;
 	transform: rotate(-7deg);
-	transition: filter 250ms, opacity 250ms, transform 250ms;
+	transition: opacity 250ms, filter 250ms, transform 250ms;
+	filter: grayscale(100%);
 
-	body:not(.snowing) & {
-		filter: grayscale(100%);
-		opacity: 0.5;
+	body.snowing & {
+		filter: none;
+		opacity: 1;
 	}
 
 	&:hover {
-		filter: unset !important;
-		opacity: 0.9 !important;
+		filter: none !important;
+		opacity: 1;
 		transform: rotate(-4deg) scale(1.1);
+	}
+}
+
+@media all and (max-width: 590px) {
+	.snow__trigger {
+		width: 50px;
+	}
+
+	.snow__trigger--fixed-right {
+		bottom: 2px !important;
+		right: 2px !important;
 	}
 }
 
@@ -59,8 +71,8 @@ canvas.snow {
 
 .snow__trigger--fixed-right {
 	position: fixed;
-	right: 18px;
-	bottom: 18px;
+	right: 10px;
+	bottom: 10px;
 	z-index: 2147483647;
 }
 

@@ -1440,13 +1440,12 @@ img.center {
 	.acquisition-banner {
 		padding: 2em 1em;
 		margin: 1em 0 0 0;
-		flex-wrap: wrap;
+		flex-wrap: wrap-reverse;
 	}
 
 	.acquisition-banner__text {
 		flex-basis: auto;
 		padding-right: 0;
-		margin-bottom: 3em;
 		justify-content: center;
 		text-align: center;
 
@@ -1461,6 +1460,7 @@ img.center {
 
 	.acquisition-banner__logo {
 		flex-basis: auto;
+		margin-bottom: 1em;
 		max-height: 150px;
 	}
 
@@ -1509,6 +1509,26 @@ img.center {
 
 	.notice {
 		margin-top: 1em;
+	}
+}
+
+@media all and (max-width: 590px) and (max-height: 1080px) {
+	.acquisition-banner {
+		font-size: 0.7em;
+	}
+
+	.acquisition-banner__logo {
+		max-height: 100px;
+	}
+}
+
+@media all and (max-width: 590px) and (max-height: 600px) {
+	.acquisition-banner {
+		font-size: 0.6em;
+	}
+
+	.acquisition-banner__logo {
+		max-height: 75px;
 	}
 }
 
