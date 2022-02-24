@@ -3,13 +3,14 @@
 	class="section"
 	data-view="whats-new"
 	data-classes="section--has-footer"
-	data-version="11.7"
+	data-version="12.0"
 >
 	<div class="section__header">
-		<h3>What's&nbsp;new&nbsp;in <span class="changelog__version">GitLens 11</span></h3>
+		<h3>What's&nbsp;new&nbsp;in <span class="changelog__version">GitLens 12</span></h3>
 	</div>
 
 	<div class="changelog__versions--minor">
+		<a class="changelog__version-link" data-action="showVersion" data-version="12.0">12.0</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.7">11.7</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.6">11.6</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.5">11.5</a>
@@ -106,6 +107,364 @@
 			>
 		</div>
 	</div>
+
+	<ul class="changelog__list" data-visibility="version" data-version="12.0">
+		<!-- #region 12.0.0 -->
+
+		<li id="12.0.0" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">12.0.0</div>
+			<div class="changelog__date">FEBRUARY &nbsp;2022</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">Adds (preview) VS Code for Web support!</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Get the power and insights of GitLens for any GitHub repository directly in your browser on vscode.dev
+				or github.dev
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Introducing Premium Features &mdash;
+				<a href="https://gitkraken.com/gitlens/premium-features">learn about premium features</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Access to premium features requires a free account for public repos and a paid account for private
+				repos. All non-premium features will continue to be free without an account, so you won't lose access to
+				any of the GitLens features you know and love.
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Visual File History &mdash; a visual way to analyze and explore changes to a file
+			</div>
+			<div class="changelog__details changelog__details--list">
+				<img
+					class="changelog__image"
+					src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/visual-file-history-hover.png"
+					alt="Visual File History"
+				/>
+				<ul>
+					<li>
+						The Visual File History allows you to quickly see the evolution of a file, including when
+						changes were made, how large they were, and who made them
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">Worktrees &mdash; allow multiple branches to be checked-out at once</div>
+			<div class="changelog__details changelog__details--list">
+				<img
+					class="changelog__image"
+					src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/main/images/docs/worktrees-view.png"
+					alt="Worktrees view"
+				/>
+				<ul>
+					<li>
+						Worktrees allow you to easily work on different branches of a repository simultaneously. You can
+						create multiple working trees, each of which can be opened in individual windows or all together
+						in a single workspace
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a new GitLens Home view &mdash; see welcome content, help resource, and subscription information
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a <i>Get Started with GitLens</i> walkthrough to introduce new (and existing) users to many of the
+				powerful features of GitLens &mdash; try it via <i>GitLens: Get Started</i> from the Command Palette
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a new <i>Autolinked Issues and Pull Requests</i> node to comparisons to list autolinked issues in
+				commit messages and associated pull requests
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">Now you can quickly see all the issues fixed in a release and more</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">Currently only supported for connected GitHub remote providers</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds the ability to choose a stash when opening or comparing file revisions, via the
+				<i>Open Changes with Revision...</i> & <i>Open File at Revision...</i> commands
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds improved hover information, including status and color-coding, shown on pull requests in the
+				GitLens views
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds a <code>gitlens.codeLens.dateFormat</code> setting to specify how to format absolute dates in the
+				Git CodeLens
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds an easier method to choose a specific commit to the
+				<i>Git Command Palette</i>'s <i>merge</i> & <i>rebase</i> commands
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">Adds a new commit format token: <code>${link}</code></div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Completely refactors the internals of GitLens into a new flexible Git provider model to allow GitLens to
+				work on the web and in virtual environments like vscode.dev and github.dev
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Improves the user experience of the commit details and file details quick pick menus
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--changed">~</div>
+			<div class="changelog__content">
+				Commands are now grouped and easier to understand and access &mdash; thanks to Tyler Leonhardt (<a
+					href="https://github.com/tylerLeonhardt"
+					>@tylerLeonhardt</a
+				>) on the VS Code team for the quick pick API additions
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">Improves performance and reduces latency across many workflows</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Improves startup performance on previously opened workspaces by remembering details from the last time
+				the workspace was opened
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Improves performance of the all GitLens webviews, most noticeable on the GitLens settings editor
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Improves GitLens view refreshing when folders are added or removed from a workspace
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes the icon of the <i>Open Changes</i> action on the hovers to be clearer
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes footnotes in hovers to be above the command bar rather than below
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Reworks many internal Git parsers to reduce memory usage and improve performance
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1818" href="https://github.com/gitkraken/vscode-gitlens/issues/1818">#1818</a>
+				&mdash; Ambiguous error message on GitHub authentication errors
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1645" href="https://github.com/gitkraken/vscode-gitlens/issues/1645">#1645</a>
+				&mdash; Possible catastrophic backtracking with large inputs
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1506" href="https://github.com/gitkraken/vscode-gitlens/issues/1506">#1506</a>
+				&mdash; Annoying Github login request
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1735" href="https://github.com/gitkraken/vscode-gitlens/issues/1735">#1735</a>
+				&mdash; "gitlens.hovers.detailsMarkdownFormat" edit error
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1745" href="https://github.com/gitkraken/vscode-gitlens/issues/1745">#1745</a>
+				&mdash; autolinks.url encodes hash char
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1572" href="https://github.com/gitkraken/vscode-gitlens/issues/1572">#1572</a>
+				&mdash; Forced regular expression search in changes
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1473" href="https://github.com/gitkraken/vscode-gitlens/issues/1473">#1473</a>
+				&mdash; Support VSCodium in interactive rebase editor
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1699" href="https://github.com/gitkraken/vscode-gitlens/issues/1699">#1699</a>
+				&mdash; Exception has occurred: RangeError [ERR<i>OUT</i>OF_RANGE]
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1601" href="https://github.com/gitkraken/vscode-gitlens/issues/1601">#1601</a>
+				&mdash; Add a better time sample in "Dates & Times" setting
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">Fixes performance issue with the rich hover on the status bar blame</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes cross repository branch switching via the <i>Git Command Palette</i>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">Fixes an issue with TOC entries in the VS Code settings editor</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes issues using quotes when searching for commits in certain scenarios
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes issues when revealing items in GitLens views the item wouldn't get selected properly
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">Fixes issues with retries on <i>Git Command Palette</i> command steps</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes code splitting issue where GitHub support wasn't split out of the main bundle for better loading
+				performance
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">Fixes issue with quotes and commit search</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">Fixes a leaked disposable on cancellable promises</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+	</ul>
 
 	<ul class="changelog__list" data-visibility="version" data-version="11.7">
 		<!-- #region 11.7.0 -->
