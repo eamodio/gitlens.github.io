@@ -3,13 +3,14 @@
 	class="section"
 	data-view="whats-new"
 	data-classes="section--has-footer"
-	data-version="12.0"
+	data-version="12.1"
 >
 	<div class="section__header">
 		<h3>What's&nbsp;new&nbsp;in <span class="changelog__version">GitLens 12</span></h3>
 	</div>
 
 	<div class="changelog__versions--minor">
+		<a class="changelog__version-link" data-action="showVersion" data-version="12.1">12.1</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="12.0">12.0</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.7">11.7</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.6">11.6</a>
@@ -19,6 +20,42 @@
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.2">11.2</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.1">11.1</a>
 		<a class="changelog__version-link" data-action="showVersion" data-version="11.0">11.0</a>
+
+		<div class="changelog__versions--patch" data-target="patches" data-visibility="version" data-version="12.1">
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="12.1.1"
+				>12.1.1</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="12.1.0"
+				>12.1.0</a
+			>
+		</div>
+
+		<div class="changelog__versions--patch" data-target="patches" data-visibility="version" data-version="12.0">
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="12.0.7"
+				>12.0.7</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="12.0.6"
+				>12.0.6</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="12.0.5"
+				>12.0.5</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="12.0.4"
+				>12.0.4</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="12.0.3"
+				>12.0.3</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="12.0.2"
+				>12.0.2</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="12.0.1"
+				>12.0.1</a
+			>
+			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="12.0.0"
+				>12.0.0</a
+			>
+		</div>
 
 		<div class="changelog__versions--patch" data-target="patches" data-visibility="version" data-version="11.7">
 			<a class="changelog__version-link" title="Jump to Version" data-action="scrollTo" data-scroll-to="11.7.0"
@@ -108,7 +145,849 @@
 		</div>
 	</div>
 
+	<ul class="changelog__list" data-visibility="version" data-version="12.1">
+		<!-- #region 12.1.1 -->
+
+		<li id="12.1.1" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">12.1.1</div>
+			<div class="changelog__date">JUNE &nbsp;2022</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds getting started tutorial video to the Welcome, Get Started walkthrough, GitLens Home view, and
+				README
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #2037" href="https://github.com/gitkraken/vscode-gitlens/issues/2037">#2037</a>
+				&mdash; Autolinks can end up getting saved with invalid (cached) properties
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+
+		<!-- #region 12.1.0 -->
+
+		<li id="12.1.0" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">12.1.0</div>
+			<div class="changelog__date">JUNE &nbsp;2022</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds
+				<a href="https://github.com/gitkraken/vscode-gitlens#remote-provider-integrations-"
+					><b>rich integration</b></a
+				>
+				with GitLab and GitLab self-managed instances &mdash; closes
+				<a title="Open Issue #1236" href="https://github.com/gitkraken/vscode-gitlens/issues/1236">#1236</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">Adds associated pull request to line annotations and hovers</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">Adds associated pull request to status bar blame</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">Adds GitLab avatars</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">Adds associated pull requests to branches and commits in GitLens views</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds rich autolinks for GitLab issues and merge requests, including titles, status, and authors
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds rich support to <i>Autolinked Issues and Pull Requests</i> within comparisons to list autolinked
+				GitLab issues and merge requests in commit messages
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Additional thanks to Kevin Paxton (<a href="https://github.com/kpaxton">kpaxton</a>) for help and
+				contributions on this feature
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds editor line highlighting and code fading (dimming) to the
+				<i>File Heatmap</i> annotations to make it easier to tell recent vs old lines of code
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds a <code>line</code> option to <code>gitlens.heatmap.locations</code> setting to specify whether to
+				add a line highlight to the <i>File Heatmap</i> annotations
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds a <code>gitlens.heatmap.fadeLines</code> setting to specify whether to fade out older lines when
+				showing the <i>File Heatmap</i> annotations
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds editor line highlighting to the <i>File Changes</i> annotations for easier discovery of the added
+				or changed lines
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds a <code>line</code> option to <code>gitlens.changes.locations</code> setting to specify whether to
+				add a line highlight to the <i>File Changes</i> annotations
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds "vanilla"
+				<a href="https://www.gerritcodereview.com/">Gerrit</a> remote provider support &mdash; closes
+				<a title="Open Issue #1953" href="https://github.com/gitkraken/vscode-gitlens/issues/1953">#1953</a>
+				thanks to
+				<a title="Open Pull Request #1954" href="https://github.com/gitkraken/vscode-gitlens/pull/1954"
+					>PR #1954</a
+				>
+				by Felipe Santos (<a href="https://github.com/felipecrs">@felipecrs</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds "Oldest first" toggle to Interactive Rebase &mdash; closes
+				<a title="Open Issue #1190" href="https://github.com/gitkraken/vscode-gitlens/issues/1190">#1190</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds a <code>gitlens.rebaseEditor.ordering</code> setting to specify how Git commits are displayed in
+				the <i>Interactive Rebase Editor</i>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">Adds new and improved Autolink support</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds an <i>Autolinks</i> section in the <i>GitLens Settings Editor</i> to visually add and update
+				autolink entries &mdash; closes
+				<a title="Open Issue #1315" href="https://github.com/gitkraken/vscode-gitlens/issues/1315">#1315</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds improved support to <i>Autolinked Issues and Pull Requests</i> within comparisons to list
+				autolinked issues in commit messages
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				You can now see all autolinks found in the commits in the comparison regardless of whether its a
+				provider-based autolink or a custom (user-provided) autolink
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds <i>Open Current Branch on Remote</i> to the Command Palette &mdash; closes
+				<a title="Open Issue #1718" href="https://github.com/gitkraken/vscode-gitlens/issues/1718">#1718</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Improves how stashes are shown in the <i>Stashes</i> view by separating the associated branch from the
+				stash message &mdash; closes
+				<a title="Open Issue #1523" href="https://github.com/gitkraken/vscode-gitlens/issues/1523">#1523</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Changes previous Gerrit remote support to Google Source remote support &mdash; thanks to
+				<a title="Open Pull Request #1954" href="https://github.com/gitkraken/vscode-gitlens/pull/1954"
+					>PR #1954</a
+				>
+				by Felipe Santos (<a href="https://github.com/felipecrs">@felipecrs</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">Renames "Gutter Blame" annotations to "File Blame"</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">Renames "Gutter Changes" annotations to "File Changes"</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">Renames "Gutter Heatmap" annotations to "File Heatmap"</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #2033" href="https://github.com/gitkraken/vscode-gitlens/issues/2033">#2033</a>
+				&mdash; Diffing, applying, and restoring untracked files in a stash doesn't work
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #2028" href="https://github.com/gitkraken/vscode-gitlens/issues/2028">#2028</a>
+				&mdash; Branch names with special characters '&lt;' also causes errors on the command line &mdash;
+				thanks to
+				<a title="Open Pull Request #2030" href="https://github.com/gitkraken/vscode-gitlens/pull/2030"
+					>PR #2030</a
+				>
+				by mcy-kylin (<a href="https://github.com/mcy-kylin">@mcy-kylin</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #2028" href="https://github.com/gitkraken/vscode-gitlens/issues/2028">#2028</a>
+				&mdash; Branch names with special characters like ';\$|&gt;' causes errors on the command line (terminal
+				executed git commands)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #2021" href="https://github.com/gitkraken/vscode-gitlens/issues/2021">#2021</a>
+				&mdash; GitLab remote provider uses legacy routes &mdash; thanks to
+				<a title="Open Pull Request #2022" href="https://github.com/gitkraken/vscode-gitlens/pull/2022"
+					>PR #2022</a
+				>
+				by Brian Williams (<a href="https://github.com/Brcrwilliams">@Brcrwilliams</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1998" href="https://github.com/gitkraken/vscode-gitlens/issues/1998">#1998</a>
+				&mdash; Settings: time format reads 'Example date' instead of 'Example time' &mdash; thanks to
+				<a title="Open Pull Request #1999" href="https://github.com/gitkraken/vscode-gitlens/pull/1999"
+					>PR #1999</a
+				>
+				by Barney Carroll (<a href="https://github.com/barneycarroll">@barneycarroll</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #2012" href="https://github.com/gitkraken/vscode-gitlens/issues/2012">#2012</a>
+				&mdash; 'Gitlens: Open Changes with Revision...' results in error
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #2014" href="https://github.com/gitkraken/vscode-gitlens/issues/2014">#2014</a>
+				&mdash; '#' encoded incorrectly
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1787" href="https://github.com/gitkraken/vscode-gitlens/issues/1787">#1787</a>
+				&mdash; Remove '-review' from Gerrit Remote reviewDomain() &mdash; thanks to
+				<a title="Open Pull Request #1954" href="https://github.com/gitkraken/vscode-gitlens/pull/1954"
+					>PR #1954</a
+				>
+				by Felipe Santos (<a href="https://github.com/felipecrs">@felipecrs</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1902" href="https://github.com/gitkraken/vscode-gitlens/issues/1902">#1902</a>
+				&mdash; Support replacing mirror/replica domain with main domain for remote provider &mdash; thanks to
+				<a title="Open Pull Request #1954" href="https://github.com/gitkraken/vscode-gitlens/pull/1954"
+					>PR #1954</a
+				>
+				by Felipe Santos (<a href="https://github.com/felipecrs">@felipecrs</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+	</ul>
+
 	<ul class="changelog__list" data-visibility="version" data-version="12.0">
+		<!-- #region 12.0.7 -->
+
+		<li id="12.0.7" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">12.0.7</div>
+			<div class="changelog__date">JUNE &nbsp;2022</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1979" href="https://github.com/gitkraken/vscode-gitlens/issues/1979">#1979</a>
+				&mdash; GitLens stopped working in v12.0.0 and later
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1882" href="https://github.com/gitkraken/vscode-gitlens/issues/1882">#1882</a>
+				&mdash; Blame annotations not showing anymore after update
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1776" href="https://github.com/gitkraken/vscode-gitlens/issues/1776">#1776</a>
+				&mdash; Cant follow symlinks
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #2000" href="https://github.com/gitkraken/vscode-gitlens/issues/2000">#2000</a>
+				&mdash; File Changes annotations fail to display in certain cases
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1936" href="https://github.com/gitkraken/vscode-gitlens/issues/1936">#1936</a>
+				&mdash; Broken repositories view
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes an issue where commit messages in views incorrectly had ellipsis at the end
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes an issue where clicking on tokens on the Settings editor popup wouldn't add the token into the
+				input
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+
+		<!-- #region 12.0.6 -->
+
+		<li id="12.0.6" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">12.0.6</div>
+			<div class="changelog__date">JUNE &nbsp;2022</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1928" href="https://github.com/gitkraken/vscode-gitlens/issues/1928">#1928</a>
+				&mdash; Unable to get absolute uri between ex.txt and z:; Base path 'z:' must be an absolute path
+				&mdash; thanks to
+				<a title="Open Pull Request #1929" href="https://github.com/gitkraken/vscode-gitlens/pull/1929"
+					>PR #1929</a
+				>
+				by Ross Smith II (<a href="https://github.com/rasa">@rasa</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1932" href="https://github.com/gitkraken/vscode-gitlens/issues/1932">#1932</a>
+				&mdash; Pull request autolink doesn't work for Bitbucket Server 7 &mdash; thanks to
+				<a title="Open Pull Request #1933" href="https://github.com/gitkraken/vscode-gitlens/pull/1933"
+					>PR #1933</a
+				>
+				by Sam Martin (<a href="https://github.com/smartinio">@smartinio</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1938" href="https://github.com/gitkraken/vscode-gitlens/issues/1938">#1938</a>
+				&mdash; Git CodeLens causes line jumping on new virtual files
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1925" href="https://github.com/gitkraken/vscode-gitlens/issues/1925">#1925</a>
+				&mdash; Branches from remotes outside the repo aren't showing associated pull requests (for connected
+				remotes)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1920" href="https://github.com/gitkraken/vscode-gitlens/issues/1920">#1920</a>
+				&mdash; Can't view tags on torvalds/linux
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1923" href="https://github.com/gitkraken/vscode-gitlens/issues/1923">#1923</a>
+				&mdash; View titles fail to update properly when number of "opened" repos changes
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Fixes smooth scrolling and TOC jumping issues on the GitLens Interactive Settings
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+
+		<!-- #region 12.0.5 -->
+
+		<li id="12.0.5" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">12.0.5</div>
+			<div class="changelog__date">JUNE &nbsp;2022</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes the current line blame hover to show at the cursor, rather than the start of the line, when
+				showing the hover over the whole line (e.g. line & annotation)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes
+				<a href="https://github.com/gitkraken/vscode-gitlens#gutter-changes-"
+					><b><i>Gutter Changes</i></b></a
+				>
+				file annotations to be theme-aware
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes to honor the new(ish)
+				<code>git.repositoryScanMaxDepth</code> setting if the
+				<code>gitlens.advanced.repositorySearchDepth</code> setting isn't specified
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1909" href="https://github.com/gitkraken/vscode-gitlens/issues/1909">#1909</a>
+				&mdash; Should still "detect" repos directly in the workspace folder(s) even if
+				<code>git.autoRepositoryDetection</code> is <code>false</code>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1829" href="https://github.com/gitkraken/vscode-gitlens/issues/1829">#1829</a>
+				&mdash; Reduce re-rendering by disabling animation in blame info in the status bar
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1864" href="https://github.com/gitkraken/vscode-gitlens/issues/1864">#1864</a>
+				&mdash; Worktrees fail to load in working path with spaces
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1881" href="https://github.com/gitkraken/vscode-gitlens/issues/1881">#1881</a>
+				&mdash; Worktrees icon is very small
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1898" href="https://github.com/gitkraken/vscode-gitlens/issues/1898">#1898</a>
+				&mdash; Hovers display old Gravatar &mdash; thanks to
+				<a title="Open Pull Request #1899" href="https://github.com/gitkraken/vscode-gitlens/pull/1899"
+					>PR #1899</a
+				>
+				by Leo Dan Peña (<a href="https://github.com/amouxaden">@amouxaden</a>)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes an issue where the
+				<a href="https://github.com/gitkraken/vscode-gitlens#gutter-changes-"
+					><b><i>Gutter Changes</i></b></a
+				>
+				file annotations could be rendered on the wrong lines in certain cases
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+
+		<!-- #region 12.0.4 -->
+
+		<li id="12.0.4" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">12.0.4</div>
+			<div class="changelog__date">JUNE &nbsp;2022</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds ability to paste in an authorization URL to complete a GitLens+ sign in
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1888" href="https://github.com/gitkraken/vscode-gitlens/issues/1888">#1888</a>
+				&mdash; Gitlens breaks vscode auto repository detection settings
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes an issue where the Visual File History wasn't correctly opening the commit file details quick pick
+				menu
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes an issue where the
+				<i>Open Visual File History of Active File</i> command wasn't showing in the Command Palette
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+
+		<!-- #region 12.0.3 -->
+
+		<li id="12.0.3" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">12.0.3</div>
+			<div class="changelog__date">JUNE &nbsp;2022</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1897" href="https://github.com/gitkraken/vscode-gitlens/issues/1897">#1897</a>
+				&mdash; Repeated GitHub errors when offline
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+
+		<!-- #region 12.0.2 -->
+
+		<li id="12.0.2" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">12.0.2</div>
+			<div class="changelog__date">JUNE &nbsp;2022</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">Adds proxy support to network requests</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				By default, uses a proxy configuration based on VS Code settings or OS configuration
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li class="changelog__list-item--sub">
+			<div class="changelog__badge changelog__badge--added">+</div>
+			<div class="changelog__content">
+				Adds a <code>gitlens.proxy</code> setting to specify a GitLens specific proxy configuration
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes local repositories to be considered public rather than private for GitLens+ features (so only a
+				free account would be required)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes relative dates &gt;= 1 year but &lt; 2 years to be shown in months for better granularity -
+				related to
+				<a title="Open Issue #1546" href="https://github.com/gitkraken/vscode-gitlens/issues/1546">#1546</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1895" href="https://github.com/gitkraken/vscode-gitlens/issues/1895">#1895</a>
+				&mdash; Honor defaultDateShortFormat setting on Visual File History
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1890" href="https://github.com/gitkraken/vscode-gitlens/issues/1890">#1890</a>
+				&mdash; can no longer see untracked files in stashes
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+
+		<!-- #region 12.0.1 -->
+
+		<li id="12.0.1" class="changelog__list-item--version">
+			<div class="changelog__badge changelog__badge--version">12.0.1</div>
+			<div class="changelog__date">JUNE &nbsp;2022</div>
+			<div class="changelog__details"></div>
+		</li>
+
+		<li>
+			<div class="changelog__badge changelog__badge--added">NEW</div>
+			<div class="changelog__content">
+				Adds <code>gitlens.defaultDateFormat</code> setting to specify the locale, a
+				<a
+					href="https://en.wikipedia.org/wiki/IETF<i>language</i>tag#List<i>of</i>major<i>primary</i>language_subtags"
+					>BCP 47 language tag</a
+				>, to use for date formatting
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">Removes dependency on GitKraken Authentication extension</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes date formatting to follow the VS Code language locale by default
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">Changes framing of premium features into GitLens+</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--changed">IMPROVED</div>
+			<div class="changelog__content">
+				Changes repository naming to better reflect its folder name, related to
+				<a title="Open Issue #1854" href="https://github.com/gitkraken/vscode-gitlens/issues/1854">#1854</a>
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1859" href="https://github.com/gitkraken/vscode-gitlens/issues/1859">#1859</a>
+				&mdash; GitLens dates use system locale instead of vscode language setting
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1854" href="https://github.com/gitkraken/vscode-gitlens/issues/1854">#1854</a>
+				&mdash; All repos have the same name
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1866" href="https://github.com/gitkraken/vscode-gitlens/issues/1866">#1866</a>
+				&mdash; Copy SHA and Copy Message don't work from the views (commits, branches, etc)
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1865" href="https://github.com/gitkraken/vscode-gitlens/issues/1865">#1865</a>
+				&mdash; Value shortOffset out of range for Intl.DateTimeFormat options property timeZoneName
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1742" href="https://github.com/gitkraken/vscode-gitlens/issues/1742">#1742</a>
+				&mdash; New file lines keep jumping down
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1846" href="https://github.com/gitkraken/vscode-gitlens/issues/1846">#1846</a>
+				&mdash; Restoring (checkout) a deleted file from a commit doesn't work
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1844" href="https://github.com/gitkraken/vscode-gitlens/issues/1844">#1844</a>
+				&mdash; Autolinked issues aren't properly paged when there are too many commits
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+		<li>
+			<div class="changelog__badge changelog__badge--fixed">FIXED</div>
+			<div class="changelog__content">
+				Fixes
+				<a title="Open Issue #1843" href="https://github.com/gitkraken/vscode-gitlens/issues/1843">#1843</a>
+				&mdash; Compare references doesn't work if you have multiple repos open
+			</div>
+			<div class="changelog__details changelog__details--list"></div>
+		</li>
+
+		<!-- #endregion -->
+
 		<!-- #region 12.0.0 -->
 
 		<li id="12.0.0" class="changelog__list-item--version">
@@ -141,7 +1020,11 @@
 		<li class="changelog__list-item--sub">
 			<div class="changelog__badge changelog__badge--added">+</div>
 			<div class="changelog__content">
-				GitLens+ adds all-new, completely optional, features that enhance your current GitLens experience when you sign in with a free account. A free GitLens+ account gives you access to these new GitLens+ features on local and public repos, while a paid account allows you to use them on private repos. All other GitLens features will continue to be free without an account, so you won't lose access to any of the GitLens features you know and love, EVER.
+				GitLens+ adds all-new, completely optional, features that enhance your current GitLens experience when
+				you sign in with a free account. A free GitLens+ account gives you access to these new GitLens+ features
+				on local and public repos, while a paid account allows you to use them on private repos. All other
+				GitLens features will continue to be free without an account, so you won't lose access to any of the
+				GitLens features you know and love, EVER.
 			</div>
 			<div class="changelog__details changelog__details--list"></div>
 		</li>
