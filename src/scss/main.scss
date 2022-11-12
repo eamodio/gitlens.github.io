@@ -362,75 +362,67 @@ p.button__badge {
 }
 
 .acquisition-banner {
-	width: 100%;
-	height: auto;
-	position: relative;
-	overflow: hidden;
-	z-index: 100;
+	display: flex;
 	flex: 0 0 auto;
-	color: white;
-	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
-
-	padding: 2em 6em;
 	margin: 1.2em 0 0 0;
+	gap: 2rem;
 }
 
-.acquisition-banner__bg {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	filter: brightness(1.8);
-	background: url(../assets/gk/bg-stripes.png) no-repeat, rgba(0, 0, 0, 0.3);
-	background-size: 100% 70%;
-	background-position-y: 17%;
-	z-index: -1;
-}
+// .acquisition-banner__bg {
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	height: 100%;
+// 	width: 100%;
+// 	filter: brightness(1.8);
+// 	background: url(../assets/gk/bg-stripes.png) no-repeat, rgba(0, 0, 0, 0.3);
+// 	background-size: 100% 70%;
+// 	background-position-y: 17%;
+// 	z-index: -1;
+// }
 
-.acquisition-banner__border--bottom {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	filter: brightness(0.4);
-}
+// .acquisition-banner__border--bottom {
+// 	position: absolute;
+// 	bottom: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	filter: brightness(0.4);
+// }
 
-.acquisition-banner__border--top {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	filter: brightness(0.4);
-}
+// .acquisition-banner__border--top {
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	filter: brightness(0.4);
+// }
 
-.acquisition-banner__text {
-	flex: 1 1 50%;
-	padding-right: 2em;
-	display: flex;
-	flex-wrap: wrap;
+// .acquisition-banner__text {
+// 	flex: 1 1 50%;
+// 	padding-right: 2em;
+// 	display: flex;
+// 	flex-wrap: wrap;
 
-	& h1 {
-		font-size: 2.5em;
-		font-weight: 600;
-		margin: 0;
-		flex: 1 1 100%;
-	}
+// 	& h1 {
+// 		font-size: 2.5em;
+// 		font-weight: 600;
+// 		margin: 0;
+// 		flex: 1 1 100%;
+// 	}
 
-	& h2 {
-		font-size: 1.5em;
-		margin: 0.25em 0 0.75em 0;
-		flex: 1 1 100%;
-	}
-}
+// 	& h2 {
+// 		font-size: 1.5em;
+// 		margin: 0.25em 0 0.75em 0;
+// 		flex: 1 1 100%;
+// 	}
+// }
 
 .acquisition-banner__logo {
 	flex: 1 1 auto;
 	display: flex;
-	max-height: 250px;
-	min-width: 225px;
+	max-height: 150px;
 
 	& img {
 		display: flex;
@@ -438,57 +430,57 @@ p.button__badge {
 	}
 }
 
-.acquisition-notice {
-	flex: 0 0 auto;
+// .acquisition-notice {
+// 	flex: 0 0 auto;
 
-	figure {
-		position: relative;
-		width: 65%;
-		height: 100%;
-		margin: 0 auto;
-		overflow: hidden;
-		border-radius: 1.5rem;
-		filter: drop-shadow(0 -8px 45px rgba(145, 77, 179, 0.3));
+// 	figure {
+// 		position: relative;
+// 		width: 65%;
+// 		height: 100%;
+// 		margin: 0 auto;
+// 		overflow: hidden;
+// 		border-radius: 1.5rem;
+// 		filter: drop-shadow(0 -8px 45px rgba(145, 77, 179, 0.3));
 
-		&:before {
-			content: '';
-			background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
-			display: block;
-			position: absolute;
-			top: 0;
-			left: -75%;
-			width: 50%;
-			height: 100%;
-			transform: skewX(-25deg);
-			z-index: 2;
-			pointer-events: none;
-		}
+// 		&:before {
+// 			content: '';
+// 			background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+// 			display: block;
+// 			position: absolute;
+// 			top: 0;
+// 			left: -75%;
+// 			width: 50%;
+// 			height: 100%;
+// 			transform: skewX(-25deg);
+// 			z-index: 2;
+// 			pointer-events: none;
+// 		}
 
-		&:hover {
-			&:before {
-				animation: shine 0.75s;
-			}
-		}
+// 		&:hover {
+// 			&:before {
+// 				animation: shine 0.75s;
+// 			}
+// 		}
 
-		a {
-			display: flex;
-		}
+// 		a {
+// 			display: flex;
+// 		}
 
-		img {
-			width: 100%;
-		}
-	}
-}
+// 		img {
+// 			width: 100%;
+// 		}
+// 	}
+// }
 
-.acquisition-notice--faq {
-	margin-top: 1em;
+// .acquisition-notice--faq {
+// 	margin-top: 1em;
 
-	figure {
-		width: 90%;
-		// height: calc(100% - 17px); // not sure why it has an extra 7px
-		// filter: drop-shadow(0 -8px 45px rgba(145, 77, 179, 0.3));
-	}
-}
+// 	figure {
+// 		width: 90%;
+// 		// height: calc(100% - 17px); // not sure why it has an extra 7px
+// 		// filter: drop-shadow(0 -8px 45px rgba(145, 77, 179, 0.3));
+// 	}
+// }
 
 @keyframes shine {
 	100% {
@@ -1566,5 +1558,5 @@ img.center {
 	}
 }
 
-@import 'versions';
+// @import 'versions';
 @import 'snow';

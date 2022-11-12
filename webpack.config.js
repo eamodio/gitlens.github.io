@@ -9,7 +9,7 @@ const glob = require('glob');
 const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
+const { PurgeCSSPlugin } = require('purgecss-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = function (env, argv) {
@@ -24,7 +24,7 @@ module.exports = function (env, argv) {
 		new MiniCssExtractPlugin({
 			filename: 'main.css',
 		}),
-		new PurgecssPlugin({
+		new PurgeCSSPlugin({
 			paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true }),
 			safelist: {
 				standard: [/iframe/],
